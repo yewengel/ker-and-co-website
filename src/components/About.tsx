@@ -92,8 +92,8 @@ const About = () => {
           transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
           className="text-center mb-8 md:mb-16"
         >
-          <h2 className="text-2xl md:text-5xl font-bold font-heading mb-3 md:mb-6">
-            About <span className="text-[#C9A46A]">{brand.name}</span>
+          <h2 className="text-2xl md:text-5xl font-bold font-heading mb-3 md:mb-6 text-black">
+            About <span className="text-black">{brand.name}</span>
           </h2>
           <p className="text-xs md:text-xl text-gray-600 max-w-3xl mx-auto">
             {brand.name} tells the story of our founder’s rise from a small 1997 import business into a diversified Ethiopian group spanning distribution, paper products, hospitality, wellness, real estate, mining, agriculture, and export ventures.

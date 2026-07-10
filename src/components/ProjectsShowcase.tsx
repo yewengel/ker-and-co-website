@@ -59,8 +59,8 @@ const ProjectsShowcase = () => {
           transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
           className="text-center mb-6 md:mb-16"
         >
-          <h2 className="text-2xl md:text-5xl font-bold font-heading mb-3 md:mb-6">
-            Why Partner With <span className="text-[#C9A46A]">{brand.shortName}</span>
+          <h2 className="text-2xl md:text-5xl font-bold font-heading mb-3 md:mb-6 text-black">
+            Why Partner With <span className="text-black">{brand.shortName}</span>
           </h2>
           <p className="text-xs md:text-xl text-gray-600 max-w-3xl mx-auto">
             A founder-led Ethiopian business group shaped by practical market knowledge, diversified execution, and a long-term growth mindset.

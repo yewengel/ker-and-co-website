@@ -107,8 +107,8 @@ const Contact = () => {
           transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
           className="text-center mb-8 md:mb-18"
         >
-          <h2 className="text-2xl md:text-5xl font-bold font-heading mb-3 md:mb-6">
-            Contact <span className="text-[#C9A46A]">Us</span>
+          <h2 className="text-2xl md:text-5xl font-bold font-heading mb-3 md:mb-6 text-black">
+            Contact <span className="text-black">Us</span>
           </h2>
           <p className="text-xs md:text-xl text-gray-600 max-w-3xl mx-auto">
             Reach out to discuss distribution, hospitality, agriculture, real estate, mining, export ventures, or partnership opportunities with Ker & Co. Business Group.

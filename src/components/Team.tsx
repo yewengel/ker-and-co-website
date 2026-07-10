@@ -66,8 +66,8 @@ const Team = () => {
           transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
           className="text-center mb-8 md:mb-16"
         >
-          <h2 className="text-2xl md:text-5xl font-bold font-heading mb-3 md:mb-6">
-            Our <span className="text-[#C9A46A]">Leadership</span>
+          <h2 className="text-2xl md:text-5xl font-bold font-heading mb-3 md:mb-6 text-black">
+            Our <span className="text-black">Leadership</span>
           </h2>
           <p className="text-xs md:text-xl text-gray-600 max-w-3xl mx-auto">
             Meet the founder-led leadership structure guiding Ker & Co. Business Group across its diversified ventures and long-term growth strategy.

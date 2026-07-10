@@ -102,15 +102,15 @@ const Navigation = () => {
     'px-6 sm:px-10 md:px-14 lg:px-[64px] xl:px-[80px] 2xl:px-[96px]'
 
   const navLinkBase =
-    'relative whitespace-nowrap text-[15px] md:text-[16px] lg:text-[17px] font-medium tracking-[0.03em] transition-colors duration-200 py-1'
+    'relative whitespace-nowrap text-[14px] md:text-[15px] lg:text-[16px] font-medium tracking-[0.03em] transition-colors duration-200 py-1'
 
-  const getNavLinkClass = (active: boolean) =>
+  const getNavLinkClass = (active: boolean, isHome?: boolean) =>
     cn(
       navLinkBase,
       'after:absolute after:left-0 after:-bottom-2 after:h-[2px] after:transition-all after:duration-300',
       active
-        ? 'text-[#C9A46A] after:w-full after:bg-[#C9A46A]'
-        : 'text-[#222222] after:w-0 after:bg-[#C9A46A] hover:text-[#C9A46A] hover:after:w-full'
+        ? (isHome ? 'text-black after:w-full after:bg-black' : 'text-[#C9A46A] after:w-full after:bg-[#C9A46A]')
+        : (isHome ? 'text-black after:w-0 after:bg-black hover:after:w-full' : 'text-[#222222] after:w-0 after:bg-[#C9A46A] hover:text-[#C9A46A] hover:after:w-full')
     )
 
   const renderNavItem = (item: NavLeafItem | NavGroupItem) => {
@@ -120,7 +120,11 @@ const Navigation = () => {
           key={item.name}
           type="button"
           onClick={() => handleNavigation(item.href)}
-          className="shrink-0 inline-flex items-center h-10 md:h-11 px-6 md:px-7 text-[14px] md:text-[15px] lg:text-[16px] font-semibold text-white rounded-sm bg-[#C9A46A] hover:bg-[#C9A46A] transition-colors duration-200 shadow-sm ml-1"
+          className={cn(
+            'shrink-0 inline-flex items-center justify-center rounded-none bg-[#C9A46A] text-white px-4 md:px-5',
+            getNavLinkClass(false),
+            'after:hidden' // Hide the underline pseudo-element since we have a solid background
+          )}
         >
           {item.name}
         </button>
@@ -202,7 +206,7 @@ const Navigation = () => {
         key={item.name}
         type="button"
         onClick={() => handleNavigation(item.href)}
-        className={cn('shrink-0', getNavLinkClass(isNavActive(item.href)))}
+        className={cn('shrink-0', getNavLinkClass(isNavActive(item.href), item.name === 'Home'))}
       >
         {item.name}
       </button>
@@ -253,7 +257,7 @@ const Navigation = () => {
           <motion.div
             initial={{ opacity: 0, x: -12 }}
             animate={{ opacity: 1, x: 0 }}
-            className="flex shrink-0 items-center cursor-pointer group lg:justify-self-start"
+            className="flex shrink-0 items-center cursor-pointer group lg:justify-self-start lg:mr-10"
             onClick={() => handleNavigation('/')}
           >
             <div className="w-[64px] h-[64px] sm:w-[72px] sm:h-[72px] md:w-[80px] md:h-[80px] lg:w-[84px] lg:h-[84px] rounded-sm overflow-hidden bg-white border border-[#E7DED2] flex items-center justify-center shrink-0 transition-shadow duration-300 group-hover:shadow-[0_8px_24px_rgba(210,180,140,0.2)]">
@@ -275,7 +279,7 @@ const Navigation = () => {
 
           {/* Centered navigation links (desktop only) */}
           <div className="hidden lg:flex items-center justify-center min-w-0 overflow-x-auto scrollbar-none justify-self-center">
-            <div className="flex items-center gap-x-7 md:gap-x-9 lg:gap-x-11 xl:gap-x-14 px-2">
+            <div className="flex items-center gap-x-6 md:gap-x-8 lg:gap-x-10 xl:gap-x-13 px-2">
               {navItems.map((item) => renderNavItem(item))}
             </div>
           </div>
@@ -381,7 +385,7 @@ const Navigation = () => {
                       key={item.name}
                       type="button"
                       onClick={() => handleNavigation(item.href)}
-                      className={cn('w-full text-left', getNavLinkClass(isNavActive(item.href)))}
+                      className={cn('w-full text-left', getNavLinkClass(isNavActive(item.href), item.name === 'Home'))}
                     >
                       {item.name}
                     </button>

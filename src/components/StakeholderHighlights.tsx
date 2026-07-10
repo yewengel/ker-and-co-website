@@ -56,8 +56,8 @@ export default function StakeholderHighlights() {
           transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
           className="text-center mb-6 md:mb-12"
         >
-          <h2 className="text-2xl md:text-5xl font-bold font-heading mb-2 md:mb-4">
-            Growth, Trust & <span className="text-[#C9A46A]">Commitment</span>
+          <h2 className="text-2xl md:text-5xl font-bold font-heading mb-2 md:mb-4 text-black">
+            Growth, Trust & <span className="text-black">Commitment</span>
           </h2>
           <p className="text-xs md:text-lg text-gray-600 max-w-3xl mx-auto">
             Discover why partners, investors, and stakeholders connect with {brand.name}—a founder-led group built on resilience, diversification, and long-term vision.

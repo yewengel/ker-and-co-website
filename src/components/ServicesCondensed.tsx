@@ -115,8 +115,8 @@ const ServicesCondensed = () => {
           transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
           className="text-center mb-8 md:mb-16"
         >
-          <h2 className="text-2xl md:text-5xl font-bold font-heading mb-3 md:mb-6">
-            Our <span className="text-[#C9A46A]">Departments</span>
+          <h2 className="text-2xl md:text-5xl font-bold font-heading mb-3 md:mb-6 text-black">
+            Our <span className="text-black">Departments</span>
           </h2>
           <div className="text-xs md:text-lg text-gray-600 max-w-4xl mx-auto space-y-4">
             <p>

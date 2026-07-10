@@ -35,11 +35,11 @@ const Testimonials = () => {
           viewport={{ once: true }}
           className="text-center mb-8 md:mb-14"
         >
-          <p className="text-[10px] md:text-sm uppercase tracking-[0.25em] text-[#C9A46A] font-semibold mb-2 md:mb-3">
+          <p className="text-[10px] md:text-sm uppercase tracking-[0.25em] text-black font-semibold mb-2 md:mb-3">
             Testimonials
           </p>
-          <h2 className="text-2xl md:text-5xl font-bold font-heading text-gray-900">
-            What Our <span className="text-gradient-gold">Customers Think</span>
+          <h2 className="text-2xl md:text-5xl font-bold font-heading text-black">
+            What Our <span className="text-black">Customers Think</span>
           </h2>
           <p className="text-xs md:text-lg text-gray-600 max-w-2xl mx-auto mt-3 md:mt-5">
             Real words from the partners, guests, and buyers who work with {''}
