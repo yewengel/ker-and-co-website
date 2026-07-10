@@ -1,0 +1,650 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.cdnfonts.com/css/butler');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Luxury corporate palette */
+    /* Global radius token (6–8px rectangular language) */
+    --radius: 0.4375rem;
+    --radius-soft: var(--radius);
+
+    --cream: 34 33% 96%;
+    --surface: 45 55% 99%;
+    --divider: 0 0% 90%;
+    --charcoal: 220 15% 13%;
+
+    --background: var(--cream);
+    --foreground: var(--charcoal);
+
+    --card: 0 0% 100%;
+    --card-foreground: var(--charcoal);
+
+    --popover: 0 0% 100%;
+    --popover-foreground: var(--charcoal);
+
+    /* Bronze/gold accent */
+    --primary: 34 45% 45%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Neutral accents for secondary surfaces */
+    --secondary: 35 30% 96%;
+    --secondary-foreground: var(--charcoal);
+
+    --muted: 35 30% 96%;
+    --muted-foreground: 215.4 16.3% 40.9%;
+
+    --accent: 35 30% 96%;
+    --accent-foreground: var(--charcoal);
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: var(--divider);
+    --input: var(--divider);
+    --ring: 34 45% 45%;
+
+    /* Target 6–8px rectangular radius */
+    /* (kept for backwards compatibility; value derived from global token above) */
+    --radius: var(--radius);
+
+    /* Make rounding consistent across the app (used by inputs/buttons/cards) */
+    --radius-soft: var(--radius);
+
+
+
+    --navbar-top: 0px;
+    --navbar-top-bar: 52px;
+    --navbar-height: 108px;
+    --navbar-gap: 0px;
+    --navbar-offset: calc(var(--navbar-top) + var(--navbar-top-bar) + var(--navbar-height) + var(--navbar-gap));
+  }
+
+  .dark {
+    /* Keep luxury look in dark mode (still rectangular, still readable). */
+    --background: 35 18% 10%;
+    --foreground: 210 40% 98%;
+
+    --card: 30 20% 13%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 30 20% 13%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 34 45% 45%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 215 20% 17%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 215 20% 17%;
+    --muted-foreground: 215 20% 65.1%;
+
+    --accent: 215 20% 17%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 215 20% 25%;
+    --input: 215 20% 25%;
+    --ring: 34 45% 45%;
+  }
+}
+
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  /* Force rectangular radii for the app UI language */
+  button,
+  input,
+  select,
+  textarea,
+  .card,
+  .card *,
+  [role="button"] {
+    border-radius: var(--radius-soft);
+  }
+
+  /* Make focus outlines consistent */
+  input:focus,
+  select:focus,
+  textarea:focus,
+  button:focus {
+    outline: none;
+  }
+
+  html {
+    font-size: 75%;
+  }
+  @media (max-width: 1023.98px) {
+    html {
+      font-size: 100%;
+    }
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+  a {
+    @apply text-[#A67C52] hover:text-[#8E6844];
+  }
+}
+
+
+@layer utilities {
+  .pt-navbar {
+    padding-top: var(--navbar-offset);
+  }
+
+  .mt-navbar {
+    margin-top: var(--navbar-offset);
+  }
+
+  .scrollbar-none {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .scrollbar-none::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@layer components {
+  .gradient-bg {
+    background: linear-gradient(135deg, #111111 0%, #1f1a14 50%, #3d2a15 100%);
+  }
+  
+  .medical-gradient {
+    background: linear-gradient(135deg, #c98b2b 0%, #9f6920 100%);
+  }
+  
+  .glass-effect {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+  
+  .text-gradient {
+    color: #c98b2b;
+  }
+  
+  .hero-pattern {
+    background-image: 
+      radial-gradient(circle at 25% 25%, rgba(201, 139, 43, 0.18) 0%, transparent 50%),
+      radial-gradient(circle at 75% 75%, rgba(17, 17, 17, 0.16) 0%, transparent 50%);
+  }
+  
+  .medical-shadow {
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+  }
+  
+  .hover-lift {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .hover-lift:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+  }
+
+  /* Butler is the Ker & Co. brand identity typeface */
+  .font-heading,
+  h1, h2, h3,
+  .font-butler {
+    font-family: 'Butler', 'Poppins', Georgia, 'Times New Roman', serif;
+  }
+
+  .text-gradient-gold {
+    background: linear-gradient(120deg, #E5C599 0%, #A67C52 45%, #8F754F 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .shimmer-line {
+    background: linear-gradient(90deg, transparent, rgba(166, 124, 82, 0.85), transparent);
+  }
+
+  /* Luxury corporate design tokens */
+  .luxury-card {
+    @apply bg-white border border-[#E5E5E5] rounded-[7px] shadow-sm;
+  }
+
+  .luxury-input {
+    @apply w-full px-4 py-3 text-sm border border-[#E5E5E5] rounded-[7px] bg-white text-[#222222] transition-colors;
+    @apply focus:outline-none focus:ring-2 focus:ring-[#A67C52]/25 focus:border-[#A67C52];
+  }
+
+  .luxury-btn {
+    @apply inline-flex items-center justify-center px-6 py-3 text-sm font-semibold rounded-[7px] transition-colors duration-200;
+    @apply bg-[#A67C52] text-white hover:bg-[#8F754F];
+  }
+
+  .luxury-btn-outline {
+    @apply inline-flex items-center justify-center px-6 py-3 text-sm font-semibold rounded-[7px] transition-colors duration-200;
+    @apply border border-[#A67C52] text-[#A67C52] bg-transparent hover:bg-[#FAF6F0];
+  }
+}
+
+/* Ken Burns slow zoom for hero slideshow */
+@keyframes kenburns {
+  0% { transform: scale(1.08) translate(0, 0); }
+  100% { transform: scale(1.22) translate(-1.5%, -1.5%); }
+}
+.animate-kenburns {
+  animation: kenburns 9s ease-out forwards;
+}
+
+/* Gentle floating */
+@keyframes floaty {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+.animate-floaty {
+  animation: floaty 6s ease-in-out infinite;
+}
+
+/* Chatbot attention animations */
+@keyframes chatbot-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+@keyframes chatbot-pulse-glow {
+  0%, 100% {
+    box-shadow:
+      0 8px 24px rgba(166, 124, 82, 0.35),
+      0 0 0 0 rgba(166, 124, 82, 0.45);
+  }
+  50% {
+    box-shadow:
+      0 12px 32px rgba(166, 124, 82, 0.4),
+      0 0 0 14px rgba(166, 124, 82, 0);
+  }
+}
+
+@keyframes chatbot-ring-pulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.55;
+  }
+  70% {
+    transform: scale(1.45);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1.45);
+    opacity: 0;
+  }
+}
+
+.chatbot-trigger {
+  animation:
+    chatbot-float 3.5s ease-in-out infinite,
+    chatbot-pulse-glow 2.8s ease-in-out infinite;
+}
+
+.chatbot-trigger-ring {
+  animation: chatbot-ring-pulse 2.8s ease-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .chatbot-trigger {
+    animation: none;
+  }
+
+  .chatbot-trigger-ring {
+    animation: none;
+    opacity: 0.35;
+  }
+}
+
+/* Marquee for the trust strip */
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.animate-marquee {
+  animation: marquee 28s linear infinite;
+}
+
+/* Scroll-reveal helper (used with IntersectionObserver) */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1), transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c98b2b;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #9f6920;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Video background optimization */
+video {
+  object-fit: cover;
+  object-position: center;
+}
+
+/* Glassmorphism effect */
+.glass-card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Smooth transitions */
+* {
+  transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+/* Mobile responsive improvements */
+@media (max-width: 768px) {
+  html {
+    scroll-padding-top: 10rem;
+  }
+
+  section[id] {
+    scroll-margin-top: 10rem !important;
+  }
+
+  main > section:first-of-type {
+    padding-top: 10.5rem !important;
+  }
+
+  /* Reduce section padding on mobile */
+  section {
+    padding-top: 3rem !important;
+    padding-bottom: 3rem !important;
+  }
+  
+  /* Improve text readability on mobile */
+  h1 {
+    line-height: 1.2;
+  }
+  
+  h2 {
+    line-height: 1.3;
+  }
+  
+  /* Optimize spacing for mobile */
+  .space-y-20 > * + * {
+    margin-top: 3rem !important;
+  }
+  
+  .space-y-16 > * + * {
+    margin-top: 2.5rem !important;
+  }
+  
+  .space-y-12 > * + * {
+    margin-top: 2rem !important;
+  }
+}
+
+@media (max-width: 640px) {
+  html {
+    scroll-padding-top: 10.5rem;
+  }
+
+  section[id] {
+    scroll-margin-top: 10.5rem !important;
+  }
+
+  main > section:first-of-type {
+    padding-top: 11rem !important;
+  }
+
+  /* Further optimize for small mobile screens */
+  section {
+    padding-top: 2.5rem !important;
+    padding-bottom: 2.5rem !important;
+  }
+  
+  /* Reduce large gaps on mobile */
+  .gap-8 {
+    gap: 1rem !important;
+  }
+  
+  .gap-6 {
+    gap: 0.75rem !important;
+  }
+}
+
+/* Chatbot responsive fixes */
+@media (max-width: 640px) {
+  .chatbot-window {
+    min-height: 60vh !important;
+    max-height: 80vh !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .chatbot-window {
+    bottom: 4rem !important;
+    left: 0.5rem !important;
+    right: 0.5rem !important;
+    min-height: 65vh !important;
+    max-height: 75vh !important;
+  }
+  
+  /* Further optimize content spacing */
+  .px-4 {
+    padding-left: 0.75rem !important;
+    padding-right: 0.75rem !important;
+  }
+}
+
+@media (max-width: 360px) {
+  .chatbot-window {
+    bottom: 3.5rem !important;
+    left: 0.25rem !important;
+    right: 0.25rem !important;
+    min-height: 70vh !important;
+    max-height: 80vh !important;
+  }
+}
+
+/* Safe area support for devices with notches */
+@supports (padding: max(0px)) {
+  .chatbot-window {
+    padding-left: max(0.5rem, env(safe-area-inset-left));
+    padding-right: max(0.5rem, env(safe-area-inset-right));
+    padding-bottom: max(1rem, env(safe-area-inset-bottom));
+  }
+}
+
+/* Prevent horizontal scrolling issues */
+.chatbot-window {
+  box-sizing: border-box;
+}
+
+/* Ensure proper viewport on mobile */
+@media (max-width: 768px) {
+  .chatbot-window {
+    transform: translateZ(0); /* Force GPU acceleration */
+    -webkit-transform: translateZ(0);
+  }
+}
+
+/* Loading animation */
+.loading-dots {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+
+.loading-dots div {
+  position: absolute;
+  top: 33px;
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background: #c98b2b;
+  animation-timing-function: cubic-bezier(0, 1, 1, 0);
+}
+
+.loading-dots div:nth-child(1) {
+  left: 8px;
+  animation: loading-dots1 0.6s infinite;
+}
+
+.loading-dots div:nth-child(2) {
+  left: 8px;
+  animation: loading-dots2 0.6s infinite;
+}
+
+.loading-dots div:nth-child(3) {
+  left: 32px;
+  animation: loading-dots2 0.6s infinite;
+}
+
+.loading-dots div:nth-child(4) {
+  left: 56px;
+  animation: loading-dots3 0.6s infinite;
+}
+
+@keyframes loading-dots1 {
+  0% { transform: scale(0); }
+  100% { transform: scale(1); }
+}
+
+@keyframes loading-dots3 {
+  0% { transform: scale(1); }
+  100% { transform: scale(0); }
+}
+
+@keyframes loading-dots2 {
+  0% { transform: translate(0, 0); }
+  100% { transform: translate(24px, 0); }
+}
+
+/* Scroll-triggered animations are enabled on desktop for a modern feel. */
+/* Respect users who prefer reduced motion. */
+@media (prefers-reduced-motion: reduce) {
+  main section [style*="opacity"],
+  main section [style*="transform"],
+  main > section [style*="opacity"],
+  main > section [style*="transform"],
+  footer [style*="opacity"],
+  footer [style*="transform"] {
+    opacity: 1 !important;
+    transform: none !important;
+    animation: none !important;
+  }
+}
+
+/* Kill ALL framer-motion animations on mobile */
+/* Targets page content only - excludes nav (mobile menu) and chatbot */
+body.mobile-no-motion main section [style],
+body.mobile-no-motion main section > [style],
+body.mobile-no-motion main > section [style],
+body.mobile-no-motion footer [style],
+body.mobile-no-motion footer [style] * {
+  opacity: 1 !important;
+  transform: none !important;
+  animation: none !important;
+}
+/* Allow carousel slides to use opacity for tap-to-slide */
+body.mobile-no-motion .carousel-slide[style] {
+  opacity: unset !important;
+}
+
+/* Mobile video optimization - shift right to show left side content */
+@media (max-width: 768px) {
+  #home .hero-video {
+    transform: none !important;
+  }
+}
+
+@media (max-width: 640px) {
+  #home .hero-video {
+    transform: none !important;
+  }
+}
+
+@media (max-width: 480px) {
+  #home .hero-video {
+    transform: none !important;
+  }
+}
+
+/* Line clamp utilities for mobile */
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.line-clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Mobile touch optimization */
+@media (hover: none) and (pointer: coarse) {
+  /* Increase touch target sizes on mobile */
+  button, a {
+    min-height: 44px;
+    min-width: 44px;
+  }
+  
+  /* Disable hover effects on touch devices */
+  .hover-lift:hover {
+    transform: none;
+  }
+}
+
+/* Prevent text zoom on iOS */
+@media (max-width: 768px) {
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  textarea {
+    font-size: 16px !important;
+  }
+}
+
+/* Mobile grid improvements */
+@media (max-width: 640px) {
+  /* Ensure 2-column grids on mobile */
+  .grid-cols-1.sm\\:grid-cols-2,
+  .grid.grid-cols-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}

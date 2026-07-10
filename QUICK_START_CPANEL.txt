@@ -1,0 +1,94 @@
+╔══════════════════════════════════════════════════════════════╗
+║              QUICK START - CPANEL DEPLOYMENT                 ║
+║              (5 Minute Setup Guide)                          ║
+╚══════════════════════════════════════════════════════════════╝
+
+STEP 1: BUILD YOUR PROJECT
+---------------------------
+Run this command in your project folder:
+  
+  npm run build
+
+Wait for it to complete successfully.
+
+STEP 2: UPLOAD TO CPANEL
+-------------------------
+Login to cPanel → File Manager → Navigate to your subdomain folder
+
+Upload these folders/files:
+  • .next/ (folder)
+  • public/ (folder)
+  • asset/ (folder)
+  • node_modules/ (folder) *or skip and install on server
+  • package.json (file)
+  • package-lock.json (file)
+  • next.config.js (file)
+
+STEP 3: SETUP NODE.JS APP IN CPANEL
+------------------------------------
+cPanel → Software → Setup Node.js App → Create Application
+
+Fill in:
+  Node.js version: 18.17.0 (or latest 18.x)
+  Application mode: Production
+  Application root: /home/username/public_html/yoursubdomain
+  Application URL: https://yoursubdomain.yourdomain.com
+  Application startup file: node_modules/next/dist/bin/next
+  Application arguments: start -p PORT
+
+Click "Create" → Then click "Run NPM Install"
+
+STEP 4: NOTE YOUR PORT & CREATE .HTACCESS
+------------------------------------------
+After creating the app, cPanel assigns a PORT (e.g., 3000, 4000, etc.)
+Write it down!
+
+In File Manager, create a new file called .htaccess in your subdomain root.
+
+Copy this content (replace PORT_NUMBER with your actual port):
+
+---BEGIN .htaccess---
+RewriteEngine On
+RewriteRule ^$ http://127.0.0.1:PORT_NUMBER/ [P,L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ http://127.0.0.1:PORT_NUMBER/$1 [P,L]
+---END .htaccess---
+
+STEP 5: START YOUR APP
+-----------------------
+In "Setup Node.js App" page:
+  Click "Start App" button
+  
+Status should show: "Running" (green)
+
+STEP 6: VISIT YOUR WEBSITE
+---------------------------
+Open your subdomain URL in a browser:
+  https://yoursubdomain.yourdomain.com
+
+Your website should be LIVE! 🎉
+
+╔══════════════════════════════════════════════════════════════╗
+║  TROUBLESHOOTING                                             ║
+╚══════════════════════════════════════════════════════════════╝
+
+Problem: 502 Bad Gateway
+→ Check if app is "Running" in cPanel
+→ Verify PORT in .htaccess matches cPanel port
+
+Problem: App won't start
+→ Check Node.js version is 18.x or higher
+→ Run "NPM Install" again in cPanel
+→ Check application logs
+
+Problem: Images/videos not showing
+→ Verify public/ and asset/ folders uploaded correctly
+→ Check file permissions (755 for folders, 644 for files)
+
+╔══════════════════════════════════════════════════════════════╗
+║  NEED MORE HELP?                                             ║
+║  Read: CPANEL_DEPLOYMENT_GUIDE.txt (detailed guide)         ║
+║  Use: deployment-checklist.txt (complete checklist)         ║
+╚══════════════════════════════════════════════════════════════╝
+

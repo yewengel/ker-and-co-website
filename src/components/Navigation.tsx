@@ -1,0 +1,300 @@
+'use client'
+
+import React, { useState, useEffect } from 'react'
+import { motion, AnimatePresence } from 'framer-motion'
+import { MapPin, ChevronDown, Phone } from 'lucide-react'
+import { usePathname } from 'next/navigation'
+import { brand } from '@/lib/brand'
+import { cn } from '@/lib/utils'
+
+const BEIGE = '#F8F4EF'
+
+const Navigation = () => {
+  const pathname = usePathname()
+  const [scrolled, setScrolled] = useState(false)
+  const [openDropdown, setOpenDropdown] = useState<string | null>(null)
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 20)
+    }
+
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
+
+  type NavLeafItem = {
+    name: string
+    href: string
+    children?: never
+    variant?: 'default' | 'contact'
+  }
+  type NavGroupItem = {
+    name: string
+    children: Array<{ name: string; href: string }>
+    href?: string
+    variant?: never
+  }
+
+  const navItems: Array<NavLeafItem | NavGroupItem> = [
+    { name: 'Home', href: '/' },
+    { name: 'About', href: '/about' },
+    {
+      name: 'Departments',
+      href: '/departments',
+      children: [
+        { name: 'FMCG & Rural Distribution', href: '/departments#distribution' },
+        { name: 'Paper & Sanitary Products', href: '/departments#paper' },
+        { name: 'Hospitality & Wellness', href: '/departments#hospitality' },
+        { name: 'Real Estate Development', href: '/departments#real-estate' },
+      ],
+    },
+    { name: 'Partners', href: '/partnerships' },
+    { name: 'Leadership', href: '/leadership' },
+    {
+      name: 'More',
+      children: [
+        { name: 'News & Articles', href: '/articles' },
+        { name: 'Events', href: '/events' },
+        { name: 'Gallery', href: '/gallery' },
+        { name: 'Careers', href: '/careers' },
+      ],
+    },
+    { name: 'Contact Us', href: '#contact', variant: 'contact' },
+  ]
+
+  const isNavActive = (href: string) => {
+    if (href.startsWith('#')) return false
+    if (href === '/') return pathname === '/' || pathname === '/index.html'
+    return pathname === href || pathname.startsWith(`${href}/`)
+  }
+
+  const isGroupActive = (item: NavGroupItem) => {
+    if (item.href && isNavActive(item.href)) return true
+    return item.children.some((child) => {
+      const childPath = child.href.split('#')[0]
+      return childPath ? isNavActive(childPath) : false
+    })
+  }
+
+  const handleNavigation = (href: string) => {
+    if (href.startsWith('#')) {
+      if (window.location.pathname !== '/') {
+        window.location.href = '/' + href
+      } else {
+        const element = document.querySelector(href)
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' })
+        }
+      }
+      setOpenDropdown(null)
+    } else {
+      window.location.href = href
+      setOpenDropdown(null)
+    }
+  }
+
+  const headerPadding =
+    'px-6 sm:px-10 md:px-14 lg:px-[64px] xl:px-[80px] 2xl:px-[96px]'
+
+  const navLinkBase =
+    'relative whitespace-nowrap text-[15px] md:text-[16px] lg:text-[17px] font-medium tracking-[0.03em] transition-colors duration-200 py-1'
+
+  const getNavLinkClass = (active: boolean) =>
+    cn(
+      navLinkBase,
+      'after:absolute after:left-0 after:-bottom-2 after:h-[2px] after:transition-all after:duration-300',
+      active
+        ? 'text-[#A67C52] after:w-full after:bg-[#A67C52]'
+        : 'text-[#222222] after:w-0 after:bg-[#A67C52] hover:text-[#A67C52] hover:after:w-full'
+    )
+
+  const renderNavItem = (item: NavLeafItem | NavGroupItem) => {
+    if ('variant' in item && item.variant === 'contact') {
+      return (
+        <button
+          key={item.name}
+          type="button"
+          onClick={() => handleNavigation(item.href)}
+          className="shrink-0 inline-flex items-center h-10 md:h-11 px-6 md:px-7 text-[14px] md:text-[15px] lg:text-[16px] font-semibold text-white rounded-[7px] bg-[#A67C52] hover:bg-[#8E6844] transition-colors duration-200 shadow-sm ml-1"
+        >
+          {item.name}
+        </button>
+      )
+    }
+
+    if ('children' in item) {
+      const isActive = openDropdown === item.name
+      const isCurrent = isGroupActive(item as NavGroupItem)
+      const hasLandingHref = Boolean(item.href)
+      return (
+        <div
+          key={item.name}
+          className="relative shrink-0"
+          onMouseEnter={() => setOpenDropdown(item.name)}
+          onMouseLeave={() => setOpenDropdown(null)}
+        >
+          <div className="inline-flex items-center gap-0.5">
+            <button
+              type="button"
+              onClick={() => {
+                if (hasLandingHref && item.href) {
+                  handleNavigation(item.href)
+                  return
+                }
+                setOpenDropdown(isActive ? null : item.name)
+              }}
+              className={cn('inline-flex items-center', getNavLinkClass(isCurrent))}
+            >
+              <span>{item.name}</span>
+            </button>
+
+            <button
+              type="button"
+              aria-label={`Toggle ${item.name} menu`}
+              onClick={() => setOpenDropdown(isActive ? null : item.name)}
+              className="p-1 rounded-[6px] text-[#222222] transition-colors hover:text-[#A67C52] hover:bg-[#F8F4EF]"
+            >
+              <ChevronDown
+                className={cn(
+                  'w-4 h-4 transition-transform duration-200',
+                  isActive ? 'rotate-180 text-[#A67C52]' : 'rotate-0'
+                )}
+                strokeWidth={1.75}
+              />
+            </button>
+          </div>
+
+          <AnimatePresence>
+            {isActive && (
+              <motion.div
+                initial={{ opacity: 0, y: 6 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: 6 }}
+                transition={{ duration: 0.15 }}
+                className="absolute top-full left-1/2 -translate-x-1/2 mt-4 w-72 rounded-[7px] bg-white shadow-[0_16px_48px_rgba(0,0,0,0.08)] border border-[#E8E2DA] overflow-hidden z-50"
+              >
+                <div className="py-2">
+                  {item.children?.map((child) => (
+                    <button
+                      key={child.name}
+                      type="button"
+                      onClick={() => handleNavigation(child.href)}
+                      className="w-full text-left px-5 py-3 text-[14px] text-[#222222] hover:bg-[#F8F4EF] hover:text-[#A67C52] transition-colors"
+                    >
+                      {child.name}
+                    </button>
+                  ))}
+                </div>
+              </motion.div>
+            )}
+          </AnimatePresence>
+        </div>
+      )
+    }
+
+    return (
+      <button
+        key={item.name}
+        type="button"
+        onClick={() => handleNavigation(item.href)}
+        className={cn('shrink-0', getNavLinkClass(isNavActive(item.href)))}
+      >
+        {item.name}
+      </button>
+    )
+  }
+
+  return (
+    <header
+      className={cn(
+        'fixed top-0 left-0 right-0 z-50 w-full transition-shadow duration-300',
+        scrolled && 'shadow-[0_4px_32px_rgba(0,0,0,0.07)]'
+      )}
+    >
+      {/* Top information bar — beige/cream */}
+      <div
+        className={cn('w-full border-b border-[#E8E2DA]', headerPadding)}
+        style={{ backgroundColor: BEIGE }}
+      >
+        <div className="flex h-[52px] items-center justify-between gap-8 max-w-[1600px] mx-auto">
+          <a
+            href={brand.phoneHref}
+            className="inline-flex items-center gap-2.5 text-[13px] md:text-[14px] lg:text-[15px] font-medium text-[#222222] transition-colors hover:text-[#A67C52] shrink-0"
+          >
+            <Phone className="w-4 h-4 text-[#A67C52]" strokeWidth={1.75} />
+            <span className="whitespace-nowrap">{brand.phone}</span>
+          </a>
+
+          <div className="hidden md:inline-flex items-center justify-center gap-2.5 flex-1 min-w-0 px-8">
+            <MapPin className="w-4 h-4 text-[#A67C52] shrink-0" strokeWidth={1.75} />
+            <span className="text-[13px] md:text-[14px] lg:text-[15px] font-medium text-[#222222] truncate">
+              {brand.location}
+            </span>
+          </div>
+
+          <div className="inline-flex md:hidden items-center gap-1.5 min-w-0 flex-1 justify-end">
+            <MapPin className="w-3.5 h-3.5 text-[#A67C52] shrink-0" strokeWidth={1.75} />
+            <span className="text-[12px] font-medium text-[#222222] truncate">
+              {brand.location}
+            </span>
+          </div>
+        </div>
+      </div>
+
+      {/* Main navigation bar — white */}
+      <nav
+        className={cn(
+          'w-full bg-white border-b border-[#E8E2DA]',
+          headerPadding
+        )}
+      >
+        <div className="grid grid-cols-[auto_1fr] lg:grid-cols-[1fr_auto_1fr] items-center h-[92px] md:h-[100px] lg:h-[108px] gap-4 lg:gap-10 max-w-[1600px] mx-auto">
+          {/* Logo + company name */}
+          <motion.div
+            initial={{ opacity: 0, x: -12 }}
+            animate={{ opacity: 1, x: 0 }}
+            className="flex shrink-0 items-center cursor-pointer group lg:justify-self-start"
+            onClick={() => handleNavigation('/')}
+          >
+            <div className="w-[64px] h-[64px] sm:w-[72px] sm:h-[72px] md:w-[80px] md:h-[80px] lg:w-[84px] lg:h-[84px] rounded-[7px] overflow-hidden bg-white border border-[#E8E2DA] flex items-center justify-center shrink-0 transition-shadow duration-300 group-hover:shadow-[0_6px_20px_rgba(166,124,82,0.14)]">
+              <img
+                src={brand.logoPath}
+                alt={`${brand.name} Logo`}
+                className="w-[90%] h-[90%] object-contain"
+              />
+            </div>
+            <div className="ml-4 sm:ml-5 md:ml-6 leading-tight">
+              <div className="font-heading font-bold text-lg sm:text-xl md:text-2xl lg:text-[1.65rem] text-[#222222] whitespace-nowrap tracking-tight">
+                Ker &amp; Co.
+              </div>
+              <div className="text-[9px] sm:text-[10px] md:text-[11px] uppercase tracking-[0.26em] text-[#666666] whitespace-nowrap mt-1">
+                Business Group
+              </div>
+            </div>
+          </motion.div>
+
+          {/* Centered navigation links */}
+          <div className="flex items-center justify-end lg:justify-center min-w-0 overflow-x-auto scrollbar-none lg:justify-self-center">
+            <div className="flex items-center gap-x-7 md:gap-x-9 lg:gap-x-11 xl:gap-x-14 px-2">
+              {navItems.map((item) => renderNavItem(item))}
+            </div>
+          </div>
+
+          {/* Balance column for centered nav on desktop */}
+          <div className="hidden lg:block lg:justify-self-end" aria-hidden="true">
+            <div className="flex items-center opacity-0 pointer-events-none">
+              <div className="w-[84px] h-[84px]" />
+              <div className="ml-6 leading-tight">
+                <div className="font-heading font-bold text-[1.65rem]">Ker &amp; Co.</div>
+                <div className="text-[11px] uppercase tracking-[0.26em]">Business Group</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+  )
+}
+
+export default Navigation
