@@ -47,7 +47,7 @@ export default function StakeholderHighlights() {
   ]
 
   return (
-    <section className="py-10 md:py-20 bg-gray-50">
+    <section className="py-10 md:py-20 bg-[#F8F4EF]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, scale: 0.85, y: 50 }}
@@ -57,7 +57,7 @@ export default function StakeholderHighlights() {
           className="text-center mb-6 md:mb-12"
         >
           <h2 className="text-2xl md:text-5xl font-bold font-heading mb-2 md:mb-4">
-            Growth, Trust & <span className="text-gradient">Commitment</span>
+            Growth, Trust & <span className="text-[#C9A46A]">Commitment</span>
           </h2>
           <p className="text-xs md:text-lg text-gray-600 max-w-3xl mx-auto">
             Discover why partners, investors, and stakeholders connect with {brand.name}—a founder-led group built on resilience, diversification, and long-term vision.
@@ -69,7 +69,7 @@ export default function StakeholderHighlights() {
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="relative overflow-hidden rounded-[7px] md:rounded-[8px] shadow-xl md:shadow-2xl bg-white border border-gray-100"
+            className="relative overflow-hidden rounded-sm shadow-xl md:shadow-2xl bg-white border border-[#E7DED2]"
           >
             <div className="relative aspect-[16/9] md:aspect-[16/11]">
               <Image
@@ -81,7 +81,7 @@ export default function StakeholderHighlights() {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/65 via-black/10 to-transparent" />
               <div className="absolute bottom-0 left-0 right-0 p-3 md:p-7 text-white">
-                <div className="inline-flex items-center gap-1.5 md:gap-2 text-[9px] md:text-xs font-semibold px-2 py-0.5 md:px-3 md:py-1 rounded-[7px] bg-white/15 backdrop-blur">
+                <div className="inline-flex items-center gap-1.5 md:gap-2 text-[9px] md:text-xs font-semibold px-2 py-0.5 md:px-3 md:py-1 rounded-sm bg-white/15 backdrop-blur">
                   <Globe className="w-3 h-3 md:w-4 md:h-4" />
                   {brand.tagline}
                 </div>
@@ -101,10 +101,10 @@ export default function StakeholderHighlights() {
                 whileInView={{ opacity: 1, scale: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.2 }}
                 transition={{ duration: 0.55, delay: idx * 0.1, ease: [0.22, 1, 0.36, 1] }}
-                className="bg-white rounded-[7px] md:rounded-[8px] border border-gray-100 shadow-md md:shadow-lg hover:shadow-xl transition-shadow p-2.5 md:p-7 flex flex-col"
+                className="bg-white rounded-sm border border-[#E7DED2] shadow-md md:shadow-lg hover:shadow-xl transition-shadow p-2.5 md:p-7 flex flex-col"
               >
-                <div className="inline-flex w-7 h-7 md:w-12 md:h-12 rounded-[7px] md:rounded-[8px] bg-medical-blue/10 items-center justify-center">
-                  <card.icon className="w-3.5 h-3.5 md:w-6 md:h-6 text-medical-blue" />
+                <div className="inline-flex w-7 h-7 md:w-12 md:h-12 rounded-sm bg-[#C9A46A] items-center justify-center shadow-sm">
+                  <card.icon className="w-3.5 h-3.5 md:w-6 md:h-6 text-white" />
                 </div>
                 <h3 className="text-[10px] md:text-xl font-bold text-gray-900 mt-1.5 md:mt-4 leading-tight">{card.title}</h3>
                 <p className="text-[8px] md:text-base text-gray-600 mt-1 md:mt-2 leading-snug md:leading-relaxed flex-1 line-clamp-3 md:line-clamp-none">{card.description}</p>
@@ -123,7 +123,7 @@ export default function StakeholderHighlights() {
             {featuredImages.map((item) => (
               <div
                 key={item.title}
-                className="group relative overflow-hidden rounded-[7px] md:rounded-[8px] border border-gray-100 bg-white shadow-md md:shadow-lg hover:shadow-xl transition-shadow"
+                className="group relative overflow-hidden rounded-sm md:rounded-sm border border-gray-100 bg-white shadow-md md:shadow-lg hover:shadow-xl transition-shadow"
               >
                 <div className="relative aspect-[4/3] md:aspect-[4/3]">
                   <Image

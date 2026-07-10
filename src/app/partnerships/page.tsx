@@ -99,7 +99,7 @@ export default function PartnershipsPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7 }}
           >
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-[7px] bg-white/10 backdrop-blur-sm text-medical-blue text-sm font-semibold mb-6">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-sm bg-white/10 backdrop-blur-sm text-medical-blue text-sm font-semibold mb-6">
               <Globe className="w-4 h-4" />
               Global Partnerships
             </div>
@@ -117,7 +117,7 @@ export default function PartnershipsPage() {
       <section className="py-10 md:py-20 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-7xl mx-auto">
           <motion.div {...fadeIn} className="text-center mb-10 md:mb-16">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-[7px] bg-medical-blue/10 text-medical-red text-sm font-semibold mb-4">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-sm bg-medical-blue/10 text-medical-red text-sm font-semibold mb-4">
               <Globe className="w-4 h-4" />
               Global Network
             </div>
@@ -135,7 +135,7 @@ export default function PartnershipsPage() {
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.08 }}
-                className="flex items-center gap-2 px-3 md:px-5 py-2 md:py-3 bg-gray-50 rounded-[7px] border border-gray-200 shadow-sm"
+                className="flex items-center gap-2 px-3 md:px-5 py-2 md:py-3 bg-gray-50 rounded-sm border border-gray-200 shadow-sm"
               >
                 <Globe className="w-3 h-3 md:w-4 md:h-4 text-medical-blue" />
                 <span className="text-xs md:text-sm font-semibold text-gray-800">{c}</span>
@@ -167,7 +167,7 @@ export default function PartnershipsPage() {
       <section className="py-10 md:py-20 px-4 sm:px-6 lg:px-8 bg-gray-50">
         <div className="max-w-7xl mx-auto">
           <motion.div {...fadeIn} className="text-center mb-8 md:mb-14">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-[7px] bg-medical-blue/10 text-medical-red text-sm font-semibold mb-4">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-sm bg-medical-blue/10 text-medical-red text-sm font-semibold mb-4">
               <Star className="w-4 h-4" />
               Our Partners
             </div>
@@ -181,7 +181,7 @@ export default function PartnershipsPage() {
             {...fadeIn}
             className="flex flex-row gap-3 md:gap-12 items-center mb-12 md:mb-20"
           >
-            <div className="flex-shrink-0 w-2/5 md:w-1/2 relative rounded-[7px] md:rounded-[8px] overflow-hidden shadow-2xl border border-gray-100 bg-white">
+            <div className="flex-shrink-0 w-2/5 md:w-1/2 relative rounded-sm md:rounded-sm overflow-hidden shadow-2xl border border-gray-100 bg-white">
               <Image
                 src={brandMedia.ventures.partner}
                 alt="Ker & Co. partner network overview"
@@ -211,7 +211,7 @@ export default function PartnershipsPage() {
                   { label: '4', desc: 'Ker Fitness Sites' },
                   { label: '3', desc: 'Hotel Awards' },
                 ].map((stat) => (
-                  <div key={stat.label} className="bg-medical-blue/5 rounded-[7px] md:rounded-[7px] p-1.5 md:p-4 border border-medical-blue/20 text-center">
+                  <div key={stat.label} className="bg-medical-blue/5 rounded-sm md:rounded-sm p-1.5 md:p-4 border border-medical-blue/20 text-center">
                     <div className="text-sm md:text-3xl font-bold text-medical-blue">{stat.label}</div>
                     <div className="text-[8px] md:text-sm text-gray-600 mt-0.5 leading-tight">{stat.desc}</div>
                   </div>
@@ -233,7 +233,7 @@ export default function PartnershipsPage() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.06 }}
-                  className="group overflow-hidden rounded-[7px] md:rounded-[8px] border border-gray-100 bg-white shadow-sm hover:shadow-xl transition-all duration-300"
+                  className="group overflow-hidden rounded-sm md:rounded-sm border border-gray-100 bg-white shadow-sm hover:shadow-xl transition-all duration-300"
                 >
                   <div className="relative aspect-[4/3] bg-gray-50">
                     <Image
@@ -259,7 +259,7 @@ export default function PartnershipsPage() {
       <section className="py-10 md:py-20 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-7xl mx-auto">
           <motion.div {...fadeIn} className="text-center mb-8 md:mb-14">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-[7px] bg-medical-blue/10 text-medical-red text-sm font-semibold mb-4">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-sm bg-medical-blue/10 text-medical-red text-sm font-semibold mb-4">
               <Heart className="w-4 h-4" />
               Our Purpose
             </div>
@@ -285,7 +285,7 @@ export default function PartnershipsPage() {
             </motion.div>
             <motion.div
               {...fadeIn}
-              className="relative h-64 md:h-[480px] rounded-[8px] overflow-hidden shadow-xl"
+              className="relative h-64 md:h-[480px] rounded-sm overflow-hidden shadow-xl"
             >
               <Image
                 src={brandMedia.ventures.hotel}
@@ -295,7 +295,7 @@ export default function PartnershipsPage() {
                 unoptimized
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
-              <div className="absolute bottom-4 left-4 right-4 bg-white/10 backdrop-blur-sm rounded-[7px] p-3 md:p-4 border border-white/20">
+              <div className="absolute bottom-4 left-4 right-4 bg-white/10 backdrop-blur-sm rounded-sm p-3 md:p-4 border border-white/20">
                 <p className="text-white text-xs md:text-sm font-medium leading-snug">
                   &ldquo;Growth, for us, is measured not only by scale, but by impact.&rdquo;
                 </p>
@@ -309,7 +309,7 @@ export default function PartnershipsPage() {
       <section className="py-10 md:py-20 px-4 sm:px-6 lg:px-8 bg-gray-50">
         <div className="max-w-7xl mx-auto">
           <motion.div {...fadeIn} className="text-center mb-8 md:mb-14">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-[7px] bg-medical-blue/10 text-medical-red text-sm font-semibold mb-4">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-sm bg-medical-blue/10 text-medical-red text-sm font-semibold mb-4">
               <Gem className="w-4 h-4" />
               Partnership Value
             </div>
@@ -326,9 +326,9 @@ export default function PartnershipsPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.08 }}
-                className={`bg-white rounded-[8px] p-5 md:p-7 border border-gray-100 shadow-sm hover:shadow-md transition-shadow ${i === 6 ? 'sm:col-span-2 lg:col-span-1' : ''}`}
+                className={`bg-white rounded-sm p-5 md:p-7 border border-gray-100 shadow-sm hover:shadow-md transition-shadow ${i === 6 ? 'sm:col-span-2 lg:col-span-1' : ''}`}
               >
-                <div className="w-10 h-10 md:w-12 md:h-12 rounded-[7px] bg-medical-blue/10 flex items-center justify-center mb-3 md:mb-4">
+                <div className="w-10 h-10 md:w-12 md:h-12 rounded-sm bg-medical-blue/10 flex items-center justify-center mb-3 md:mb-4">
                   <reason.icon className="w-5 h-5 md:w-6 md:h-6 text-medical-blue" />
                 </div>
                 <h3 className="text-sm md:text-lg font-bold text-gray-900 mb-2 md:mb-3">{reason.title}</h3>

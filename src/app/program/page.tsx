@@ -30,10 +30,10 @@ export default function ProgramPage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
-              className="bg-white rounded-[7px] shadow-md hover:shadow-lg transition-shadow duration-300 overflow-hidden border border-gray-100"
+              className="bg-white rounded-sm shadow-md hover:shadow-lg transition-shadow duration-300 overflow-hidden border border-gray-100"
             >
               <div className="bg-medical-blue/5 p-4 border-b border-medical-blue/10 flex items-start space-x-4">
-                <div className="bg-medical-blue/10 p-3 rounded-[7px]">
+                <div className="bg-medical-blue/10 p-3 rounded-sm">
                   <Gem className="w-6 h-6 text-medical-blue" />
                 </div>
                 <div>
@@ -58,7 +58,7 @@ export default function ProgramPage() {
           ))}
         </div>
 
-        <div className="mt-12 bg-blue-50 border border-blue-100 rounded-[7px] p-6 text-center">
+        <div className="mt-12 bg-blue-50 border border-blue-100 rounded-sm p-6 text-center">
           <h3 className="text-lg font-semibold text-medical-blue mb-2">Need clarification?</h3>
           <p className="text-gray-600 mb-4">
             Our assistant can help you with availability and services. Ask about gold mining, crushed stone supply, or partnerships.

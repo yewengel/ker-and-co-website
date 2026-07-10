@@ -71,7 +71,7 @@ const Footer = () => {
   }
 
   return (
-    <footer className="bg-gray-900 text-white">
+    <footer className="bg-[#222222] text-white">
       {/* Main Footer */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-16">
         <div className="grid grid-cols-2 lg:grid-cols-5 gap-4 md:gap-8">
@@ -83,7 +83,7 @@ const Footer = () => {
             className="col-span-2 lg:col-span-2"
           >
             <div className="flex items-center space-x-2 md:space-x-3 mb-3 md:mb-6">
-              <div className="w-9 h-9 md:w-12 md:h-12 rounded-[7px] flex items-center justify-center overflow-hidden">
+              <div className="w-9 h-9 md:w-12 md:h-12 rounded-sm flex items-center justify-center overflow-hidden">
                 <img 
                   src={brand.logoPath} 
                   alt={`${brand.name} Logo`} 
@@ -103,19 +103,19 @@ const Footer = () => {
             {/* Contact Info */}
             <div className="space-y-2 md:space-y-4">
               <div className="flex items-center space-x-2 md:space-x-3">
-                <Phone className="w-3.5 h-3.5 md:w-5 md:h-5 text-medical-blue" />
+                <Phone className="w-3.5 h-3.5 md:w-5 md:h-5 text-[#C9A46A]" />
                 <span className="text-[10px] md:text-base text-gray-300">{brand.phone}</span>
               </div>
               <div className="flex items-center space-x-2 md:space-x-3">
-                <Mail className="w-3.5 h-3.5 md:w-5 md:h-5 text-medical-blue" />
+                <Mail className="w-3.5 h-3.5 md:w-5 md:h-5 text-[#C9A46A]" />
                 <span className="text-[10px] md:text-base text-gray-300">{brand.emailLabel}</span>
               </div>
               <div className="flex items-center space-x-2 md:space-x-3">
-                <MapPin className="w-3.5 h-3.5 md:w-5 md:h-5 text-medical-blue" />
+                <MapPin className="w-3.5 h-3.5 md:w-5 md:h-5 text-[#C9A46A]" />
                 <span className="text-[10px] md:text-base text-gray-300">{brand.location}</span>
               </div>
               <div className="flex items-center space-x-2 md:space-x-3">
-                <Clock className="w-3.5 h-3.5 md:w-5 md:h-5 text-medical-blue" />
+                <Clock className="w-3.5 h-3.5 md:w-5 md:h-5 text-[#C9A46A]" />
                 <span className="text-[10px] md:text-base text-gray-300">{brand.hours}</span>
               </div>
             </div>
@@ -134,7 +134,7 @@ const Footer = () => {
                 <li key={link.name}>
                   <button
                     onClick={() => scrollToSection(link.href)}
-                    className="text-[10px] md:text-base text-gray-300 hover:text-medical-blue transition-colors duration-200"
+                    className="text-[10px] md:text-base text-gray-300 hover:text-[#C9A46A] transition-colors duration-200"
                   >
                     {link.name}
                   </button>
@@ -156,7 +156,7 @@ const Footer = () => {
                 <li key={link.name}>
                   <button
                     onClick={() => scrollToSection(link.href)}
-                    className="text-[10px] md:text-base text-gray-300 hover:text-teal-600 transition-colors duration-200"
+                    className="text-[10px] md:text-base text-gray-300 hover:text-[#C9A46A] transition-colors duration-200"
                   >
                     {link.name}
                   </button>
@@ -189,7 +189,7 @@ const Footer = () => {
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="mt-6 md:mt-12 p-4 md:p-6 bg-gray-800/80 border border-[#A67C52]/30 rounded-[7px] md:rounded-[8px]"
+          className="mt-8 md:mt-14 p-5 md:p-7 bg-white/5 border border-[#C9A46A]/35 rounded-sm"
         >
           <div className="flex flex-col md:flex-row items-center justify-between">
             <div className="mb-3 md:mb-0">
@@ -200,7 +200,7 @@ const Footer = () => {
               variant="outline"
               size="sm"
               onClick={() => window.open(brand.phoneHref)}
-              className="bg-white text-[#A67C52] border-white hover:bg-gray-100 text-[10px] md:text-sm px-3 py-1.5 md:px-4 md:py-2 whitespace-nowrap flex-shrink-0"
+              className="bg-[#C9A46A] text-white border-[#C9A46A] hover:bg-[#C9A46A] hover:border-[#C9A46A] text-[10px] md:text-sm px-3 py-1.5 md:px-4 md:py-2 whitespace-nowrap flex-shrink-0"
             >
               <Phone className="w-3.5 h-3.5 md:w-5 md:h-5 mr-1.5 md:mr-2" />
               Call Us
@@ -223,7 +223,7 @@ const Footer = () => {
               {/* Social Links */}
               <button
                 onClick={() => window.open('https://facebook.com/')}
-                className="text-gray-400 hover:text-medical-blue transition-colors duration-200"
+                className="text-gray-400 hover:text-[#C9A46A] transition-colors duration-200"
               >
                 <Facebook className="w-5 h-5" />
               </button>
@@ -231,7 +231,7 @@ const Footer = () => {
               {/* Back to Top */}
               <button
                 onClick={scrollToTop}
-                className="flex items-center space-x-2 text-gray-400 hover:text-medical-blue transition-colors duration-200"
+                className="flex items-center space-x-2 text-gray-400 hover:text-[#C9A46A] transition-colors duration-200"
               >
                 <ArrowUp className="w-4 h-4" />
                 <span className="text-sm">Back to Top</span>
@@ -247,7 +247,7 @@ const Footer = () => {
                   <React.Fragment key={link.name}>
                     <button
                       onClick={() => scrollToSection(link.href)}
-                      className="hover:text-medical-blue transition-colors duration-200"
+                      className="hover:text-[#C9A46A] transition-colors duration-200"
                     >
                       {link.name}
                     </button>
@@ -257,7 +257,7 @@ const Footer = () => {
               </div>
               <div className="flex items-center space-x-2">
                 <span>Made with</span>
-                <Heart className="w-3 h-3 text-red-500" />
+                <Heart className="w-3 h-3 text-[#C9A46A]" />
                 <span>for long-term value</span>
               </div>
             </div>
@@ -268,10 +268,10 @@ const Footer = () => {
                 href="https://elevateadds.com" 
                 target="_blank" 
                 rel="noopener noreferrer" 
-                className="group relative px-2.5 py-1 md:px-4 md:py-2 overflow-hidden rounded-[7px] bg-gray-900 transition-all duration-300 hover:bg-gray-800 hover:shadow-[0_0_20px_rgba(59,130,246,0.5)]"
+                className="group relative px-2.5 py-1 md:px-4 md:py-2 overflow-hidden rounded-sm bg-[#1B1B1B] border border-[#C9A46A]/20 transition-all duration-300 hover:bg-[#2B2622] hover:shadow-[0_0_20px_rgba(210,180,140,0.28)]"
               >
-                <div className="absolute inset-0 bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600 opacity-20 group-hover:opacity-100 transition-opacity duration-500 blur-lg" />
-                <span className="relative text-[9px] md:text-sm bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600 bg-clip-text text-transparent font-bold tracking-wider group-hover:text-white transition-colors duration-300">
+                <div className="absolute inset-0 bg-gradient-to-r from-[#E6D0B0] via-[#C9A46A] to-[#C9A46A] opacity-25 group-hover:opacity-100 transition-opacity duration-500 blur-lg" />
+                <span className="relative text-[9px] md:text-sm bg-gradient-to-r from-[#E6D0B0] via-[#C9A46A] to-[#C9A46A] bg-clip-text text-transparent font-bold tracking-wider group-hover:text-white transition-colors duration-300">
                   Developed by Elevate Marketing & Advertising
                 </span>
               </a>

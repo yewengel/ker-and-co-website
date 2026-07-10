@@ -48,8 +48,8 @@ const Hero = () => {
         ))}
       </div>
 
-      <div className="absolute inset-0 bg-gradient-to-r from-black/75 via-black/30 to-transparent z-[1]"></div>
-      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/10 z-[1]"></div>
+      <div className="absolute inset-0 bg-gradient-to-r from-[#222222]/88 via-[#222222]/45 to-transparent z-[1]"></div>
+      <div className="absolute inset-0 bg-gradient-to-t from-[#222222]/72 via-transparent to-[#222222]/18 z-[1]"></div>
 
       <div className="relative z-10 w-full px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl">
@@ -61,7 +61,7 @@ const Hero = () => {
           >
             {/* Eyebrow */}
             <div className="flex items-center gap-3">
-              <span className="h-px w-10 md:w-16 bg-medical-blue" />
+              <span className="h-px w-10 md:w-16 bg-[#C9A46A]" />
               <span className="text-[10px] md:text-sm uppercase tracking-[0.3em] text-white/70">
                 Ethiopian Business Group &middot; Since 1997
               </span>
@@ -92,7 +92,7 @@ const Hero = () => {
                 whileHover={{ scale: 1.04 }}
                 whileTap={{ scale: 0.96 }}
                 onClick={() => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })}
-                className="group px-7 py-3.5 md:px-9 md:py-4 bg-medical-blue text-white rounded-[7px] font-semibold text-sm md:text-base flex items-center gap-2 shadow-xl shadow-medical-blue/30 hover:bg-white hover:text-black transition-all duration-300"
+                className="group px-7 py-3.5 md:px-9 md:py-4 bg-[#C9A46A] text-white rounded-sm font-semibold text-sm md:text-base flex items-center gap-2 shadow-xl shadow-[#C9A46A]/30 hover:bg-[#C9A46A] transition-all duration-300"
               >
                 Our Story
                 <ArrowRight className="w-4 h-4 md:w-5 md:h-5 group-hover:translate-x-1 transition-transform" />
@@ -101,7 +101,7 @@ const Hero = () => {
                 whileHover={{ scale: 1.04 }}
                 whileTap={{ scale: 0.96 }}
                 onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-                className="px-7 py-3.5 md:px-9 md:py-4 border border-white/40 text-white rounded-[7px] font-semibold text-sm md:text-base hover:bg-white/10 transition-colors backdrop-blur-sm"
+                className="px-7 py-3.5 md:px-9 md:py-4 bg-[#C9A46A] text-white rounded-sm font-semibold text-sm md:text-base shadow-xl shadow-[#C9A46A]/30 hover:bg-[#C9A46A] transition-all duration-300"
               >
                 Contact Us
               </motion.button>
@@ -121,9 +121,9 @@ const Hero = () => {
             transition={{ duration: 0.5 }}
             className="flex items-start gap-3"
           >
-            <span className="mt-1 h-10 md:h-12 w-1 bg-medical-blue rounded-[7px] shrink-0" />
+            <span className="mt-1 h-10 md:h-12 w-1 bg-[#C9A46A] rounded-[2px] shrink-0" />
             <div>
-              <p className="text-medical-blue text-[10px] md:text-xs uppercase tracking-[0.2em] mb-1">
+              <p className="text-[#C9A46A] text-[10px] md:text-xs uppercase tracking-[0.2em] mb-1">
                 {slides[currentSlide].eyebrow}
               </p>
               <p className="text-white font-heading text-lg md:text-2xl leading-tight">
@@ -142,8 +142,8 @@ const Hero = () => {
               key={slide.src}
               onClick={() => setCurrentSlide(index)}
               aria-label={`Go to slide ${index + 1}`}
-              className={`h-1 rounded-[7px] transition-all duration-300 ${
-                index === currentSlide ? 'w-7 bg-medical-blue' : 'w-2.5 bg-white/40 hover:bg-white/70'
+              className={`h-1 rounded-sm transition-all duration-300 ${
+                index === currentSlide ? 'w-7 bg-[#C9A46A]' : 'w-2.5 bg-white/40 hover:bg-[#C9A46A]/70'
               }`}
             />
           ))}
@@ -165,12 +165,12 @@ const Hero = () => {
           <motion.div
             animate={{ y: [0, 10, 0] }}
             transition={{ duration: 2, repeat: Infinity }}
-            className="w-6 h-10 border-2 border-white/50 rounded-[7px] flex justify-center backdrop-blur-sm"
+            className="w-6 h-10 border-2 border-white/50 rounded-sm flex justify-center backdrop-blur-sm"
           >
             <motion.div
               animate={{ y: [0, 12, 0] }}
               transition={{ duration: 2, repeat: Infinity }}
-              className="w-1 h-3 bg-white rounded-[7px] mt-2"
+              className="w-1 h-3 bg-white rounded-sm mt-2"
             />
           </motion.div>
         </div>

@@ -280,7 +280,7 @@ const Chatbot = () => {
               transition={{ duration: 0.35, ease: 'easeOut' }}
               className="absolute bottom-full right-0 mb-3 w-[220px] sm:w-[240px]"
             >
-              <div className="relative bg-white border border-[#E8E2DA] rounded-[7px] shadow-[0_8px_32px_rgba(0,0,0,0.12)] px-4 py-3">
+              <div className="relative bg-white border border-[#E7DED2] rounded-sm shadow-[0_12px_32px_rgba(34,34,34,0.12)] px-4 py-3">
                 <button
                   type="button"
                   onClick={() => setShowWelcomePopup(false)}
@@ -295,11 +295,11 @@ const Chatbot = () => {
                 <button
                   type="button"
                   onClick={handleOpenChat}
-                  className="mt-2 text-[12px] font-semibold text-[#A67C52] hover:text-[#8E6844] transition-colors"
+                  className="mt-2 text-[12px] font-semibold text-[#C9A46A] hover:text-[#C9A46A] transition-colors"
                 >
                   Start a conversation →
                 </button>
-                <div className="absolute -bottom-1.5 right-6 w-3 h-3 bg-white border-r border-b border-[#E8E2DA] rotate-45" />
+                <div className="absolute -bottom-1.5 right-6 w-3 h-3 bg-white border-r border-b border-[#E7DED2] rotate-45" />
               </div>
             </motion.div>
           )}
@@ -307,13 +307,13 @@ const Chatbot = () => {
 
         <div className="relative">
           <span
-            className="chatbot-trigger-ring absolute -inset-1 rounded-[7px] bg-[#A67C52]/30 pointer-events-none"
+            className="chatbot-trigger-ring absolute -inset-1 rounded-sm bg-[#C9A46A]/30 pointer-events-none"
             aria-hidden="true"
           />
           <Button
             onClick={() => (isOpen ? setIsOpen(false) : handleOpenChat())}
             className={cn(
-              'chatbot-trigger relative w-14 h-14 sm:w-16 sm:h-16 rounded-[7px] bg-[#A67C52] hover:bg-[#8E6844] text-white shadow-lg hover:shadow-xl transition-colors duration-300',
+              'chatbot-trigger relative w-14 h-14 sm:w-16 sm:h-16 rounded-sm bg-[#C9A46A] hover:bg-[#C9A46A] text-white shadow-lg hover:shadow-xl transition-colors duration-300',
               !isOpen && 'chatbot-trigger'
             )}
             size="icon"
@@ -349,12 +349,12 @@ const Chatbot = () => {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 100, scale: 0.85 }}
             transition={{ type: 'spring', stiffness: 300, damping: 28 }}
-            className="chatbot-window fixed bottom-32 right-2 left-2 md:bottom-28 md:right-6 md:left-auto w-auto md:w-96 lg:w-[400px] max-w-[calc(100vw-1rem)] md:max-w-[calc(100vw-3rem)] h-[70vh] md:h-[500px] lg:h-[550px] max-h-[calc(100vh-10rem)] md:max-h-[calc(100vh-9rem)] bg-white rounded-[8px] shadow-2xl border border-[#E8E2DA] z-40 flex flex-col overflow-hidden"
+            className="chatbot-window fixed bottom-32 right-2 left-2 md:bottom-28 md:right-6 md:left-auto w-auto md:w-96 lg:w-[400px] max-w-[calc(100vw-1rem)] md:max-w-[calc(100vw-3rem)] h-[70vh] md:h-[500px] lg:h-[550px] max-h-[calc(100vh-10rem)] md:max-h-[calc(100vh-9rem)] bg-white rounded-sm shadow-2xl border border-[#E7DED2] z-40 flex flex-col overflow-hidden"
           >
             {/* Header */}
-            <div className="bg-[#A67C52] text-white p-3 sm:p-4 flex items-center justify-between">
+            <div className="bg-[#C9A46A] text-white p-3 sm:p-4 flex items-center justify-between">
               <div className="flex items-center space-x-3">
-                <div className="w-8 h-8 sm:w-10 sm:h-10 bg-white/20 rounded-[7px] flex items-center justify-center">
+                <div className="w-8 h-8 sm:w-10 sm:h-10 bg-white/20 rounded-sm flex items-center justify-center">
                   <Bot className="w-5 h-5 sm:w-6 sm:h-6" />
                 </div>
                 <div>
@@ -371,7 +371,7 @@ const Chatbot = () => {
             </div>
 
             {/* Messages */}
-            <div className="flex-1 overflow-y-auto p-3 sm:p-4 space-y-3 sm:space-y-4 bg-[#FAFAF8]">
+            <div className="flex-1 overflow-y-auto p-3 sm:p-4 space-y-3 sm:space-y-4 bg-[#F8F4EF]">
               {messages.map((message) => (
                 <div
                   key={message.id}
@@ -379,10 +379,10 @@ const Chatbot = () => {
                 >
                   <div className={`max-w-[85%] sm:max-w-[80%] ${message.isBot ? 'order-2' : 'order-1'}`}>
                     <div
-                      className={`px-3 py-2 sm:px-4 sm:py-2.5 rounded-[7px] ${
+                      className={`px-3 py-2 sm:px-4 sm:py-2.5 rounded-sm ${
                         message.isBot
-                          ? 'bg-white text-[#222222] border border-[#E8E2DA]'
-                          : 'bg-[#A67C52] text-white'
+                          ? 'bg-white text-[#222222] border border-[#E7DED2]'
+                          : 'bg-[#C9A46A] text-white'
                       }`}
                     >
                       <p className="text-sm leading-relaxed">{message.text}</p>
@@ -394,7 +394,7 @@ const Chatbot = () => {
                           <button
                             key={index}
                             onClick={() => handleSendMessage(reply)}
-                            className="px-2.5 py-1 sm:px-3 sm:py-1.5 text-xs bg-[#F8F4EF] text-[#A67C52] border border-[#E8E2DA] rounded-[6px] hover:bg-[#A67C52]/10 transition-colors"
+                            className="px-2.5 py-1 sm:px-3 sm:py-1.5 text-xs bg-white text-[#C9A46A] border border-[#C9A46A]/35 rounded-sm hover:bg-[#F8F4EF] transition-colors"
                           >
                             {reply}
                           </button>
@@ -403,13 +403,13 @@ const Chatbot = () => {
                     )}
                   </div>
                   
-                  <div className={`w-7 h-7 sm:w-8 sm:h-8 rounded-[6px] flex items-center justify-center flex-shrink-0 ${
-                    message.isBot ? 'order-1 mr-1 sm:mr-2 bg-[#F8F4EF] border border-[#E8E2DA]' : 'order-2 ml-1 sm:ml-2 bg-[#A67C52]/10'
+                  <div className={`w-7 h-7 sm:w-8 sm:h-8 rounded-sm flex items-center justify-center flex-shrink-0 ${
+                    message.isBot ? 'order-1 mr-1 sm:mr-2 bg-[#C9A46A]' : 'order-2 ml-1 sm:ml-2 bg-[#C9A46A]'
                   }`}>
                     {message.isBot ? (
-                      <Bot className="w-3 h-3 sm:w-4 sm:h-4 text-[#A67C52]" />
+                      <Bot className="w-3 h-3 sm:w-4 sm:h-4 text-white" />
                     ) : (
-                      <User className="w-3 h-3 sm:w-4 sm:h-4 text-[#8E6844]" />
+                      <User className="w-3 h-3 sm:w-4 sm:h-4 text-white" />
                     )}
                   </div>
                 </div>
@@ -418,14 +418,14 @@ const Chatbot = () => {
               {isTyping && (
                 <div className="flex justify-start">
                   <div className="flex items-center space-x-2">
-                    <div className="w-8 h-8 rounded-[6px] bg-[#F8F4EF] border border-[#E8E2DA] flex items-center justify-center">
-                      <Bot className="w-4 h-4 text-[#A67C52]" />
+                    <div className="w-8 h-8 rounded-sm bg-[#C9A46A] flex items-center justify-center">
+                      <Bot className="w-4 h-4 text-white" />
                     </div>
-                    <div className="bg-white border border-[#E8E2DA] px-4 py-2.5 rounded-[7px]">
+                    <div className="bg-white border border-[#E7DED2] px-4 py-2.5 rounded-sm">
                       <div className="flex space-x-1">
-                        <div className="w-2 h-2 bg-[#A67C52]/50 rounded-[2px] animate-bounce"></div>
-                        <div className="w-2 h-2 bg-[#A67C52]/50 rounded-[2px] animate-bounce" style={{ animationDelay: '0.1s' }}></div>
-                        <div className="w-2 h-2 bg-[#A67C52]/50 rounded-[2px] animate-bounce" style={{ animationDelay: '0.2s' }}></div>
+                        <div className="w-2 h-2 bg-[#C9A46A]/60 rounded-[2px] animate-bounce"></div>
+                        <div className="w-2 h-2 bg-[#C9A46A]/60 rounded-[2px] animate-bounce" style={{ animationDelay: '0.1s' }}></div>
+                        <div className="w-2 h-2 bg-[#C9A46A]/60 rounded-[2px] animate-bounce" style={{ animationDelay: '0.2s' }}></div>
                       </div>
                     </div>
                   </div>
@@ -436,7 +436,7 @@ const Chatbot = () => {
             </div>
 
             {/* Input */}
-            <div className="p-3 sm:p-4 border-t border-[#E8E2DA] bg-white">
+            <div className="p-3 sm:p-4 border-t border-[#E7DED2] bg-white">
               <div className="flex space-x-2">
                 <input
                   type="text"
@@ -444,12 +444,12 @@ const Chatbot = () => {
                   onChange={(e) => setInputValue(e.target.value)}
                   onKeyPress={handleKeyPress}
                   placeholder="Type your question..."
-                  className="flex-1 px-3 py-2 sm:px-4 sm:py-2.5 text-sm border border-[#E8E2DA] rounded-[7px] focus:outline-none focus:ring-2 focus:ring-[#A67C52]/30 focus:border-[#A67C52]"
+                  className="flex-1 px-3 py-2 sm:px-4 sm:py-2.5 text-sm border border-[#E7DED2] rounded-sm focus:outline-none focus:ring-2 focus:ring-[#C9A46A]/30 focus:border-[#C9A46A]"
                 />
                 <Button
                   onClick={() => handleSendMessage()}
                   disabled={!inputValue.trim()}
-                  className="w-9 h-9 sm:w-10 sm:h-10 rounded-[7px] bg-[#A67C52] hover:bg-[#8E6844] flex-shrink-0"
+                  className="w-9 h-9 sm:w-10 sm:h-10 rounded-sm bg-[#C9A46A] hover:bg-[#C9A46A] flex-shrink-0"
                   size="icon"
                 >
                   <Send className="w-3 h-3 sm:w-4 sm:h-4" />

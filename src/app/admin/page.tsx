@@ -30,14 +30,14 @@ export default function AdminLogin() {
   }
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-50 px-4">
-      <div className="max-w-md w-full space-y-8 bg-white p-8 rounded-[8px] shadow-lg">
+    <div className="min-h-screen flex items-center justify-center bg-[#F8F4EF] px-4">
+      <div className="max-w-md w-full space-y-8 bg-white p-8 rounded-sm shadow-lg border border-[#E7DED2]">
         <div className="text-center">
-          <div className="mx-auto h-12 w-12 bg-teal-600/10 rounded-[7px] flex items-center justify-center mb-4">
-            <Lock className="h-6 w-6 text-teal-600" />
+          <div className="mx-auto h-12 w-12 bg-[#C9A46A] rounded-sm flex items-center justify-center mb-4 shadow-sm">
+            <Lock className="h-6 w-6 text-white" />
           </div>
           <h2 className="text-3xl font-bold text-gray-900">Admin Login</h2>
-          <p className="mt-2 text-gray-600">Sign in to manage VanguardX Import & Export content</p>
+          <p className="mt-2 text-gray-600">Sign in to manage Ker &amp; Co. website content</p>
         </div>
 
         <form className="mt-8 space-y-6" onSubmit={handleLogin}>
@@ -49,7 +49,7 @@ export default function AdminLogin() {
                 name="email"
                 type="email"
                 required
-                className="appearance-none relative block w-full px-3 py-3 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-[7px] focus:outline-none focus:ring-teal-600 focus:border-teal-600 sm:text-sm"
+                className="appearance-none relative block w-full px-3 py-3 border border-[#E7DED2] placeholder-[#7A7169] text-gray-900 rounded-sm focus:outline-none focus:ring-[#C9A46A] focus:border-[#C9A46A] sm:text-sm"
                 placeholder="Email address"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
@@ -62,7 +62,7 @@ export default function AdminLogin() {
                 name="password"
                 type="password"
                 required
-                className="appearance-none relative block w-full px-3 py-3 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-[7px] focus:outline-none focus:ring-teal-600 focus:border-teal-600 sm:text-sm"
+                className="appearance-none relative block w-full px-3 py-3 border border-[#E7DED2] placeholder-[#7A7169] text-gray-900 rounded-sm focus:outline-none focus:ring-[#C9A46A] focus:border-[#C9A46A] sm:text-sm"
                 placeholder="Password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
@@ -71,7 +71,7 @@ export default function AdminLogin() {
           </div>
 
           {error && (
-            <div className="flex items-center space-x-2 text-red-500 text-sm bg-red-50 p-3 rounded-[7px]">
+            <div className="flex items-center space-x-2 text-red-500 text-sm bg-red-50 p-3 rounded-sm">
               <AlertCircle className="h-4 w-4" />
               <span>{error}</span>
             </div>

@@ -60,7 +60,7 @@ const ProjectsShowcase = () => {
           className="text-center mb-6 md:mb-16"
         >
           <h2 className="text-2xl md:text-5xl font-bold font-heading mb-3 md:mb-6">
-            Why Partner With <span className="text-gradient">{brand.shortName}</span>
+            Why Partner With <span className="text-[#C9A46A]">{brand.shortName}</span>
           </h2>
           <p className="text-xs md:text-xl text-gray-600 max-w-3xl mx-auto">
             A founder-led Ethiopian business group shaped by practical market knowledge, diversified execution, and a long-term growth mindset.
@@ -76,7 +76,7 @@ const ProjectsShowcase = () => {
               whileInView={{ opacity: 1, scale: 1, y: 0 }}
               viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 0.6, delay: (index % 3) * 0.12, ease: [0.22, 1, 0.36, 1] }}
-              className="group bg-white rounded-[7px] md:rounded-[8px] shadow-md md:shadow-lg hover-lift overflow-hidden border border-gray-100"
+              className="group bg-white rounded-sm md:rounded-sm shadow-md md:shadow-lg hover-lift overflow-hidden border border-gray-100"
             >
               {/* Image */}
               <div className="relative h-24 md:h-52 overflow-hidden">
@@ -90,7 +90,7 @@ const ProjectsShowcase = () => {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
                 
                 <div className="absolute bottom-3 left-3 flex items-center gap-2">
-                  <div className="w-8 h-8 bg-white/20 backdrop-blur-sm rounded-[7px] flex items-center justify-center">
+                  <div className="w-8 h-8 bg-white/20 backdrop-blur-sm rounded-sm flex items-center justify-center">
                     <reason.icon className="w-4 h-4 text-white" />
                   </div>
                 </div>
@@ -109,7 +109,7 @@ const ProjectsShowcase = () => {
                 <div className="hidden md:block space-y-2">
                   {reason.highlights.map((highlight, idx) => (
                     <div key={idx} className="flex items-start gap-2">
-                      <CheckCircle className="w-4 h-4 text-medical-blue flex-shrink-0 mt-0.5" />
+                      <CheckCircle className="w-4 h-4 text-[#C9A46A] flex-shrink-0 mt-0.5" />
                       <span className="text-xs text-gray-700">{highlight}</span>
                     </div>
                   ))}

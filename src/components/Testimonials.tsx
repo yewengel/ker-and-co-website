@@ -21,11 +21,11 @@ const Testimonials = () => {
   const current = items[active]
 
   return (
-    <section id="testimonials" className="relative py-12 md:py-24 overflow-hidden bg-gray-50">
+    <section id="testimonials" className="relative py-12 md:py-24 overflow-hidden bg-[#F8F4EF]">
       {/* Decorative glow */}
       <div className="pointer-events-none absolute inset-0">
-        <div className="absolute -top-20 left-1/4 w-72 h-72 bg-medical-blue/20 rounded-[7px] blur-3xl" />
-        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-medical-blue/10 rounded-[7px] blur-3xl" />
+        <div className="absolute -top-20 left-1/4 w-72 h-72 bg-[#C9A46A]/20 rounded-sm blur-3xl" />
+        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-[#C9A46A]/10 rounded-sm blur-3xl" />
       </div>
 
       <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -35,7 +35,7 @@ const Testimonials = () => {
           viewport={{ once: true }}
           className="text-center mb-8 md:mb-14"
         >
-          <p className="text-[10px] md:text-sm uppercase tracking-[0.25em] text-[#A67C52] font-semibold mb-2 md:mb-3">
+          <p className="text-[10px] md:text-sm uppercase tracking-[0.25em] text-[#C9A46A] font-semibold mb-2 md:mb-3">
             Testimonials
           </p>
           <h2 className="text-2xl md:text-5xl font-bold font-heading text-gray-900">
@@ -55,13 +55,13 @@ const Testimonials = () => {
               animate={{ opacity: 1, y: 0, scale: 1 }}
               exit={{ opacity: 0, y: -20, scale: 0.98 }}
               transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-              className="mx-auto max-w-3xl bg-white border border-gray-100 rounded-[8px] p-6 md:p-12 text-center shadow-lg"
+              className="mx-auto max-w-3xl bg-white border border-[#E7DED2] rounded-sm p-6 md:p-12 text-center shadow-lg"
             >
-              <Quote className="w-8 h-8 md:w-12 md:h-12 text-medical-blue mx-auto mb-4 md:mb-6" />
+              <Quote className="w-8 h-8 md:w-12 md:h-12 text-[#C9A46A] mx-auto mb-4 md:mb-6" />
 
               <div className="flex items-center justify-center gap-1 mb-4 md:mb-6">
                 {Array.from({ length: current.rating }).map((_, i) => (
-                  <Star key={i} className="w-4 h-4 md:w-5 md:h-5 text-medical-blue fill-medical-blue" />
+                  <Star key={i} className="w-4 h-4 md:w-5 md:h-5 text-[#C9A46A] fill-[#C9A46A]" />
                 ))}
               </div>
 
@@ -70,11 +70,11 @@ const Testimonials = () => {
               </p>
 
               <div className="flex flex-col items-center">
-                <div className="w-12 h-12 md:w-14 md:h-14 rounded-[7px] bg-gradient-to-br from-medical-blue to-medical-red flex items-center justify-center text-white font-bold text-lg md:text-xl mb-3">
+                <div className="w-12 h-12 md:w-14 md:h-14 rounded-sm bg-gradient-to-br from-[#C9A46A] to-[#C9A46A] flex items-center justify-center text-white font-bold text-lg md:text-xl mb-3">
                   {current.name.charAt(0)}
                 </div>
                 <div className="text-sm md:text-lg font-semibold text-gray-900">{current.name}</div>
-                <div className="text-xs md:text-sm text-medical-blue">{current.role}</div>
+                <div className="text-xs md:text-sm text-[#C9A46A]">{current.role}</div>
               </div>
             </motion.div>
           </AnimatePresence>
@@ -84,7 +84,7 @@ const Testimonials = () => {
             <button
               onClick={() => goTo(active - 1)}
               aria-label="Previous testimonial"
-              className="w-10 h-10 md:w-12 md:h-12 rounded-[7px] border border-gray-200 text-gray-700 bg-white flex items-center justify-center hover:bg-gray-50 transition-colors"
+              className="w-10 h-10 md:w-12 md:h-12 rounded-sm border border-gray-200 text-gray-700 bg-white flex items-center justify-center hover:bg-gray-50 transition-colors"
             >
               <ChevronLeft className="w-5 h-5" />
             </button>
@@ -95,8 +95,8 @@ const Testimonials = () => {
                   key={item.name}
                   onClick={() => goTo(index)}
                   aria-label={`Go to testimonial ${index + 1}`}
-                  className={`h-1.5 rounded-[7px] transition-all duration-300 ${
-                    index === active ? 'w-8 bg-medical-blue' : 'w-3 bg-gray-300 hover:bg-gray-400'
+                  className={`h-1.5 rounded-sm transition-all duration-300 ${
+                    index === active ? 'w-8 bg-[#C9A46A]' : 'w-3 bg-gray-300 hover:bg-[#C9A46A]/45'
                   }`}
                 />
               ))}
@@ -105,7 +105,7 @@ const Testimonials = () => {
             <button
               onClick={() => goTo(active + 1)}
               aria-label="Next testimonial"
-              className="w-10 h-10 md:w-12 md:h-12 rounded-[7px] border border-gray-200 text-gray-700 bg-white flex items-center justify-center hover:bg-gray-50 transition-colors"
+              className="w-10 h-10 md:w-12 md:h-12 rounded-sm border border-gray-200 text-gray-700 bg-white flex items-center justify-center hover:bg-gray-50 transition-colors"
             >
               <ChevronRight className="w-5 h-5" />
             </button>

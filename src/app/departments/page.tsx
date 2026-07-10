@@ -7,6 +7,7 @@ import {
   Building2, Coffee, ArrowRight,
   CheckCircle, Heart, Globe, Shield, Leaf, Factory
 } from 'lucide-react'
+import { PaperIcon, HospitalityIcon, CoalMiningIcon } from '@/components/icons/DepartmentIcons'
 import Navigation from '@/components/Navigation'
 import Footer from '@/components/Footer'
 import { Button } from '@/components/ui/button'
@@ -21,11 +22,11 @@ const fadeIn = {
 
 const departmentIconMap = {
   distribution: Globe,
-  paper: Shield,
-  hospitality: Heart,
+  paper: PaperIcon,
+  hospitality: HospitalityIcon,
   'real-estate': Building2,
   mining: Factory,
-  'coal-mining': Factory,
+  'coal-mining': CoalMiningIcon,
   agriculture: Leaf,
   exports: Coffee,
 } as const
@@ -40,10 +41,10 @@ const departments = brandDepartments.map((department, index) => ({
 }))
 
 const colorMap: Record<string, { bg: string; text: string; badge: string; border: string; light: string }> = {
-  blue: { bg: 'bg-medical-blue/5', text: 'text-medical-blue', badge: 'bg-medical-blue/10', border: 'border-medical-blue/20', light: 'bg-medical-blue' },
-  amber: { bg: 'bg-amber-50', text: 'text-amber-700', badge: 'bg-amber-100', border: 'border-amber-200', light: 'bg-amber-500' },
-  red: { bg: 'bg-medical-red/5', text: 'text-medical-red', badge: 'bg-medical-red/10', border: 'border-medical-red/20', light: 'bg-medical-red' },
-  charcoal: { bg: 'bg-gray-100', text: 'text-gray-900', badge: 'bg-gray-200', border: 'border-gray-300', light: 'bg-gray-900' },
+  blue: { bg: 'bg-[#C9A46A]/8', text: 'text-[#C9A46A]', badge: 'bg-[#C9A46A]', border: 'border-[#C9A46A]/25', light: 'bg-[#C9A46A]' },
+  amber: { bg: 'bg-[#C9A46A]/8', text: 'text-[#C9A46A]', badge: 'bg-[#C9A46A]', border: 'border-[#C9A46A]/25', light: 'bg-[#C9A46A]' },
+  red: { bg: 'bg-[#C9A46A]/8', text: 'text-[#C9A46A]', badge: 'bg-[#C9A46A]', border: 'border-[#C9A46A]/25', light: 'bg-[#C9A46A]' },
+  charcoal: { bg: 'bg-[#C9A46A]/8', text: 'text-[#C9A46A]', badge: 'bg-[#C9A46A]', border: 'border-[#C9A46A]/25', light: 'bg-[#C9A46A]' },
 }
 
 function DeptImageCarousel({ image1, image2, title, isEven }: { image1: string; image2: string; title: string; isEven: boolean }) {
@@ -55,7 +56,7 @@ function DeptImageCarousel({ image1, image2, title, isEven }: { image1: string; 
       {/* Mobile: tap-to-slide carousel */}
       <div className="md:hidden relative">
         <div
-          className="relative h-48 rounded-[7px] overflow-hidden shadow-xl cursor-pointer"
+          className="relative h-48 rounded-sm overflow-hidden shadow-xl cursor-pointer"
           onClick={() => setActiveIdx((prev) => (prev + 1) % images.length)}
         >
           {images.map((img, i) => (
@@ -74,7 +75,7 @@ function DeptImageCarousel({ image1, image2, title, isEven }: { image1: string; 
             </div>
           ))}
           {/* Tap hint */}
-          <div className="absolute bottom-2 right-2 bg-black/50 text-white text-[8px] px-2 py-0.5 rounded-[7px]">
+          <div className="absolute bottom-2 right-2 bg-black/50 text-white text-[8px] px-2 py-0.5 rounded-sm">
             Tap to slide
           </div>
           {/* Dots indicator */}
@@ -82,7 +83,7 @@ function DeptImageCarousel({ image1, image2, title, isEven }: { image1: string; 
             {images.map((_, i) => (
               <div
                 key={i}
-                className={`w-1.5 h-1.5 rounded-[7px] transition-colors ${i === activeIdx ? 'bg-white' : 'bg-white/40'}`}
+                className={`w-1.5 h-1.5 rounded-sm transition-colors ${i === activeIdx ? 'bg-white' : 'bg-white/40'}`}
               />
             ))}
           </div>
@@ -91,7 +92,7 @@ function DeptImageCarousel({ image1, image2, title, isEven }: { image1: string; 
 
       {/* Desktop: stacked images */}
       <div className="hidden md:block space-y-4">
-        <div className="relative h-80 rounded-[8px] overflow-hidden shadow-xl">
+        <div className="relative h-80 rounded-sm overflow-hidden shadow-xl">
           <Image
             src={image1}
             alt={title}
@@ -100,7 +101,7 @@ function DeptImageCarousel({ image1, image2, title, isEven }: { image1: string; 
             unoptimized
           />
         </div>
-        <div className="relative h-56 rounded-[8px] overflow-hidden shadow-lg">
+        <div className="relative h-56 rounded-sm overflow-hidden shadow-lg">
           <Image
             src={image2}
             alt={`${title} operations`}
@@ -116,23 +117,23 @@ function DeptImageCarousel({ image1, image2, title, isEven }: { image1: string; 
 
 export default function DepartmentsPage() {
   return (
-    <main className="relative min-h-screen bg-gray-50">
+    <main className="relative min-h-screen bg-[#F8F4EF]">
       <Navigation />
 
       {/* Hero */}
-      <section className="pt-navbar pb-10 md:pb-20 px-4 sm:px-6 lg:px-8 bg-gray-50">
+      <section className="pt-navbar pb-10 md:pb-20 px-4 sm:px-6 lg:px-8 bg-[#F8F4EF]">
         <div className="max-w-7xl mx-auto text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-[7px] bg-medical-blue/10 text-medical-red text-sm font-semibold mb-6">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-sm bg-[#C9A46A]/14 text-[#C9A46A] text-sm font-semibold mb-6">
               <Globe className="w-4 h-4" />
               Our Departments
             </div>
             <h1 className="text-2xl md:text-6xl font-bold text-gray-900 mb-3 md:mb-6 font-heading">
-              {departments.length} Ventures, <span className="text-gradient">One Vision</span>
+              {departments.length} Ventures, <span className="text-[#C9A46A]">One Vision</span>
             </h1>
             <p className="text-xs md:text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
               Explore the core ventures behind {brand.name}—a diversified platform built through distribution, hospitality, real estate, industrial activity, agriculture, and export growth.
@@ -150,7 +151,7 @@ export default function DepartmentsPage() {
                     const el = document.getElementById(dept.id)
                     el?.scrollIntoView({ behavior: 'smooth', block: 'start' })
                   }}
-                  className={`inline-flex items-center gap-1 md:gap-2 px-2.5 py-1.5 md:px-5 md:py-2.5 rounded-[7px] ${colors.badge} ${colors.text} text-[10px] md:text-sm font-semibold hover:shadow-md transition-all border ${colors.border}`}
+                  className={`inline-flex items-center gap-1 md:gap-2 px-2.5 py-1.5 md:px-5 md:py-2.5 rounded-sm ${colors.badge} text-white text-[10px] md:text-sm font-semibold hover:shadow-md transition-all border ${colors.border}`}
                 >
                   <dept.icon className="w-3 h-3 md:w-4 md:h-4" />
                   {dept.title}
@@ -170,14 +171,14 @@ export default function DepartmentsPage() {
           <section
             key={dept.id}
             id={dept.id}
-            className={`py-10 md:py-20 px-4 sm:px-6 lg:px-8 scroll-mt-24 bg-gray-50`}
+            className={`py-12 md:py-24 px-4 sm:px-6 lg:px-8 scroll-mt-24 bg-[#F8F4EF]`}
           >
             <div className="max-w-7xl mx-auto">
               <motion.div {...fadeIn}>
                 {/* Header */}
                 <div className="flex items-center gap-3 mb-2">
-                  <div className={`w-10 h-10 rounded-[7px] ${colors.badge} flex items-center justify-center`}>
-                    <dept.icon className={`w-5 h-5 ${colors.text}`} />
+                  <div className={`w-10 h-10 rounded-sm ${colors.badge} flex items-center justify-center`}>
+                    <dept.icon className={`w-5 h-5 text-white`} />
                   </div>
                   <span className={`text-sm font-semibold ${colors.text} uppercase tracking-wider`}>{dept.tagline}</span>
                 </div>
@@ -198,7 +199,6 @@ export default function DepartmentsPage() {
                       ))}
                     </div>
                     <Button
-                      variant="medical"
                       className="mt-8"
                       onClick={() => {
                         const el = document.getElementById('contact')
@@ -225,7 +225,7 @@ export default function DepartmentsPage() {
       })}
 
       {/* CTA Section */}
-      <section className="py-10 md:py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-medical-blue to-medical-red text-white">
+      <section className="py-10 md:py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-[#C9A46A] to-[#C9A46A] text-white">
         <div className="max-w-4xl mx-auto text-center">
           <motion.div {...fadeIn}>
             <h2 className="text-xl md:text-4xl font-bold mb-2 md:mb-4">Ready to Work With Us?</h2>
@@ -235,7 +235,7 @@ export default function DepartmentsPage() {
             <div className="flex flex-wrap justify-center gap-4">
               <Button
                 size="lg"
-                className="bg-white text-medical-red hover:bg-gray-100"
+                className="bg-white text-[#C9A46A] hover:bg-gray-100"
                 onClick={() => window.location.href = '/partnerships'}
               >
                 Why Partner With Us

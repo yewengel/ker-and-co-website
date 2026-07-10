@@ -17,10 +17,10 @@ const SpineModel3D: React.FC<SpineModel3DProps> = ({
   const splineSceneUrl = "https://prod.spline.design/6Wq1Q7YGyM-iab9i/scene.splinecode"
   
   const LoadingSpinner = () => (
-    <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-medical-teal/10 to-medical-green/10 rounded-[8px]">
+    <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-medical-teal/10 to-medical-green/10 rounded-sm">
       <div className="text-center space-y-4">
         <div className="w-16 h-16 mx-auto">
-          <div className="animate-spin rounded-full h-16 w-16 border-4 border-medical-teal border-t-transparent"></div>
+          <div className="animate-spin rounded-sm h-16 w-16 border-4 border-medical-teal border-t-transparent"></div>
         </div>
         <p className="text-medical-teal font-medium">Loading 3D Spine Model...</p>
       </div>
@@ -28,7 +28,7 @@ const SpineModel3D: React.FC<SpineModel3DProps> = ({
   )
 
   const ErrorFallback = () => (
-    <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-medical-teal/20 to-medical-green/20 rounded-[8px]">
+    <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-medical-teal/20 to-medical-green/20 rounded-sm">
       <div className="text-center space-y-4">
         <motion.div
           animate={{ 
@@ -40,7 +40,7 @@ const SpineModel3D: React.FC<SpineModel3DProps> = ({
             repeat: Infinity,
             ease: "easeInOut"
           }}
-          className="w-24 h-32 mx-auto bg-white/30 rounded-[7px] backdrop-blur-sm flex items-center justify-center"
+          className="w-24 h-32 mx-auto bg-white/30 rounded-sm backdrop-blur-sm flex items-center justify-center"
         >
           {/* Simplified spine representation */}
           <div className="space-y-1">
@@ -56,7 +56,7 @@ const SpineModel3D: React.FC<SpineModel3DProps> = ({
                   repeat: Infinity,
                   delay: i * 0.1
                 }}
-                className="w-6 h-3 bg-white/60 rounded-[7px] mx-auto"
+                className="w-6 h-3 bg-white/60 rounded-sm mx-auto"
               />
             ))}
           </div>
@@ -82,7 +82,7 @@ const SpineModel3D: React.FC<SpineModel3DProps> = ({
           <motion.div
             animate={{ y: [-5, 5, -5], opacity: [0.7, 1, 0.7] }}
             transition={{ duration: 3, repeat: Infinity }}
-            className="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-white/90 backdrop-blur-sm rounded-[7px] px-3 py-2 text-xs text-gray-700"
+            className="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-white/90 backdrop-blur-sm rounded-sm px-3 py-2 text-xs text-gray-700"
           >
             Click and drag to rotate
           </motion.div>

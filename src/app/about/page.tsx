@@ -47,11 +47,11 @@ export default function AboutPage() {
   const journeyHighlights = founderStory.slice(0, 4)
 
   return (
-    <main className="relative min-h-screen bg-gray-50">
+    <main className="relative min-h-screen bg-[#F8F4EF]">
       <Navigation />
 
       {/* Hero Section */}
-      <section className="relative pt-navbar pb-10 md:pb-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-gray-900 via-gray-800 to-black overflow-hidden">
+      <section className="relative pt-navbar pb-10 md:pb-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-[#222222] via-[#3d352d] to-[#222222] overflow-hidden">
         <div className="absolute inset-0 opacity-20">
           <Image
             src={brandMedia.ventures.distribution}
@@ -68,18 +68,18 @@ export default function AboutPage() {
             transition={{ duration: 0.7 }}
             className="text-center"
           >
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-[7px] bg-white/10 backdrop-blur-sm text-medical-blue text-sm font-semibold mb-6">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-sm bg-white/10 backdrop-blur-sm text-[#C9A46A] text-sm font-semibold mb-6">
               <Building2 className="w-4 h-4" />
               About {brand.shortName}
             </div>
             <h1 className="text-2xl md:text-6xl lg:text-7xl font-bold text-white mb-3 md:mb-6 font-heading">
-              Built Through <span className="text-medical-blue">Vision</span>
+              Built Through <span className="text-[#C9A46A]">Vision</span>
             </h1>
             <p className="text-xs md:text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
               {brand.name} is the story of Keria Ahmed’s rise from a modest 1997 import business into a diversified Ethiopian business group spanning distribution, paper products, hospitality, wellness, real estate, mining, agriculture, and export ventures.
             </p>
             <div className="mt-10 flex flex-wrap justify-center gap-4">
-              <Button variant="medical" size="lg" onClick={() => window.location.href = '/partnerships'}>
+              <Button size="lg" onClick={() => window.location.href = '/partnerships'}>
                 Why Partner With Us
                 <ArrowRight className="w-5 h-5 ml-2" />
               </Button>
@@ -101,10 +101,10 @@ export default function AboutPage() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: i * 0.1 }}
-                className="bg-white rounded-[7px] md:rounded-[8px] shadow-xl border border-gray-100 p-3 md:p-6 text-center"
+                className="bg-white rounded-sm md:rounded-sm shadow-xl border border-[#E7DED2] p-3 md:p-6 text-center"
               >
-                <div className="text-lg md:text-4xl font-bold text-medical-blue">{stat.value}</div>
-                <div className="text-[10px] md:text-sm font-semibold text-gray-900 mt-0.5 md:mt-1">{stat.label}</div>
+                <div className="text-lg md:text-4xl font-bold text-[#C9A46A]">{stat.value}</div>
+                <div className="text-[10px] md:text-sm font-semibold text-[#222222] mt-0.5 md:mt-1">{stat.label}</div>
                 <div className="text-[9px] md:text-xs text-gray-500 mt-0.5">{stat.sublabel}</div>
               </motion.div>
             ))}
@@ -117,8 +117,8 @@ export default function AboutPage() {
         <div className="max-w-7xl mx-auto">
           <motion.div {...fadeIn} className="grid lg:grid-cols-2 gap-6 md:gap-12 items-center">
             <div>
-              <h2 className="text-xl md:text-4xl font-bold text-gray-900 mb-3 md:mb-6">
-                Our <span className="text-medical-blue">Story</span>
+              <h2 className="text-xl md:text-4xl font-bold text-[#222222] mb-3 md:mb-6">
+                Our <span className="text-[#C9A46A]">Story</span>
               </h2>
               <div className="space-y-2 md:space-y-4 text-xs md:text-base text-gray-600 leading-relaxed">
                 <p>
@@ -132,7 +132,7 @@ export default function AboutPage() {
                 </p>
               </div>
             </div>
-            <div className="relative h-48 md:h-[420px] rounded-[7px] md:rounded-[8px] overflow-hidden shadow-2xl">
+            <div className="relative h-48 md:h-[420px] rounded-sm md:rounded-sm overflow-hidden shadow-2xl">
               <Image
                 src={brandMedia.founder.portrait}
                 alt="Keria Ahmed portrait"
@@ -146,10 +146,10 @@ export default function AboutPage() {
       </section>
 
       {/* Healthcare Foundation */}
-      <section className="py-10 md:py-20 px-4 sm:px-6 lg:px-8 bg-gray-50">
+      <section className="py-10 md:py-20 px-4 sm:px-6 lg:px-8 bg-[#F8F4EF]">
         <div className="max-w-7xl mx-auto">
           <motion.div {...fadeIn} className="grid lg:grid-cols-2 gap-6 md:gap-12 items-center">
-            <div className="order-2 lg:order-1 relative h-48 md:h-[420px] rounded-[7px] md:rounded-[8px] overflow-hidden shadow-2xl">
+            <div className="order-2 lg:order-1 relative h-48 md:h-[420px] rounded-sm md:rounded-sm overflow-hidden shadow-2xl">
               <Image
                 src={brandMedia.founder.beginnings}
                 alt="Founder journey and venture foundations"
@@ -159,19 +159,19 @@ export default function AboutPage() {
               />
             </div>
             <div className="order-1 lg:order-2">
-              <div className="inline-flex items-center gap-1.5 md:gap-2 px-2 py-0.5 md:px-3 md:py-1 rounded-[7px] bg-medical-blue/10 text-medical-red text-[10px] md:text-sm font-semibold mb-2 md:mb-4">
+              <div className="inline-flex items-center gap-1.5 md:gap-2 px-2 py-0.5 md:px-3 md:py-1 rounded-sm bg-[#C9A46A]/10 text-[#C9A46A] text-[10px] md:text-sm font-semibold mb-2 md:mb-4">
                 <Heart className="w-3 h-3 md:w-4 md:h-4" />
                 Founder Journey
               </div>
-              <h2 className="text-xl md:text-4xl font-bold text-gray-900 mb-3 md:mb-6">
-                From Humble Beginnings to <span className="text-medical-blue">Diversification</span>
+              <h2 className="text-xl md:text-4xl font-bold text-[#222222] mb-3 md:mb-6">
+                From Humble Beginnings to <span className="text-[#C9A46A]">Diversification</span>
               </h2>
               <div className="space-y-3 md:space-y-4 text-xs md:text-base text-gray-600 leading-relaxed">
                 {journeyHighlights.map((item) => (
                   <div key={item.id} className="flex items-start gap-3">
-                    <CheckCircle className="w-4 h-4 md:w-5 md:h-5 text-medical-blue flex-shrink-0 mt-0.5" />
+                    <CheckCircle className="w-4 h-4 md:w-5 md:h-5 text-[#C9A46A] flex-shrink-0 mt-0.5" />
                     <div>
-                      <p className="font-semibold text-gray-900">{item.title} <span className="text-gray-500">({item.year})</span></p>
+                      <p className="font-semibold text-[#222222]">{item.title} <span className="text-gray-500">({item.year})</span></p>
                       <p>{item.description}</p>
                     </div>
                   </div>
@@ -183,11 +183,11 @@ export default function AboutPage() {
       </section>
 
       {/* Mission, Vision, Values */}
-      <section className="py-10 md:py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-gray-900 to-gray-800 text-white">
+      <section className="py-10 md:py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-[#222222] to-[#3d352d] text-white">
         <div className="max-w-7xl mx-auto">
           <motion.div {...fadeIn} className="text-center mb-16">
             <h2 className="text-xl md:text-4xl font-bold mb-2 md:mb-4">
-              Our <span className="text-medical-blue">Commitment</span>
+              Our <span className="text-[#C9A46A]">Commitment</span>
             </h2>
             <p className="text-xs md:text-lg text-gray-300 max-w-3xl mx-auto">
               {brand.name} operates with a long-term vision rooted in resilience, trust, and meaningful growth.
@@ -200,10 +200,10 @@ export default function AboutPage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-[7px] md:rounded-[8px] p-3 md:p-8"
+              className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-sm md:rounded-sm p-3 md:p-8"
             >
-              <div className="w-8 h-8 md:w-14 md:h-14 rounded-[7px] md:rounded-[7px] bg-medical-blue/20 flex items-center justify-center mb-2 md:mb-6">
-                <Target className="w-4 h-4 md:w-7 md:h-7 text-medical-blue" />
+              <div className="w-8 h-8 md:w-14 md:h-14 rounded-sm md:rounded-sm bg-[#C9A46A]/20 flex items-center justify-center mb-2 md:mb-6">
+                <Target className="w-4 h-4 md:w-7 md:h-7 text-[#C9A46A]" />
               </div>
               <h3 className="text-[11px] md:text-xl font-bold mb-1 md:mb-3">Our Mission</h3>
               <p className="text-[9px] md:text-base text-gray-300 leading-snug md:leading-relaxed">
@@ -216,10 +216,10 @@ export default function AboutPage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.2 }}
-              className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-[7px] md:rounded-[8px] p-3 md:p-8"
+              className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-sm md:rounded-sm p-3 md:p-8"
             >
-              <div className="w-8 h-8 md:w-14 md:h-14 rounded-[7px] md:rounded-[7px] bg-medical-blue/20 flex items-center justify-center mb-2 md:mb-6">
-                <Eye className="w-4 h-4 md:w-7 md:h-7 text-medical-blue" />
+              <div className="w-8 h-8 md:w-14 md:h-14 rounded-sm md:rounded-sm bg-[#C9A46A]/20 flex items-center justify-center mb-2 md:mb-6">
+                <Eye className="w-4 h-4 md:w-7 md:h-7 text-[#C9A46A]" />
               </div>
               <h3 className="text-[11px] md:text-xl font-bold mb-1 md:mb-3">Our Vision</h3>
               <p className="text-[9px] md:text-base text-gray-300 leading-snug md:leading-relaxed">
@@ -232,10 +232,10 @@ export default function AboutPage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.3 }}
-              className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-[7px] md:rounded-[8px] p-3 md:p-8"
+              className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-sm md:rounded-sm p-3 md:p-8"
             >
-              <div className="w-8 h-8 md:w-14 md:h-14 rounded-[7px] md:rounded-[7px] bg-medical-blue/20 flex items-center justify-center mb-2 md:mb-6">
-                <Shield className="w-4 h-4 md:w-7 md:h-7 text-medical-blue" />
+              <div className="w-8 h-8 md:w-14 md:h-14 rounded-sm md:rounded-sm bg-[#C9A46A]/20 flex items-center justify-center mb-2 md:mb-6">
+                <Shield className="w-4 h-4 md:w-7 md:h-7 text-[#C9A46A]" />
               </div>
               <h3 className="text-[11px] md:text-xl font-bold mb-1 md:mb-3">Our Values</h3>
               <p className="text-[9px] md:text-base text-gray-300 leading-snug md:leading-relaxed">
@@ -250,12 +250,12 @@ export default function AboutPage() {
       <section className="py-10 md:py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <motion.div {...fadeIn} className="text-center mb-6 md:mb-16">
-            <div className="inline-flex items-center gap-1.5 md:gap-2 px-2 py-0.5 md:px-3 md:py-1 rounded-[7px] bg-medical-blue/10 text-medical-red text-[10px] md:text-sm font-semibold mb-2 md:mb-4">
+            <div className="inline-flex items-center gap-1.5 md:gap-2 px-2 py-0.5 md:px-3 md:py-1 rounded-sm bg-[#C9A46A]/10 text-[#C9A46A] text-[10px] md:text-sm font-semibold mb-2 md:mb-4">
               <Globe className="w-3 h-3 md:w-4 md:h-4" />
               Growth Footprint
             </div>
-            <h2 className="text-xl md:text-4xl font-bold text-gray-900 mb-2 md:mb-4">
-              Operational Presence & <span className="text-medical-blue">Expansion</span>
+            <h2 className="text-xl md:text-4xl font-bold text-[#222222] mb-2 md:mb-4">
+              Operational Presence & <span className="text-[#C9A46A]">Expansion</span>
             </h2>
             <p className="text-xs md:text-lg text-gray-600 max-w-3xl mx-auto">
               {brand.shortName} continues to grow through anchored local ventures, strong operational hubs, and expansion-minded businesses positioned for broader market reach.
@@ -270,15 +270,15 @@ export default function AboutPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1 }}
-                className="bg-white rounded-[7px] md:rounded-[8px] border border-gray-100 shadow-lg p-3 md:p-6 hover:shadow-xl transition-shadow"
+                className="bg-white rounded-sm md:rounded-sm border border-[#E7DED2] shadow-lg p-3 md:p-6 hover:shadow-xl transition-shadow"
               >
                 <div className="flex items-start gap-2 md:gap-4">
-                  <div className="w-8 h-8 md:w-12 md:h-12 rounded-[7px] md:rounded-[7px] bg-medical-blue/10 flex items-center justify-center flex-shrink-0">
-                    <MapPin className="w-4 h-4 md:w-6 md:h-6 text-medical-blue" />
+                  <div className="w-8 h-8 md:w-12 md:h-12 rounded-sm md:rounded-sm bg-[#C9A46A]/10 flex items-center justify-center flex-shrink-0">
+                    <MapPin className="w-4 h-4 md:w-6 md:h-6 text-[#C9A46A]" />
                   </div>
                   <div>
-                    <h3 className="text-[11px] md:text-lg font-bold text-gray-900">{office.country}</h3>
-                    <p className="text-[9px] md:text-sm text-medical-blue font-semibold">{office.role}</p>
+                    <h3 className="text-[11px] md:text-lg font-bold text-[#222222]">{office.country}</h3>
+                    <p className="text-[9px] md:text-sm text-[#C9A46A] font-semibold">{office.role}</p>
                     <p className="text-[9px] md:text-sm text-gray-500 mt-0.5 md:mt-1">{office.city}</p>
                   </div>
                 </div>
@@ -286,7 +286,7 @@ export default function AboutPage() {
             ))}
           </div>
 
-          <motion.div {...fadeIn} className="bg-medical-blue/5 rounded-[7px] md:rounded-[8px] p-4 md:p-10">
+          <motion.div {...fadeIn} className="bg-[#C9A46A]/5 rounded-sm md:rounded-sm p-4 md:p-10">
             <p className="text-xs md:text-lg text-gray-700 leading-relaxed">
               Our growth model is deliberate and practical. We prioritize strong foundations, disciplined execution, and ventures that can scale responsibly from local success into wider partnership and trade opportunities.
             </p>
@@ -295,11 +295,11 @@ export default function AboutPage() {
       </section>
 
       {/* Diversified Sectors */}
-      <section className="py-10 md:py-20 px-4 sm:px-6 lg:px-8 bg-gray-50">
+      <section className="py-10 md:py-20 px-4 sm:px-6 lg:px-8 bg-[#F8F4EF]">
         <div className="max-w-7xl mx-auto">
           <motion.div {...fadeIn} className="text-center mb-6 md:mb-16">
-            <h2 className="text-xl md:text-4xl font-bold text-gray-900 mb-2 md:mb-4">
-              Diversified <span className="text-medical-blue">Sectors</span>
+            <h2 className="text-xl md:text-4xl font-bold text-[#222222] mb-2 md:mb-4">
+              Diversified <span className="text-[#C9A46A]">Sectors</span>
             </h2>
             <p className="text-xs md:text-lg text-gray-600 max-w-3xl mx-auto">
               {brand.name} grows through multiple complementary ventures, reflecting a business model built on diversification, market understanding, and long-term value creation.
@@ -314,12 +314,12 @@ export default function AboutPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.08 }}
-                className="group bg-white rounded-[7px] md:rounded-[8px] p-3 md:p-6 hover:bg-medical-blue/5 transition-all border border-gray-100 hover:border-medical-blue/20 shadow-sm"
+                className="group bg-white rounded-sm md:rounded-sm p-3 md:p-6 hover:bg-[#C9A46A]/5 transition-all border border-[#E7DED2] hover:border-[#C9A46A]/20 shadow-sm"
               >
-                <div className="w-8 h-8 md:w-12 md:h-12 rounded-[7px] md:rounded-[7px] bg-medical-blue/10 group-hover:bg-medical-blue/20 flex items-center justify-center mb-2 md:mb-4 transition-colors">
-                  <sector.icon className="w-4 h-4 md:w-6 md:h-6 text-medical-blue" />
+                <div className="w-8 h-8 md:w-12 md:h-12 rounded-sm md:rounded-sm bg-[#C9A46A]/10 group-hover:bg-[#C9A46A]/20 flex items-center justify-center mb-2 md:mb-4 transition-colors">
+                  <sector.icon className="w-4 h-4 md:w-6 md:h-6 text-[#C9A46A]" />
                 </div>
-                <h3 className="text-[10px] md:text-lg font-bold text-gray-900">{sector.name}</h3>
+                <h3 className="text-[10px] md:text-lg font-bold text-[#222222]">{sector.name}</h3>
               </motion.div>
             ))}
           </div>
@@ -329,7 +329,6 @@ export default function AboutPage() {
               Each venture contributes to a broader group strategy grounded in discipline, brand building, and sustainable growth. From distribution and hospitality to industrial and export activity, the group is structured to expand with clarity and purpose.
             </p>
             <Button 
-              variant="medical" 
               size="lg" 
               className="mt-8"
               onClick={() => window.location.href = '/departments'}
@@ -342,7 +341,7 @@ export default function AboutPage() {
       </section>
 
       {/* Commitment to Future */}
-      <section className="py-10 md:py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-medical-blue to-medical-red text-white">
+      <section className="py-10 md:py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-[#C9A46A] to-[#C9A46A] text-white">
         <div className="max-w-5xl mx-auto text-center">
           <motion.div {...fadeIn}>
             <Heart className="w-8 h-8 md:w-12 md:h-12 mx-auto mb-3 md:mb-6 text-white/80" />
@@ -361,7 +360,7 @@ export default function AboutPage() {
             <div className="mt-10 flex flex-wrap justify-center gap-4">
               <Button 
                 size="lg" 
-                className="bg-white text-medical-red hover:bg-gray-100"
+                className="bg-white text-[#C9A46A] hover:bg-gray-100"
                 onClick={() => window.location.href = '/partnerships'}
               >
                 Partner With Us

@@ -33,7 +33,7 @@ const Services = () => {
       title: 'Diagnostic Imaging',
       description: 'Advanced imaging services for accurate diagnosis and treatment planning.',
       features: ['Digital X-ray Machine', 'Musculo-skeletal Ultrasound', 'Real-time Imaging'],
-      color: 'bg-medical-blue',
+      color: 'bg-[#C9A46A]',
       boneModel: 'knee' as const
     },
     {
@@ -41,7 +41,7 @@ const Services = () => {
       title: 'Medical Laboratory',
       description: 'Comprehensive laboratory services with 10+ specialized tests for complete health assessment.',
       features: ['CBC', 'Coagulation Profile', 'FBS/RBS', 'ESR', 'Renal Function Test', 'Urine Analysis', 'CRP', 'Chemistry', 'Vitamin D', 'RF', 'Liver Function Test'],
-      color: 'bg-medical-green',
+      color: 'bg-[#C9A46A]',
       boneModel: 'femur' as const
     }
   ]
@@ -52,7 +52,7 @@ const Services = () => {
       title: 'PRP Injection',
       description: 'Platelet Rich Plasma injection using your own blood to stimulate healing in damaged tissues.',
       features: ['Tendon Repair', 'Ligament Healing', 'Joint Treatment', 'Pain Reduction', 'Improved Function'],
-      color: 'bg-medical-teal',
+      color: 'bg-[#C9A46A]',
       boneModel: 'shoulder' as const
     },
     {
@@ -60,7 +60,7 @@ const Services = () => {
       title: 'Conservative Management',
       description: 'Non-surgical treatment of fractures and dislocations with expert care.',
       features: ['Fracture Management', 'Dislocation Treatment', 'Cast Application', 'Follow-up Care'],
-      color: 'bg-teal-600',
+      color: 'bg-[#C9A46A]',
       boneModel: 'femur' as const
     }
   ]
@@ -71,7 +71,7 @@ const Services = () => {
       title: 'Joint Replacement Surgery',
       description: 'Complete joint replacement services to restore function and movement.',
       features: ['Total Hip Replacement', 'Total Knee Replacement', 'Shoulder Replacement', 'Hemiarthroplasty'],
-      color: 'bg-medical-blue',
+      color: 'bg-[#C9A46A]',
       boneModel: 'hip' as const
     },
     {
@@ -79,7 +79,7 @@ const Services = () => {
       title: 'Fracture Surgery',
       description: 'Surgical treatment of simple and complicated fractures with advanced techniques.',
       features: ['Simple Fractures', 'Complicated Fractures', 'Internal Fixation', 'External Fixation'],
-      color: 'bg-teal-600',
+      color: 'bg-[#C9A46A]',
       boneModel: 'femur' as const
     },
     {
@@ -87,7 +87,7 @@ const Services = () => {
       title: 'Hand Surgery',
       description: 'Specialized surgical procedures for hand and wrist conditions.',
       features: ['Hand Trauma', 'Wrist Surgery', 'Tendon Repair', 'Nerve Repair'],
-      color: 'bg-medical-green',
+      color: 'bg-[#C9A46A]',
       boneModel: 'shoulder' as const
     },
     {
@@ -95,7 +95,7 @@ const Services = () => {
       title: 'Neurosurgery',
       description: 'Advanced neurosurgical procedures for spine and neurological conditions.',
       features: ['Spine Surgery', 'Neurological Disorders', 'Minimally Invasive Procedures'],
-      color: 'bg-teal-700',
+      color: 'bg-[#C9A46A]',
       boneModel: 'spine' as const
     }
   ]
@@ -106,7 +106,7 @@ const Services = () => {
       title: 'Pediatric Orthopedics',
       description: 'Specialized orthopedic care for children and adolescents.',
       features: ['Congenital Conditions', 'Growth Disorders', 'Pediatric Fractures', 'Child-Friendly Care'],
-      color: 'bg-medical-blue',
+      color: 'bg-[#C9A46A]',
       boneModel: 'femur' as const
     },
     {
@@ -114,7 +114,7 @@ const Services = () => {
       title: 'Bone Health & Osteoporosis',
       description: 'Comprehensive management of bone health and osteoporosis treatment.',
       features: ['Bone Density Testing', 'Osteoporosis Management', 'Prevention Programs', 'Nutritional Counseling'],
-      color: 'bg-medical-green',
+      color: 'bg-[#C9A46A]',
       boneModel: 'spine' as const
     },
     {
@@ -122,7 +122,7 @@ const Services = () => {
       title: 'Physiotherapy',
       description: 'Comprehensive rehabilitation services to restore function and mobility.',
       features: ['Post-Surgery Rehab', 'Mobility Training', 'Pain Management', 'Recovery Programs'],
-      color: 'bg-medical-teal',
+      color: 'bg-[#C9A46A]',
       boneModel: 'shoulder' as const
     }
   ]
@@ -133,7 +133,7 @@ const Services = () => {
       title: 'Pharmacy',
       description: 'On-site pharmacy services for convenient medication access.',
       features: ['Prescription Medications', 'Pain Management', 'Post-Surgery Medications', 'Consultation'],
-      color: 'bg-teal-600',
+      color: 'bg-[#C9A46A]',
       boneModel: 'knee' as const
     },
     {
@@ -141,7 +141,7 @@ const Services = () => {
       title: 'Ambulance Service',
       description: 'Emergency ambulance services for urgent medical transportation.',
       features: ['Emergency Transport', '24/7 Availability', 'Medical Equipment', 'Trained Staff'],
-      color: 'bg-teal-700',
+      color: 'bg-[#C9A46A]',
       boneModel: 'femur' as const
     }
   ]
@@ -156,11 +156,11 @@ const Services = () => {
   ]
 
   return (
-    <section id="services" className="py-20 bg-gradient-to-b from-gray-50 to-white relative overflow-hidden">
+    <section id="services" className="py-20 bg-gradient-to-b from-[#F8F4EF] to-white relative overflow-hidden">
       {/* Background Decoration */}
       <div className="absolute inset-0 opacity-20">
-        <div className="absolute top-20 left-20 w-96 h-96 bg-medical-green/20 rounded-[7px] blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-20 right-20 w-80 h-80 bg-medical-teal/20 rounded-[7px] blur-3xl animate-pulse" style={{ animationDelay: '2s' }}></div>
+        <div className="absolute top-20 left-20 w-96 h-96 bg-[#C9A46A]/20 rounded-sm blur-3xl animate-pulse"></div>
+        <div className="absolute bottom-20 right-20 w-80 h-80 bg-[#C9A46A]/20 rounded-sm blur-3xl animate-pulse" style={{ animationDelay: '2s' }}></div>
       </div>
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -177,12 +177,12 @@ const Services = () => {
             viewport={{ once: true }}
             className="inline-block mb-4"
           >
-            <span className="px-4 py-2 bg-medical-blue text-white rounded-[7px] text-sm font-semibold shadow-lg">
+            <span className="px-4 py-2 bg-[#C9A46A] text-white rounded-sm text-sm font-semibold shadow-lg">
               What We Offer
             </span>
           </motion.div>
           <h2 className="text-4xl md:text-5xl font-bold font-heading mb-6">
-            Our <span className="text-gradient">Services</span>
+            Our <span className="text-[#C9A46A]">Services</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             We specialize in advanced orthopedics and joint replacement services, offering comprehensive care for bone, joint and musculo-skeletal disorders with the most effective surgical and non-surgical treatments.
@@ -279,10 +279,10 @@ const Services = () => {
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="bg-white rounded-[8px] p-8 shadow-lg mb-16"
+          className="bg-white rounded-sm p-8 shadow-lg mb-16"
         >
           <div className="text-center mb-8">
-            <Target className="w-12 h-12 text-medical-teal mx-auto mb-4" />
+            <Target className="w-12 h-12 text-[#C9A46A] mx-auto mb-4" />
             <h3 className="text-2xl font-bold text-gray-900 mb-4">
               Common Cases We Treat
             </h3>
@@ -298,7 +298,7 @@ const Services = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className="flex items-center space-x-3 p-3 bg-gray-50 rounded-[7px]"
+                className="flex items-center space-x-3 p-3 bg-gray-50 rounded-sm"
               >
                 <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" />
                 <span className="text-gray-700 font-medium">{condition}</span>
@@ -314,7 +314,7 @@ const Services = () => {
           viewport={{ once: true }}
           className="text-center mt-16"
         >
-          <div className="bg-white rounded-[8px] p-8 shadow-lg max-w-4xl mx-auto">
+          <div className="bg-white rounded-sm p-8 shadow-lg max-w-4xl mx-auto">
             <h3 className="text-2xl font-bold text-gray-900 mb-4">
               Need Immediate Orthopedic Care?
             </h3>
@@ -324,7 +324,6 @@ const Services = () => {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button 
                 size="lg" 
-                variant="medical"
                 onClick={() => window.open('tel:+251911249528')}
               >
                 Emergency: +251 911 249 528
@@ -360,10 +359,10 @@ const ServiceCard = ({ service, index }: { service: any, index: number }) => {
             <BoneModel3D type={service.boneModel} className="w-full h-full" animated={false} />
           </div>
           
-          <div className={`w-16 h-16 mx-auto rounded-[8px] ${service.color} flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300 relative z-10`}>
+          <div className={`w-16 h-16 mx-auto rounded-sm ${service.color} flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300 relative z-10`}>
             <service.icon className="w-8 h-8 text-white" />
           </div>
-          <CardTitle className="text-xl font-bold text-gray-900 group-hover:text-medical-blue transition-colors">
+          <CardTitle className="text-xl font-bold text-gray-900 group-hover:text-[#C9A46A] transition-colors">
             {service.title}
           </CardTitle>
           <CardDescription className="text-gray-600">
@@ -381,7 +380,7 @@ const ServiceCard = ({ service, index }: { service: any, index: number }) => {
           </ul>
           <Button 
             variant="outline" 
-            className="w-full group-hover:bg-medical-blue group-hover:text-white group-hover:border-medical-blue transition-all duration-300"
+            className="w-full group-hover:bg-[#C9A46A] group-hover:text-white group-hover:border-[#C9A46A] transition-all duration-300"
           >
             Learn More
             <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />

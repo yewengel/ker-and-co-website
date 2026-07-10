@@ -60,9 +60,9 @@ export default function CompliancePage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: idx * 0.08 }}
-              className="bg-white rounded-[7px] md:rounded-[8px] border border-gray-100 shadow-sm p-3 md:p-8"
+              className="bg-white rounded-sm md:rounded-sm border border-gray-100 shadow-sm p-3 md:p-8"
             >
-              <div className="inline-flex w-8 h-8 md:w-12 md:h-12 rounded-[7px] md:rounded-[8px] bg-teal-600/10 items-center justify-center">
+              <div className="inline-flex w-8 h-8 md:w-12 md:h-12 rounded-sm md:rounded-sm bg-teal-600/10 items-center justify-center">
                 <item.icon className="w-4 h-4 md:w-6 md:h-6 text-teal-600" />
               </div>
               <h2 className="text-[11px] md:text-xl font-bold text-gray-900 mt-2 md:mt-4">{item.title}</h2>
@@ -71,7 +71,7 @@ export default function CompliancePage() {
           ))}
         </div>
 
-        <div className="max-w-7xl mx-auto mt-4 md:mt-10 bg-white rounded-[7px] md:rounded-[8px] border border-gray-100 shadow-lg p-4 md:p-8">
+        <div className="max-w-7xl mx-auto mt-4 md:mt-10 bg-white rounded-sm md:rounded-sm border border-gray-100 shadow-lg p-4 md:p-8">
           <h2 className="text-base md:text-2xl font-bold text-gray-900">Reporting & Inquiries</h2>
           <p className="text-[10px] md:text-base text-gray-600 mt-1 md:mt-2">
             For compliance-related questions or reporting, please contact our team.

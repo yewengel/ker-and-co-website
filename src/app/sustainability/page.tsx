@@ -82,7 +82,7 @@ export default function SustainabilityPage() {
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="relative overflow-hidden rounded-[8px] shadow-xl bg-white"
+            className="relative overflow-hidden rounded-sm shadow-xl bg-white"
           >
             <div className="relative aspect-[16/10]">
               <Image
@@ -94,7 +94,7 @@ export default function SustainabilityPage() {
               />
             </div>
             <div className="p-7">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-[7px] bg-teal-600/10 text-teal-600 text-sm font-semibold">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-sm bg-teal-600/10 text-teal-600 text-sm font-semibold">
                 <HeartHandshake className="w-4 h-4" />
                 Contributions
               </div>
@@ -125,9 +125,9 @@ export default function SustainabilityPage() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: idx * 0.08 }}
-                  className="bg-white rounded-[8px] border border-gray-100 shadow-sm p-6"
+                  className="bg-white rounded-sm border border-gray-100 shadow-sm p-6"
                 >
-                  <div className="inline-flex w-12 h-12 rounded-[8px] bg-teal-600/10 items-center justify-center">
+                  <div className="inline-flex w-12 h-12 rounded-sm bg-teal-600/10 items-center justify-center">
                     <item.icon className="w-6 h-6 text-teal-600" />
                   </div>
                   <h3 className="text-lg font-bold text-gray-900 mt-4">{item.title}</h3>
@@ -140,7 +140,7 @@ export default function SustainabilityPage() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="bg-white rounded-[8px] border border-gray-100 shadow-lg p-8"
+              className="bg-white rounded-sm border border-gray-100 shadow-lg p-8"
             >
               <h2 className="text-2xl font-bold text-gray-900 mb-2">Our contributions</h2>
               <p className="text-gray-600 mb-6">
@@ -148,7 +148,7 @@ export default function SustainabilityPage() {
               </p>
               <div className="grid md:grid-cols-2 gap-5">
                 {contributions.map((c) => (
-                  <div key={c.title} className="rounded-[8px] bg-gray-50 border border-gray-100 p-5">
+                  <div key={c.title} className="rounded-sm bg-gray-50 border border-gray-100 p-5">
                     <div className="font-semibold text-gray-900">{c.title}</div>
                     <div className="text-sm text-gray-600 mt-2 leading-relaxed">{c.description}</div>
                   </div>

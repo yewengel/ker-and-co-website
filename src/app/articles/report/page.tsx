@@ -73,14 +73,14 @@ export default function ReportViewPage() {
               href={report.pdf_url}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium text-white bg-medical-blue rounded-[7px] hover:bg-medical-blue/90 transition-colors"
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium text-white bg-medical-blue rounded-sm hover:bg-medical-blue/90 transition-colors"
             >
               <Download className="w-3.5 h-3.5" />
               Download
             </a>
             <button
               onClick={toggleFullscreen}
-              className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium text-gray-300 bg-gray-700 rounded-[7px] hover:bg-gray-600 transition-colors"
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium text-gray-300 bg-gray-700 rounded-sm hover:bg-gray-600 transition-colors"
             >
               <Minimize2 className="w-3.5 h-3.5" />
               Exit Fullscreen
@@ -116,14 +116,14 @@ export default function ReportViewPage() {
           </Button>
 
           {loading ? (
-            <div className="bg-white rounded-[8px] border border-gray-100 shadow-lg p-10">
+            <div className="bg-white rounded-sm border border-gray-100 shadow-lg p-10">
               <div className="flex items-center gap-3 text-gray-500">
-                <div className="w-5 h-5 border-2 border-medical-blue border-t-transparent rounded-[7px] animate-spin" />
+                <div className="w-5 h-5 border-2 border-medical-blue border-t-transparent rounded-sm animate-spin" />
                 Loading report...
               </div>
             </div>
           ) : notFound || !report ? (
-            <div className="bg-white rounded-[8px] border border-gray-100 shadow-lg p-10">
+            <div className="bg-white rounded-sm border border-gray-100 shadow-lg p-10">
               <h1 className="text-2xl font-bold text-gray-900">Report not found</h1>
               <p className="text-gray-600 mt-2">
                 The requested annual report does not exist or is unavailable.
@@ -141,17 +141,17 @@ export default function ReportViewPage() {
               transition={{ duration: 0.35 }}
             >
               {/* Report Header */}
-              <div className="bg-white rounded-[8px] border border-gray-100 shadow-xl overflow-hidden mb-6">
+              <div className="bg-white rounded-sm border border-gray-100 shadow-xl overflow-hidden mb-6">
                 <div className="bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 p-8 md:p-10">
                   <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-6">
                     {/* Left: Report info */}
                     <div className="flex-1">
                       <div className="flex items-center gap-2 mb-4">
-                        <span className="inline-flex items-center px-3 py-1 text-xs font-semibold text-white bg-medical-blue rounded-[7px]">
+                        <span className="inline-flex items-center px-3 py-1 text-xs font-semibold text-white bg-medical-blue rounded-sm">
                           <BookOpen className="w-3 h-3 mr-1" />
                           Annual Report
                         </span>
-                        <span className="inline-flex items-center px-3 py-1 text-xs font-semibold text-white/80 bg-white/10 rounded-[7px]">
+                        <span className="inline-flex items-center px-3 py-1 text-xs font-semibold text-white/80 bg-white/10 rounded-sm">
                           <Calendar className="w-3 h-3 mr-1" />
                           {report.year}
                         </span>
@@ -172,14 +172,14 @@ export default function ReportViewPage() {
                           href={report.pdf_url}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="inline-flex items-center gap-2 px-5 py-2.5 text-sm font-semibold text-white bg-medical-blue rounded-[7px] hover:bg-medical-blue/90 transition-colors shadow-lg shadow-medical-blue/25"
+                          className="inline-flex items-center gap-2 px-5 py-2.5 text-sm font-semibold text-white bg-medical-blue rounded-sm hover:bg-medical-blue/90 transition-colors shadow-lg shadow-medical-blue/25"
                         >
                           <Download className="w-4 h-4" />
                           Download PDF
                         </a>
                         <button
                           onClick={toggleFullscreen}
-                          className="inline-flex items-center gap-2 px-5 py-2.5 text-sm font-semibold text-white bg-white/10 rounded-[7px] hover:bg-white/20 transition-colors"
+                          className="inline-flex items-center gap-2 px-5 py-2.5 text-sm font-semibold text-white bg-white/10 rounded-sm hover:bg-white/20 transition-colors"
                         >
                           <Maximize2 className="w-4 h-4" />
                           Fullscreen
@@ -190,7 +190,7 @@ export default function ReportViewPage() {
                     {/* Right: Mini cover preview */}
                     {report.cover_image_url && (
                       <div className="hidden md:block w-36 flex-shrink-0">
-                        <div className="aspect-[3/4] rounded-[7px] overflow-hidden shadow-2xl border-2 border-white/10">
+                        <div className="aspect-[3/4] rounded-sm overflow-hidden shadow-2xl border-2 border-white/10">
                           <img
                             src={report.cover_image_url}
                             alt={report.title}
@@ -204,7 +204,7 @@ export default function ReportViewPage() {
               </div>
 
               {/* PDF Viewer */}
-              <div className="bg-white rounded-[8px] border border-gray-100 shadow-xl overflow-hidden">
+              <div className="bg-white rounded-sm border border-gray-100 shadow-xl overflow-hidden">
                 <div className="flex items-center justify-between px-6 py-4 border-b border-gray-100 bg-gray-50/50">
                   <div className="flex items-center gap-2 text-sm text-gray-600">
                     <FileText className="w-4 h-4 text-medical-blue" />

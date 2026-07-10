@@ -52,7 +52,7 @@ export default function ProjectsPage() {
             transition={{ duration: 0.6 }}
           >
             <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-5 font-heading">
-              Our <span className="text-teal-600">Projects</span>
+              Our <span className="text-[#C9A46A]">Projects</span>
             </h1>
             <p className="text-lg md:text-xl text-gray-600 max-w-4xl mx-auto">
               Explore our flagship projects and the work we deliver across exploration, quarry development, and responsible operations.
@@ -70,7 +70,7 @@ export default function ProjectsPage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: idx * 0.1 }}
-              className="group rounded-[8px] overflow-hidden bg-white shadow-lg border border-gray-100 hover:shadow-2xl transition-all duration-300"
+              className="group rounded-sm overflow-hidden bg-white shadow-lg border border-gray-100 hover:shadow-2xl transition-all duration-300"
             >
               <div className="relative aspect-[16/10] overflow-hidden bg-gray-200">
                 <img
@@ -80,8 +80,8 @@ export default function ProjectsPage() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
                 <div className="absolute bottom-0 left-0 right-0 p-6">
-                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-[7px] bg-white/15 text-white text-sm font-semibold backdrop-blur">
-                    <p.icon className="w-4 h-4 text-teal-600" />
+                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-sm bg-white/15 text-white text-sm font-semibold backdrop-blur">
+                    <p.icon className="w-4 h-4 text-[#C9A46A]" />
                     {p.subtitle}
                   </div>
                   <h2 className="text-2xl md:text-3xl font-bold text-white mt-3">{p.title}</h2>
@@ -91,7 +91,7 @@ export default function ProjectsPage() {
               <div className="p-7">
                 <p className="text-gray-600 leading-relaxed">{p.description}</p>
                 <div className="mt-6 flex flex-col sm:flex-row gap-3">
-                  <Button variant="medical" onClick={() => (window.location.href = p.href)}>
+                  <Button onClick={() => (window.location.href = p.href)}>
                     View details
                     <ArrowRight className="w-4 h-4 ml-2" />
                   </Button>

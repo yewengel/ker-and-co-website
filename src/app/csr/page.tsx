@@ -43,18 +43,18 @@ export default function CSRPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-[7px] bg-medical-blue/10 text-medical-red text-sm font-semibold">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-sm bg-[#C9A46A]/10 text-[#C9A46A] text-sm font-semibold">
               <HeartHandshake className="w-4 h-4" />
               CSR & Community Impact
             </div>
             <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mt-4 mb-5 font-heading">
-              Community <span className="text-gradient">Impact</span>
+              Community <span className="text-[#C9A46A]">Impact</span>
             </h1>
             <p className="text-lg md:text-xl text-gray-600 leading-relaxed">
               {brand.name} is committed to building ventures that create opportunity, strengthen communities, and support sustainable local development.
             </p>
             <div className="mt-8 flex flex-col sm:flex-row gap-3">
-              <Button variant="medical" onClick={() => (window.location.href = '/gallery/')}
+              <Button onClick={() => (window.location.href = '/gallery/')}
               >
                 View CSR media
                 <ArrowRight className="w-4 h-4 ml-2" />
@@ -70,7 +70,7 @@ export default function CSRPage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="relative overflow-hidden rounded-[8px] shadow-xl bg-gray-200"
+            className="relative overflow-hidden rounded-sm shadow-xl bg-gray-200"
           >
             <div className="relative aspect-[16/11]">
               <img
@@ -94,10 +94,10 @@ export default function CSRPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: idx * 0.08 }}
-                className="rounded-[8px] bg-white border border-gray-100 shadow-sm p-7"
+                className="rounded-sm bg-white border border-gray-100 shadow-sm p-7"
               >
-                <div className="inline-flex w-12 h-12 rounded-[8px] bg-medical-blue/10 items-center justify-center">
-                  <h.icon className="w-6 h-6 text-medical-blue" />
+                <div className="inline-flex w-12 h-12 rounded-sm bg-[#C9A46A]/10 items-center justify-center">
+                  <h.icon className="w-6 h-6 text-[#C9A46A]" />
                 </div>
                 <h2 className="text-xl font-bold text-gray-900 mt-4">{h.title}</h2>
                 <p className="text-gray-600 mt-2 leading-relaxed">{h.description}</p>
@@ -110,7 +110,7 @@ export default function CSRPage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="mt-12 rounded-[8px] bg-medical-blue/5 border border-medical-blue/20 p-8 md:p-10"
+            className="mt-12 rounded-sm bg-[#C9A46A]/5 border border-[#C9A46A]/20 p-8 md:p-10"
           >
             <h2 className="text-2xl md:text-3xl font-bold text-gray-900">Our Approach</h2>
             <p className="text-gray-600 mt-3 leading-relaxed max-w-4xl">
@@ -118,9 +118,9 @@ export default function CSRPage() {
             </p>
           </motion.div>
 
-          <div className="mt-12 rounded-[8px] bg-gradient-to-r from-medical-blue to-medical-red text-white p-8 md:p-10 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+          <div className="mt-12 rounded-sm bg-gradient-to-r from-[#C9A46A] to-[#C9A46A] text-white p-8 md:p-10 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
             <div>
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-[7px] bg-white/10 text-white text-sm font-semibold">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-sm bg-white/10 text-white text-sm font-semibold">
                 <HeartHandshake className="w-4 h-4" />
                 Learn More
               </div>
@@ -133,7 +133,7 @@ export default function CSRPage() {
               variant="outline"
               size="lg"
               onClick={() => (window.location.href = '/gallery')}
-              className="bg-white text-medical-red border-white hover:bg-gray-100"
+              className="bg-white text-[#C9A46A] border-white hover:bg-gray-100"
             >
               Open Gallery
               <ArrowRight className="w-5 h-5 ml-2" />

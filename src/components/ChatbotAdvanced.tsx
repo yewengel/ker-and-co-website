@@ -234,7 +234,7 @@ const ChatbotAdvanced = () => {
       >
         <Button
           onClick={() => setIsOpen(!isOpen)}
-          className="w-14 h-14 rounded-[7px] bg-gradient-to-r from-medical-blue to-medical-red text-white shadow-lg hover:shadow-xl transition-all duration-300"
+          className="w-14 h-14 rounded-sm bg-gradient-to-r from-medical-blue to-medical-red text-white shadow-lg hover:shadow-xl transition-all duration-300"
           size="icon"
         >
           {isOpen ? <X className="w-6 h-6" /> : <MessageCircle className="w-6 h-6" />}
@@ -248,12 +248,12 @@ const ChatbotAdvanced = () => {
             initial={{ opacity: 0, y: 100, scale: 0.8 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 100, scale: 0.8 }}
-            className="fixed bottom-24 right-6 w-96 h-[500px] bg-white rounded-[8px] shadow-2xl border border-gray-200 z-40 flex flex-col overflow-hidden"
+            className="fixed bottom-24 right-6 w-96 h-[500px] bg-white rounded-sm shadow-2xl border border-gray-200 z-40 flex flex-col overflow-hidden"
           >
             {/* Header */}
             <div className="bg-gradient-to-r from-medical-blue to-medical-red text-white p-4 flex items-center justify-between">
               <div className="flex items-center space-x-3">
-                <div className="w-10 h-10 bg-white/20 rounded-[7px] flex items-center justify-center">
+                <div className="w-10 h-10 bg-white/20 rounded-sm flex items-center justify-center">
                   <Bot className="w-6 h-6" />
                 </div>
                 <div>
@@ -267,7 +267,7 @@ const ChatbotAdvanced = () => {
               {/* AI Toggle */}
               <button
                 onClick={() => setUseAI(!useAI)}
-                className="text-xs bg-white/20 px-2 py-1 rounded-[7px] hover:bg-white/30 transition-colors"
+                className="text-xs bg-white/20 px-2 py-1 rounded-sm hover:bg-white/30 transition-colors"
               >
                 {useAI ? 'AI' : 'Basic'}
               </button>
@@ -282,7 +282,7 @@ const ChatbotAdvanced = () => {
                 >
                   <div className={`max-w-[80%] ${message.isBot ? 'order-2' : 'order-1'}`}>
                     <div
-                      className={`px-4 py-2 rounded-[8px] ${
+                      className={`px-4 py-2 rounded-sm ${
                         message.isBot
                           ? 'bg-gray-100 text-gray-800'
                           : 'bg-gradient-to-r from-medical-blue to-medical-red text-white'
@@ -298,7 +298,7 @@ const ChatbotAdvanced = () => {
                           <button
                             key={index}
                             onClick={() => handleSendMessage(reply)}
-                            className="px-3 py-1 text-xs bg-medical-blue/10 text-medical-blue rounded-[7px] hover:bg-medical-blue/20 transition-colors"
+                            className="px-3 py-1 text-xs bg-medical-blue/10 text-medical-blue rounded-sm hover:bg-medical-blue/20 transition-colors"
                           >
                             {reply}
                           </button>
@@ -307,7 +307,7 @@ const ChatbotAdvanced = () => {
                     )}
                   </div>
                   
-                  <div className={`w-8 h-8 rounded-[7px] flex items-center justify-center flex-shrink-0 ${
+                  <div className={`w-8 h-8 rounded-sm flex items-center justify-center flex-shrink-0 ${
                     message.isBot ? 'order-1 mr-2 bg-medical-blue/10' : 'order-2 ml-2 bg-medical-red/10'
                   }`}>
                     {message.isBot ? (
@@ -323,10 +323,10 @@ const ChatbotAdvanced = () => {
               {isTyping && (
                 <div className="flex justify-start">
                   <div className="flex items-center space-x-2">
-                    <div className="w-8 h-8 rounded-[7px] bg-medical-blue/10 flex items-center justify-center">
+                    <div className="w-8 h-8 rounded-sm bg-medical-blue/10 flex items-center justify-center">
                       <Loader2 className="w-4 h-4 text-medical-blue animate-spin" />
                     </div>
-                    <div className="bg-gray-100 px-4 py-2 rounded-[8px]">
+                    <div className="bg-gray-100 px-4 py-2 rounded-sm">
                       <p className="text-sm text-gray-600">Thinking...</p>
                     </div>
                   </div>
@@ -345,12 +345,12 @@ const ChatbotAdvanced = () => {
                   onChange={(e) => setInputValue(e.target.value)}
                   onKeyPress={handleKeyPress}
                   placeholder={`Ask me about ${brand.shortName}...`}
-                  className="flex-1 px-4 py-2 border border-gray-300 rounded-[7px] focus:outline-none focus:ring-2 focus:ring-medical-blue focus:border-transparent"
+                  className="flex-1 px-4 py-2 border border-gray-300 rounded-sm focus:outline-none focus:ring-2 focus:ring-medical-blue focus:border-transparent"
                 />
                 <Button
                   onClick={() => handleSendMessage()}
                   disabled={!inputValue.trim() || isTyping}
-                  className="w-10 h-10 rounded-[7px] bg-gradient-to-r from-medical-blue to-medical-red"
+                  className="w-10 h-10 rounded-sm bg-gradient-to-r from-medical-blue to-medical-red"
                   size="icon"
                 >
                   <Send className="w-4 h-4" />

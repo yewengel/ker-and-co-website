@@ -97,7 +97,7 @@ const Contact = () => {
   }
 
   return (
-    <section id="contact" className="py-10 md:py-20 bg-gray-50">
+    <section id="contact" className="py-12 md:py-24 bg-[#F8F4EF]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <motion.div
@@ -105,17 +105,17 @@ const Contact = () => {
           whileInView={{ opacity: 1, scale: 1, y: 0 }}
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-          className="text-center mb-6 md:mb-16"
+          className="text-center mb-8 md:mb-18"
         >
           <h2 className="text-2xl md:text-5xl font-bold font-heading mb-3 md:mb-6">
-            Contact <span className="text-gradient">Us</span>
+            Contact <span className="text-[#C9A46A]">Us</span>
           </h2>
           <p className="text-xs md:text-xl text-gray-600 max-w-3xl mx-auto">
             Reach out to discuss distribution, hospitality, agriculture, real estate, mining, export ventures, or partnership opportunities with Ker & Co. Business Group.
           </p>
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-6 md:gap-12">
+        <div className="grid lg:grid-cols-2 gap-8 md:gap-14">
           {/* Contact Information */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
@@ -140,13 +140,13 @@ const Contact = () => {
                   transition={{ delay: index * 0.1 }}
                 >
                   <Card 
-                    className={`hover-lift border border-gray-100 shadow-sm ${info.action ? 'cursor-pointer' : ''}`}
+                    className={`hover-lift luxury-card ${info.action ? 'cursor-pointer' : ''}`}
                     onClick={info.action || undefined}
                   >
                     <CardContent className="p-3 md:p-6">
                       <div className="flex items-start space-x-2 md:space-x-4">
-                        <div className="w-8 h-8 md:w-12 md:h-12 bg-[#A67C52]/10 rounded-[7px] flex items-center justify-center flex-shrink-0">
-                          <info.icon className="w-4 h-4 md:w-6 md:h-6 text-[#A67C52]" />
+                        <div className="w-8 h-8 md:w-12 md:h-12 bg-[#C9A46A] rounded-sm flex items-center justify-center flex-shrink-0 shadow-sm">
+                          <info.icon className="w-4 h-4 md:w-6 md:h-6 text-white" />
                         </div>
                         <div>
                           <h4 className="text-[10px] md:text-base font-semibold text-gray-900 mb-0.5 md:mb-2">{info.title}</h4>
@@ -166,7 +166,7 @@ const Contact = () => {
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="h-48 md:h-80 bg-gray-100 rounded-[7px] md:rounded-[8px] overflow-hidden shadow-lg"
+              className="h-48 md:h-80 bg-white rounded-sm overflow-hidden shadow-lg border border-[#E7DED2]"
             >
               <iframe
                 src="https://www.google.com/maps?q=Addis+Ababa,+Ethiopia&output=embed"
@@ -187,10 +187,10 @@ const Contact = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
           >
-            <Card className="border border-gray-100 shadow-md bg-white">
+            <Card className="border border-[#E7DED2] shadow-md bg-white">
               <CardHeader>
                 <CardTitle className="text-base md:text-2xl font-bold text-gray-900 flex items-center">
-                  <FileText className="w-4 h-4 md:w-6 md:h-6 mr-2 md:mr-3 text-[#A67C52]" />
+                  <FileText className="w-4 h-4 md:w-6 md:h-6 mr-2 md:mr-3 text-[#C9A46A]" />
                   Contact Us
                 </CardTitle>
                 <p className="text-[11px] md:text-sm text-gray-500 mt-1 md:mt-2">
@@ -251,13 +251,12 @@ const Contact = () => {
                   <Button
                     type="submit"
                     size="lg"
-                    variant="gradient"
                     disabled={isSubmitting}
                     className="w-full"
                   >
                     {isSubmitting ? (
                       <div className="flex items-center">
-                        <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white mr-2"></div>
+                        <div className="animate-spin rounded-sm h-5 w-5 border-b-2 border-white mr-2"></div>
                         Submitting...
                       </div>
                     ) : (
@@ -270,14 +269,14 @@ const Contact = () => {
 
                   {/* Status Messages */}
                   {submitStatus === 'success' && (
-                    <div className="flex items-center p-4 bg-green-50 border border-green-200 rounded-[7px]">
+                    <div className="flex items-center p-4 bg-green-50 border border-green-200 rounded-sm">
                       <CheckCircle className="w-5 h-5 text-green-600 mr-3" />
                       <span className="text-green-800">Thank you! We&rsquo;ll get back to you once our team has processed your message.</span>
                     </div>
                   )}
 
                   {submitStatus === 'error' && (
-                    <div className="flex items-center p-4 bg-red-50 border border-red-200 rounded-[7px]">
+                    <div className="flex items-center p-4 bg-red-50 border border-red-200 rounded-sm">
                       <AlertCircle className="w-5 h-5 text-red-600 mr-3" />
                       <span className="text-red-800">There was an error submitting your request. Please try again.</span>
                     </div>

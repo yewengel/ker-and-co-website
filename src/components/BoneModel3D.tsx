@@ -32,13 +32,13 @@ const BoneModel3D: React.FC<BoneModel3DProps> = ({
               className="relative"
             >
               {/* Femur bone structure */}
-              <div className="w-8 h-40 bg-gradient-to-b from-gray-100 to-gray-300 rounded-[7px] relative shadow-lg">
+              <div className="w-8 h-40 bg-gradient-to-b from-gray-100 to-gray-300 rounded-sm relative shadow-lg">
                 {/* Femur head */}
-                <div className="absolute -top-4 -left-2 w-12 h-12 bg-gradient-to-br from-gray-200 to-gray-400 rounded-[7px] shadow-md"></div>
+                <div className="absolute -top-4 -left-2 w-12 h-12 bg-gradient-to-br from-gray-200 to-gray-400 rounded-sm shadow-md"></div>
                 {/* Greater trochanter */}
-                <div className="absolute top-4 -right-2 w-6 h-8 bg-gradient-to-br from-gray-200 to-gray-400 rounded-[7px] shadow-md"></div>
+                <div className="absolute top-4 -right-2 w-6 h-8 bg-gradient-to-br from-gray-200 to-gray-400 rounded-sm shadow-md"></div>
                 {/* Condyles */}
-                <div className="absolute -bottom-2 -left-3 w-14 h-8 bg-gradient-to-br from-gray-200 to-gray-400 rounded-[7px] shadow-md"></div>
+                <div className="absolute -bottom-2 -left-3 w-14 h-8 bg-gradient-to-br from-gray-200 to-gray-400 rounded-sm shadow-md"></div>
               </div>
             </motion.div>
           </div>
@@ -80,7 +80,7 @@ const BoneModel3D: React.FC<BoneModel3DProps> = ({
                   }}
                 >
                   {/* Vertebral body */}
-                  <div className="w-full h-full rounded-[7px] shadow-sm relative">
+                  <div className="w-full h-full rounded-sm shadow-sm relative">
                     {/* Spinous process */}
                     <div className="absolute -right-1 top-1/2 transform -translate-y-1/2 w-2 h-6 bg-gray-400 rounded-[6px] shadow-sm"></div>
                   </div>
@@ -107,19 +107,19 @@ const BoneModel3D: React.FC<BoneModel3DProps> = ({
             >
               {/* Femur (upper) */}
               <div className="w-6 h-20 bg-gradient-to-b from-gray-200 to-gray-300 rounded-t-full mb-2 shadow-lg">
-                <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-10 h-6 bg-gray-300 rounded-[7px]"></div>
+                <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-10 h-6 bg-gray-300 rounded-sm"></div>
               </div>
               
               {/* Knee joint space */}
-              <div className="w-12 h-4 bg-gradient-to-r from-blue-200 to-blue-300 rounded-[7px] shadow-inner mb-2 relative">
+              <div className="w-12 h-4 bg-gradient-to-r from-blue-200 to-blue-300 rounded-sm shadow-inner mb-2 relative">
                 {/* Meniscus */}
-                <div className="absolute top-0 left-2 w-8 h-1 bg-blue-400 rounded-[7px]"></div>
-                <div className="absolute bottom-0 left-2 w-8 h-1 bg-blue-400 rounded-[7px]"></div>
+                <div className="absolute top-0 left-2 w-8 h-1 bg-blue-400 rounded-sm"></div>
+                <div className="absolute bottom-0 left-2 w-8 h-1 bg-blue-400 rounded-sm"></div>
               </div>
               
               {/* Tibia (lower) */}
               <div className="w-6 h-20 bg-gradient-to-b from-gray-300 to-gray-200 rounded-b-full shadow-lg">
-                <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-10 h-6 bg-gray-300 rounded-[7px]"></div>
+                <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-10 h-6 bg-gray-300 rounded-sm"></div>
               </div>
             </motion.div>
           </div>
@@ -141,9 +141,9 @@ const BoneModel3D: React.FC<BoneModel3DProps> = ({
               className="relative"
             >
               {/* Scapula */}
-              <div className="w-16 h-20 bg-gradient-to-br from-gray-200 to-gray-400 rounded-[7px] shadow-lg relative">
+              <div className="w-16 h-20 bg-gradient-to-br from-gray-200 to-gray-400 rounded-sm shadow-lg relative">
                 {/* Glenoid cavity */}
-                <div className="absolute right-2 top-8 w-6 h-6 bg-gray-300 rounded-[7px] shadow-inner"></div>
+                <div className="absolute right-2 top-8 w-6 h-6 bg-gray-300 rounded-sm shadow-inner"></div>
               </div>
               
               {/* Humerus head */}
@@ -157,11 +157,11 @@ const BoneModel3D: React.FC<BoneModel3DProps> = ({
                   repeat: Infinity,
                   ease: "easeInOut"
                 }}
-                className="absolute right-0 top-6 w-8 h-8 bg-gradient-to-br from-gray-100 to-gray-300 rounded-[7px] shadow-lg"
+                className="absolute right-0 top-6 w-8 h-8 bg-gradient-to-br from-gray-100 to-gray-300 rounded-sm shadow-lg"
               ></motion.div>
               
               {/* Clavicle */}
-              <div className="absolute top-2 left-4 w-12 h-3 bg-gradient-to-r from-gray-200 to-gray-300 rounded-[7px] shadow-md"></div>
+              <div className="absolute top-2 left-4 w-12 h-3 bg-gradient-to-r from-gray-200 to-gray-300 rounded-sm shadow-md"></div>
             </motion.div>
           </div>
         )
@@ -182,10 +182,10 @@ const BoneModel3D: React.FC<BoneModel3DProps> = ({
               className="relative"
             >
               {/* Pelvis */}
-              <div className="w-20 h-16 bg-gradient-to-br from-gray-200 to-gray-400 rounded-[7px] shadow-lg relative">
+              <div className="w-20 h-16 bg-gradient-to-br from-gray-200 to-gray-400 rounded-sm shadow-lg relative">
                 {/* Acetabulum (hip socket) */}
-                <div className="absolute left-4 bottom-2 w-8 h-8 bg-gray-300 rounded-[7px] shadow-inner"></div>
-                <div className="absolute right-4 bottom-2 w-8 h-8 bg-gray-300 rounded-[7px] shadow-inner"></div>
+                <div className="absolute left-4 bottom-2 w-8 h-8 bg-gray-300 rounded-sm shadow-inner"></div>
+                <div className="absolute right-4 bottom-2 w-8 h-8 bg-gray-300 rounded-sm shadow-inner"></div>
               </div>
               
               {/* Femur heads */}
@@ -199,7 +199,7 @@ const BoneModel3D: React.FC<BoneModel3DProps> = ({
                   repeat: Infinity,
                   ease: "easeInOut"
                 }}
-                className="absolute left-6 bottom-0 w-6 h-6 bg-gradient-to-br from-gray-100 to-gray-300 rounded-[7px] shadow-lg"
+                className="absolute left-6 bottom-0 w-6 h-6 bg-gradient-to-br from-gray-100 to-gray-300 rounded-sm shadow-lg"
               ></motion.div>
               
               <motion.div
@@ -213,7 +213,7 @@ const BoneModel3D: React.FC<BoneModel3DProps> = ({
                   ease: "easeInOut",
                   delay: 0.5
                 }}
-                className="absolute right-6 bottom-0 w-6 h-6 bg-gradient-to-br from-gray-100 to-gray-300 rounded-[7px] shadow-lg"
+                className="absolute right-6 bottom-0 w-6 h-6 bg-gradient-to-br from-gray-100 to-gray-300 rounded-sm shadow-lg"
               ></motion.div>
             </motion.div>
           </div>
@@ -226,11 +226,11 @@ const BoneModel3D: React.FC<BoneModel3DProps> = ({
 
   return (
     <div className={`${className} relative`}>
-      <div className="w-full h-full bg-gradient-to-br from-medical-teal/10 to-medical-green/10 rounded-[8px] overflow-hidden">
+      <div className="w-full h-full bg-gradient-to-br from-medical-teal/10 to-medical-green/10 rounded-sm overflow-hidden">
         {getBoneVisualization()}
         
         {/* Bone type label */}
-        <div className="absolute bottom-2 left-2 bg-white/90 backdrop-blur-sm rounded-[7px] px-3 py-1">
+        <div className="absolute bottom-2 left-2 bg-white/90 backdrop-blur-sm rounded-sm px-3 py-1">
           <span className="text-xs font-medium text-gray-700 capitalize">{type}</span>
         </div>
         
@@ -239,7 +239,7 @@ const BoneModel3D: React.FC<BoneModel3DProps> = ({
           <motion.div
             animate={{ opacity: [0.5, 1, 0.5] }}
             transition={{ duration: 2, repeat: Infinity }}
-            className="absolute top-2 right-2 text-xs text-white/80 bg-medical-teal/20 rounded-[7px] px-2 py-1"
+            className="absolute top-2 right-2 text-xs text-white/80 bg-medical-teal/20 rounded-sm px-2 py-1"
           >
             3D
           </motion.div>

@@ -207,7 +207,7 @@ const Services = () => {
                 <div className="space-y-6">
                   {/* Icon & Title */}
                   <div className="flex items-center gap-4">
-                    <div className={`w-16 h-16 ${service.color} rounded-[8px] flex items-center justify-center`}>
+                    <div className={`w-16 h-16 ${service.color} rounded-sm flex items-center justify-center`}>
                       <service.icon className="w-8 h-8 text-white" />
                     </div>
                     <h3 className="text-2xl md:text-3xl font-bold text-gray-900">
@@ -240,7 +240,7 @@ const Services = () => {
                       {service.features.map((feature, idx) => (
                         <span
                           key={idx}
-                          className="px-3 py-1 bg-gray-100 text-gray-700 text-sm rounded-[7px]"
+                          className="px-3 py-1 bg-gray-100 text-gray-700 text-sm rounded-sm"
                         >
                           {feature}
                         </span>
@@ -254,7 +254,7 @@ const Services = () => {
               <div className={index % 2 === 0 ? '' : 'lg:col-start-1'}>
                 <div className="relative">
                   {/* Main Image Container */}
-                  <div className="relative aspect-video bg-gray-100 rounded-[8px] overflow-hidden shadow-2xl">
+                  <div className="relative aspect-video bg-gray-100 rounded-sm overflow-hidden shadow-2xl">
                     <Image
                       src={service.images[currentImageIndex[service.id] || 0]?.src}
                       alt={service.images[currentImageIndex[service.id] || 0]?.alt}
@@ -273,25 +273,25 @@ const Services = () => {
                         {/* Navigation Arrows */}
                         <button
                           onClick={() => prevImage(service.id, service.images.length)}
-                          className="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 bg-black/50 hover:bg-black/70 text-white rounded-[7px] flex items-center justify-center transition-colors"
+                          className="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 bg-black/50 hover:bg-black/70 text-white rounded-sm flex items-center justify-center transition-colors"
                         >
                           <ChevronLeft className="w-5 h-5" />
                         </button>
                         <button
                           onClick={() => nextImage(service.id, service.images.length)}
-                          className="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 bg-black/50 hover:bg-black/70 text-white rounded-[7px] flex items-center justify-center transition-colors"
+                          className="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 bg-black/50 hover:bg-black/70 text-white rounded-sm flex items-center justify-center transition-colors"
                         >
                           <ChevronRight className="w-5 h-5" />
                         </button>
 
                         {/* Image Counter & Auto-play */}
                         <div className="absolute bottom-4 left-4 flex items-center gap-3">
-                          <div className="bg-black/70 text-white text-sm px-3 py-1 rounded-[7px]">
+                          <div className="bg-black/70 text-white text-sm px-3 py-1 rounded-sm">
                             {(currentImageIndex[service.id] || 0) + 1} / {service.images.length}
                           </div>
                           <button
                             onClick={() => toggleAutoPlay(service.id)}
-                            className="w-8 h-8 bg-black/50 hover:bg-black/70 text-white rounded-[7px] flex items-center justify-center transition-colors"
+                            className="w-8 h-8 bg-black/50 hover:bg-black/70 text-white rounded-sm flex items-center justify-center transition-colors"
                           >
                             {autoPlay[service.id] ? <Pause className="w-4 h-4" /> : <Play className="w-4 h-4 ml-0.5" />}
                           </button>
@@ -303,7 +303,7 @@ const Services = () => {
                             <button
                               key={imgIdx}
                               onClick={() => setCurrentImageIndex(prev => ({ ...prev, [service.id]: imgIdx }))}
-                              className={`w-2 h-2 rounded-[7px] transition-colors ${
+                              className={`w-2 h-2 rounded-sm transition-colors ${
                                 (currentImageIndex[service.id] || 0) === imgIdx ? 'bg-white' : 'bg-white/50'
                               }`}
                             />
@@ -332,7 +332,7 @@ const Services = () => {
           viewport={{ once: true }}
           className="text-center mt-20"
         >
-          <div className="bg-white rounded-[8px] p-8 shadow-lg max-w-4xl mx-auto">
+          <div className="bg-white rounded-sm p-8 shadow-lg max-w-4xl mx-auto">
             <h3 className="text-2xl font-bold text-gray-900 mb-4">
               Ready to Experience Our Expert Care?
             </h3>
@@ -341,13 +341,13 @@ const Services = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <button 
-                className="px-8 py-3 bg-medical-blue text-white rounded-[7px] font-semibold hover:bg-medical-blue/90 transition-colors"
+                className="px-8 py-3 bg-medical-blue text-white rounded-sm font-semibold hover:bg-medical-blue/90 transition-colors"
                 onClick={() => window.open('tel:+251911249528')}
               >
                 Call: +251 911 249 528
               </button>
               <button 
-                className="px-8 py-3 border border-medical-blue text-medical-blue rounded-[7px] font-semibold hover:bg-medical-blue/10 transition-colors"
+                className="px-8 py-3 border border-medical-blue text-medical-blue rounded-sm font-semibold hover:bg-medical-blue/10 transition-colors"
                 onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
               >
                 Schedule Appointment

@@ -233,7 +233,7 @@ const Gallery = () => {
                 key={name}
                 type="button"
                 onClick={() => setActiveCategory(name)}
-                className={`px-2.5 py-1.5 md:px-4 md:py-2 rounded-[7px] text-[10px] md:text-sm font-semibold border transition-colors ${
+                className={`px-2.5 py-1.5 md:px-4 md:py-2 rounded-sm text-[10px] md:text-sm font-semibold border transition-colors ${
                   activeCategory === name
                     ? 'bg-medical-blue text-white border-medical-blue'
                     : 'bg-white text-gray-700 border-gray-200 hover:border-medical-blue hover:text-medical-blue'
@@ -272,7 +272,7 @@ const Gallery = () => {
                   onClick={() => openLightbox(group)}
                 >
                   <div
-                    className="relative overflow-hidden rounded-[7px] md:rounded-[8px] shadow-md group-hover:shadow-xl transition-all duration-300 bg-gray-100"
+                    className="relative overflow-hidden rounded-sm md:rounded-sm shadow-md group-hover:shadow-xl transition-all duration-300 bg-gray-100"
                     style={{ aspectRatio: cardAspectRatio }}
                   >
                     <img
@@ -340,7 +340,7 @@ const Gallery = () => {
                   src={encodeURI(currentSrc)}
                   controls
                   playsInline
-                  className="max-w-full max-h-[85vh] object-contain rounded-[7px] shadow-2xl"
+                  className="max-w-full max-h-[85vh] object-contain rounded-sm shadow-2xl"
                   onClick={(e) => e.stopPropagation()}
                 />
               ) : (
@@ -352,7 +352,7 @@ const Gallery = () => {
                   transition={{ duration: 0.3 }}
                   src={encodeURI(currentSrc)}
                   alt={`${selectedGroup.title} - Image ${currentImageIndex + 1}`}
-                  className="max-w-full max-h-[85vh] object-contain rounded-[7px] shadow-2xl"
+                  className="max-w-full max-h-[85vh] object-contain rounded-sm shadow-2xl"
                   onClick={(e) => e.stopPropagation()}
                 />
               )}
@@ -360,13 +360,13 @@ const Gallery = () => {
               {/* Navigation Arrows */}
               <button
                 onClick={prevImage}
-                className="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 p-3 bg-black/50 text-white rounded-[7px] hover:bg-medical-blue transition-colors"
+                className="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 p-3 bg-black/50 text-white rounded-sm hover:bg-medical-blue transition-colors"
               >
                 <ArrowLeft className="w-6 h-6" />
               </button>
               <button
                 onClick={nextImage}
-                className="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 p-3 bg-black/50 text-white rounded-[7px] hover:bg-medical-blue transition-colors"
+                className="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 p-3 bg-black/50 text-white rounded-sm hover:bg-medical-blue transition-colors"
               >
                 <ArrowRight className="w-6 h-6" />
               </button>
@@ -389,7 +389,7 @@ const Gallery = () => {
                     e.stopPropagation()
                     setCurrentImageIndex(idx)
                   }}
-                  className={`relative w-12 h-12 flex-shrink-0 rounded-[7px] overflow-hidden transition-all ${
+                  className={`relative w-12 h-12 flex-shrink-0 rounded-sm overflow-hidden transition-all ${
                     currentImageIndex === idx ? 'ring-2 ring-medical-blue scale-110' : 'opacity-50 hover:opacity-100'
                   }`}
                 >

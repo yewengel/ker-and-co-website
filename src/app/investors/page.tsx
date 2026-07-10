@@ -63,9 +63,9 @@ export default function InvestorsPage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: idx * 0.08 }}
-              className="bg-white rounded-[8px] border border-gray-100 shadow-sm p-8"
+              className="bg-white rounded-sm border border-gray-100 shadow-sm p-8"
             >
-              <div className="inline-flex w-12 h-12 rounded-[8px] bg-medical-blue/10 items-center justify-center">
+              <div className="inline-flex w-12 h-12 rounded-sm bg-medical-blue/10 items-center justify-center">
                 <item.icon className="w-6 h-6 text-medical-blue" />
               </div>
               <h2 className="text-xl font-bold text-gray-900 mt-4">{item.title}</h2>
@@ -74,7 +74,7 @@ export default function InvestorsPage() {
           ))}
         </div>
 
-        <div className="max-w-7xl mx-auto mt-10 bg-white rounded-[8px] border border-gray-100 shadow-lg p-8">
+        <div className="max-w-7xl mx-auto mt-10 bg-white rounded-sm border border-gray-100 shadow-lg p-8">
           <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
             <div>
               <h2 className="text-2xl font-bold text-gray-900">Downloads</h2>
@@ -91,10 +91,10 @@ export default function InvestorsPage() {
 
           <div className="grid md:grid-cols-3 gap-5 mt-8">
             {downloads.map((d) => (
-              <div key={d.title} className="rounded-[8px] bg-gray-50 border border-gray-100 p-6">
+              <div key={d.title} className="rounded-sm bg-gray-50 border border-gray-100 p-6">
                 <div className="flex items-center justify-between">
                   <div className="font-semibold text-gray-900">{d.title}</div>
-                  <div className="text-xs font-semibold px-2 py-1 rounded-[7px] bg-white border border-gray-200 text-gray-600">
+                  <div className="text-xs font-semibold px-2 py-1 rounded-sm bg-white border border-gray-200 text-gray-600">
                     {d.tag}
                   </div>
                 </div>

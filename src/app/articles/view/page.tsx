@@ -113,15 +113,15 @@ export default function ArticleViewPage() {
   }
 
   return (
-    <main className="relative min-h-screen bg-gray-50">
+    <main className="relative min-h-screen bg-[#F8F4EF]">
       <Navigation />
 
       {loading ? (
         <section className="pt-navbar pb-10 px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto">
-            <div className="bg-white rounded-[8px] border border-gray-100 shadow-lg p-10">
+            <div className="bg-white rounded-sm border border-gray-100 shadow-lg p-10">
               <div className="flex items-center gap-3 text-gray-500">
-                <div className="w-5 h-5 border-2 border-teal-600 border-t-transparent rounded-[7px] animate-spin" />
+                <div className="w-5 h-5 border-2 border-[#C9A46A] border-t-transparent rounded-sm animate-spin" />
                 Loading article...
               </div>
             </div>
@@ -130,7 +130,7 @@ export default function ArticleViewPage() {
       ) : notFound || !article ? (
         <section className="pt-navbar pb-10 px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto">
-            <div className="bg-white rounded-[8px] border border-gray-100 shadow-lg p-10 text-center">
+            <div className="bg-white rounded-sm border border-gray-100 shadow-lg p-10 text-center">
               <Newspaper className="w-16 h-16 text-gray-300 mx-auto mb-4" />
               <h1 className="text-2xl font-bold text-gray-900">Article not found</h1>
               <p className="text-gray-600 mt-2">The requested article does not exist or is unavailable.</p>
@@ -166,7 +166,7 @@ export default function ArticleViewPage() {
             <div className="absolute top-24 left-4 sm:left-6 lg:left-8 z-10">
               <button
                 onClick={() => (window.location.href = '/articles/')}
-                className="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium text-white/90 bg-white/10 backdrop-blur-md rounded-[7px] hover:bg-white/20 transition-colors"
+                className="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium text-white/90 bg-white/10 backdrop-blur-md rounded-sm hover:bg-white/20 transition-colors"
               >
                 <ArrowLeft className="w-4 h-4" />
                 Back to News
@@ -182,11 +182,11 @@ export default function ArticleViewPage() {
                 className="max-w-4xl mx-auto"
               >
                 <div className="flex items-center gap-2 mb-4">
-                  <span className="inline-flex items-center px-3 py-1 text-xs font-bold text-white bg-teal-600 rounded-[7px] shadow-lg">
+                  <span className="inline-flex items-center px-3 py-1 text-xs font-bold text-white bg-[#C9A46A] rounded-sm shadow-lg">
                     <Tag className="w-3 h-3 mr-1" />
                     {article.category}
                   </span>
-                  <span className="inline-flex items-center px-3 py-1 text-xs font-medium text-white/80 bg-white/10 backdrop-blur-sm rounded-[7px]">
+                  <span className="inline-flex items-center px-3 py-1 text-xs font-medium text-white/80 bg-white/10 backdrop-blur-sm rounded-sm">
                     <Clock className="w-3 h-3 mr-1" />
                     {article.readTime}
                   </span>
@@ -206,9 +206,9 @@ export default function ArticleViewPage() {
               transition={{ duration: 0.4, delay: 0.3 }}
               className="max-w-4xl mx-auto"
             >
-              <div className="bg-white rounded-[7px] md:rounded-[8px] shadow-lg border border-gray-100 px-3 py-2.5 md:px-6 md:py-4 flex flex-wrap items-center justify-between gap-2 md:gap-4">
+              <div className="bg-white rounded-sm md:rounded-sm shadow-lg border border-gray-100 px-3 py-2.5 md:px-6 md:py-4 flex flex-wrap items-center justify-between gap-2 md:gap-4">
                 <div className="flex items-center gap-2 md:gap-4">
-                  <div className="w-8 h-8 md:w-11 md:h-11 rounded-[7px] bg-gradient-to-br from-teal-600 to-teal-800 flex items-center justify-center shadow-md">
+                  <div className="w-8 h-8 md:w-11 md:h-11 rounded-sm bg-gradient-to-br from-[#C9A46A] to-[#C9A46A] flex items-center justify-center shadow-md">
                     <User className="w-4 h-4 md:w-5 md:h-5 text-white" />
                   </div>
                   <div>
@@ -239,7 +239,7 @@ export default function ArticleViewPage() {
             >
               {/* Excerpt / Lead paragraph */}
               {article.excerpt && (
-                <p className="text-sm md:text-xl text-gray-600 leading-relaxed mb-4 md:mb-8 font-medium border-l-4 border-teal-600 pl-3 md:pl-5">
+                <p className="text-sm md:text-xl text-gray-600 leading-relaxed mb-4 md:mb-8 font-medium border-l-4 border-[#C9A46A] pl-3 md:pl-5">
                   {article.excerpt}
                 </p>
               )}
@@ -251,10 +251,10 @@ export default function ArticleViewPage() {
                     prose-headings:text-gray-900 prose-headings:font-bold prose-headings:leading-snug
                     prose-h1:text-3xl prose-h2:text-2xl prose-h3:text-xl
                     prose-p:text-gray-700 prose-p:leading-relaxed
-                    prose-a:text-teal-600 prose-a:no-underline hover:prose-a:underline
+                    prose-a:text-[#C9A46A] prose-a:no-underline hover:prose-a:underline
                     prose-strong:text-gray-900
-                    prose-blockquote:border-l-teal-600 prose-blockquote:bg-gray-50 prose-blockquote:py-1 prose-blockquote:px-2 prose-blockquote:rounded-r-lg prose-blockquote:not-italic
-                    prose-img:rounded-[8px] prose-img:shadow-lg
+                    prose-blockquote:border-l-[#C9A46A] prose-blockquote:bg-[#F8F4EF] prose-blockquote:py-1 prose-blockquote:px-2 prose-blockquote:rounded-r-lg prose-blockquote:not-italic
+                    prose-img:rounded-sm prose-img:shadow-lg
                     prose-li:text-gray-700
                     prose-ul:list-disc prose-ol:list-decimal"
                   dangerouslySetInnerHTML={{ __html: article.content }}
@@ -274,7 +274,7 @@ export default function ArticleViewPage() {
                 <Button
                   variant="ghost"
                   onClick={() => (window.location.href = '/articles/')}
-                  className="text-gray-600 hover:text-teal-600"
+                  className="text-gray-600 hover:text-[#C9A46A]"
                 >
                   <ArrowLeft className="w-4 h-4 mr-2" />
                   Back to All News
@@ -289,7 +289,7 @@ export default function ArticleViewPage() {
               <div className="max-w-5xl mx-auto">
                 <div className="border-t border-gray-200 pt-6 md:pt-12">
                   <h2 className="text-lg md:text-2xl font-bold text-gray-900 mb-4 md:mb-8">
-                    More in <span className="text-teal-600">{article.category}</span>
+                    More in <span className="text-[#C9A46A]">{article.category}</span>
                   </h2>
                   <div className="grid grid-cols-2 lg:grid-cols-3 gap-2.5 md:gap-6">
                     {relatedArticles.map((related, index) => (
@@ -299,7 +299,7 @@ export default function ArticleViewPage() {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.4, delay: 0.1 * index }}
                         onClick={() => openArticle(related.id)}
-                        className="bg-white rounded-[7px] md:rounded-[8px] shadow-md hover:shadow-xl transition-all duration-300 cursor-pointer group overflow-hidden"
+                        className="bg-white rounded-sm md:rounded-sm shadow-md hover:shadow-xl transition-all duration-300 cursor-pointer group overflow-hidden"
                       >
                         <div className="relative w-full aspect-video overflow-hidden bg-gray-200">
                           {related.image_url ? (
@@ -324,13 +324,13 @@ export default function ArticleViewPage() {
                           </div>
                         </div>
                         <div className="p-2.5 md:p-4">
-                          <h3 className="font-bold text-gray-900 text-[10px] md:text-sm leading-tight md:leading-snug group-hover:text-teal-600 transition-colors line-clamp-2 mb-1 md:mb-2">
+                          <h3 className="font-bold text-gray-900 text-[10px] md:text-sm leading-tight md:leading-snug group-hover:text-[#C9A46A] transition-colors line-clamp-2 mb-1 md:mb-2">
                             {related.title}
                           </h3>
                           <p className="text-gray-500 text-[9px] md:text-xs leading-snug md:leading-relaxed line-clamp-2">
                             {related.excerpt}
                           </p>
-                          <span className="inline-flex items-center gap-1 text-xs font-semibold text-teal-600 mt-3 group-hover:gap-2 transition-all">
+                          <span className="inline-flex items-center gap-1 text-xs font-semibold text-[#C9A46A] mt-3 group-hover:gap-2 transition-all">
                             Read More
                             <ArrowRight className="w-3 h-3" />
                           </span>

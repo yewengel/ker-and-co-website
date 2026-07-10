@@ -35,12 +35,12 @@ export default function EventsPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-[7px] bg-medical-blue/10 text-medical-red text-sm font-semibold mb-6">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-sm bg-[#C9A46A]/10 text-[#C9A46A] text-sm font-semibold mb-6">
               <Globe className="w-4 h-4" />
               Events & Engagement
             </div>
             <h1 className="text-2xl md:text-6xl font-bold text-gray-900 mb-3 md:mb-5 font-heading">
-              Events & <span className="text-gradient">Engagement</span>
+              Events & <span className="text-[#C9A46A]">Engagement</span>
             </h1>
             <p className="text-xs md:text-xl text-gray-600 max-w-4xl mx-auto">
               Highlights from founder showcases, hospitality engagements, export meetings, and venture strategy sessions that shape the growth story of {brand.name}.
@@ -58,17 +58,17 @@ export default function EventsPage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: idx * 0.08 }}
-              className={`grid lg:grid-cols-2 gap-4 md:gap-8 items-center rounded-[7px] md:rounded-[8px] bg-white border border-gray-100 shadow-lg p-3 md:p-10`}
+              className={`grid lg:grid-cols-2 gap-4 md:gap-8 items-center rounded-sm md:rounded-sm bg-white border border-gray-100 shadow-lg p-3 md:p-10`}
             >
               <div className={idx % 2 !== 0 ? 'lg:order-2' : ''}>
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-[7px] bg-medical-blue/10 text-medical-blue text-sm font-semibold">
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-sm bg-[#C9A46A]/10 text-[#C9A46A] text-sm font-semibold">
                   <b.icon className="w-4 h-4" />
                   Events
                 </div>
                 <h2 className="text-base md:text-3xl font-bold text-gray-900 mt-2 md:mt-4">{b.title}</h2>
                 <p className="text-[10px] md:text-base text-gray-600 mt-1.5 md:mt-3 leading-relaxed">{b.description}</p>
                 <div className="mt-6 flex flex-col sm:flex-row gap-3">
-                  <Button variant="medical" onClick={() => (window.location.href = '/gallery')}>
+                  <Button onClick={() => (window.location.href = '/gallery')}>
                     View Gallery
                     <ArrowRight className="w-4 h-4 ml-2" />
                   </Button>
@@ -78,7 +78,7 @@ export default function EventsPage() {
                 </div>
               </div>
 
-              <div className={`relative overflow-hidden rounded-[8px] shadow ${idx % 2 !== 0 ? 'lg:order-1' : ''}`}>
+              <div className={`relative overflow-hidden rounded-sm shadow ${idx % 2 !== 0 ? 'lg:order-1' : ''}`}>
                 <div className="relative aspect-[16/10]">
                   <Image
                     src={b.image}
@@ -92,9 +92,9 @@ export default function EventsPage() {
             </motion.div>
           ))}
 
-          <div className="rounded-[7px] md:rounded-[8px] bg-gradient-to-r from-medical-blue to-medical-red text-white p-4 md:p-10 flex flex-col md:flex-row items-start md:items-center justify-between gap-3 md:gap-6">
+          <div className="rounded-sm md:rounded-sm bg-gradient-to-r from-[#C9A46A] to-[#C9A46A] text-white p-4 md:p-10 flex flex-col md:flex-row items-start md:items-center justify-between gap-3 md:gap-6">
             <div>
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-[7px] bg-white/10 text-white text-sm font-semibold">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-sm bg-white/10 text-white text-sm font-semibold">
                 <Briefcase className="w-4 h-4" />
                 Gallery
               </div>
@@ -107,7 +107,7 @@ export default function EventsPage() {
               variant="outline"
               size="lg"
               onClick={() => (window.location.href = '/gallery')}
-              className="bg-white text-medical-red border-white hover:bg-gray-100"
+              className="bg-white text-[#C9A46A] border-white hover:bg-gray-100"
             >
               Open Gallery
               <ArrowRight className="w-5 h-5 ml-2" />

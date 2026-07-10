@@ -6,55 +6,41 @@
 
 @layer base {
   :root {
-    /* Luxury corporate palette */
-    /* Global radius token (6–8px rectangular language) */
-    --radius: 0.4375rem;
+    /* Luxury corporate palette tokens */
+    --radius: 0.25rem; /* 4px rectangular shape for premium design */
     --radius-soft: var(--radius);
 
-    --cream: 34 33% 96%;
-    --surface: 45 55% 99%;
-    --divider: 0 0% 90%;
-    --charcoal: 220 15% 13%;
+    --background: #F8F4EF;
+    --foreground: #222222;
 
-    --background: var(--cream);
-    --foreground: var(--charcoal);
+    --card: #FFFFFF;
+    --card-foreground: #222222;
 
-    --card: 0 0% 100%;
-    --card-foreground: var(--charcoal);
+    --popover: #FFFFFF;
+    --popover-foreground: #222222;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: var(--charcoal);
+    /* Warm premium tan primary accent */
+    --primary: #C9A46A;
+    --primary-foreground: #FFFFFF;
 
-    /* Bronze/gold accent */
-    --primary: 34 45% 45%;
-    --primary-foreground: 0 0% 100%;
+    /* Secondary backgrounds / neutral accents */
+    --secondary: #F8F4EF;
+    --secondary-foreground: #222222;
 
-    /* Neutral accents for secondary surfaces */
-    --secondary: 35 30% 96%;
-    --secondary-foreground: var(--charcoal);
+    --muted: #F8F4EF;
+    --muted-foreground: #666666;
 
-    --muted: 35 30% 96%;
-    --muted-foreground: 215.4 16.3% 40.9%;
-
-    --accent: 35 30% 96%;
-    --accent-foreground: var(--charcoal);
+    --accent: #F8F4EF;
+    --accent-foreground: #222222;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: var(--divider);
-    --input: var(--divider);
-    --ring: 34 45% 45%;
+    --border: #E7DED2;
+    --input: #E7DED2;
+    --ring: #C9A46A; /* Tan focus ring */
 
-    /* Target 6–8px rectangular radius */
-    /* (kept for backwards compatibility; value derived from global token above) */
-    --radius: var(--radius);
-
-    /* Make rounding consistent across the app (used by inputs/buttons/cards) */
-    --radius-soft: var(--radius);
-
-
-
+    /* Layout Spacing Tokens */
     --navbar-top: 0px;
     --navbar-top-bar: 52px;
     --navbar-height: 108px;
@@ -64,33 +50,33 @@
 
   .dark {
     /* Keep luxury look in dark mode (still rectangular, still readable). */
-    --background: 35 18% 10%;
-    --foreground: 210 40% 98%;
+    --background: #1A1815;
+    --foreground: #FFFFFF;
 
-    --card: 30 20% 13%;
-    --card-foreground: 210 40% 98%;
+    --card: #252320;
+    --card-foreground: #FFFFFF;
 
-    --popover: 30 20% 13%;
-    --popover-foreground: 210 40% 98%;
+    --popover: #252320;
+    --popover-foreground: #FFFFFF;
 
-    --primary: 34 45% 45%;
-    --primary-foreground: 0 0% 100%;
+    --primary: #C9A46A;
+    --primary-foreground: #FFFFFF;
 
-    --secondary: 215 20% 17%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: #2E2B27;
+    --secondary-foreground: #FFFFFF;
 
-    --muted: 215 20% 17%;
-    --muted-foreground: 215 20% 65.1%;
+    --muted: #2E2B27;
+    --muted-foreground: #B0A89F;
 
-    --accent: 215 20% 17%;
-    --accent-foreground: 210 40% 98%;
+    --accent: #2E2B27;
+    --accent-foreground: #FFFFFF;
 
     --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: #FFFFFF;
 
-    --border: 215 20% 25%;
-    --input: 215 20% 25%;
-    --ring: 34 45% 45%;
+    --border: #3D3934;
+    --input: #3D3934;
+    --ring: #C9A46A;
   }
 }
 
@@ -130,9 +116,18 @@
   body {
     @apply bg-background text-foreground;
     font-feature-settings: "rlig" 1, "calt" 1;
+    letter-spacing: 0.01em;
   }
   a {
-    @apply text-[#A67C52] hover:text-[#8E6844];
+    @apply text-[#C9A46A] hover:text-[#C9A46A] transition-colors duration-200;
+  }
+
+  /* Premium typography defaults */
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading tracking-tight text-[#222222] leading-snug;
+  }
+  p {
+    @apply font-sans leading-relaxed text-[#222222] tracking-normal;
   }
 }
 
@@ -158,11 +153,11 @@
 
 @layer components {
   .gradient-bg {
-    background: linear-gradient(135deg, #111111 0%, #1f1a14 50%, #3d2a15 100%);
+    background: linear-gradient(135deg, #222222 0%, #3d352d 48%, #C9A46A 100%);
   }
   
   .medical-gradient {
-    background: linear-gradient(135deg, #c98b2b 0%, #9f6920 100%);
+    background: linear-gradient(135deg, #C9A46A 0%, #C9A46A 100%);
   }
   
   .glass-effect {
@@ -172,13 +167,13 @@
   }
   
   .text-gradient {
-    color: #c98b2b;
+    color: #C9A46A;
   }
   
   .hero-pattern {
     background-image: 
-      radial-gradient(circle at 25% 25%, rgba(201, 139, 43, 0.18) 0%, transparent 50%),
-      radial-gradient(circle at 75% 75%, rgba(17, 17, 17, 0.16) 0%, transparent 50%);
+      radial-gradient(circle at 25% 25%, rgba(210, 180, 140, 0.22) 0%, transparent 50%),
+      radial-gradient(circle at 75% 75%, rgba(34, 34, 34, 0.14) 0%, transparent 50%);
   }
   
   .medical-shadow {
@@ -202,34 +197,51 @@
   }
 
   .text-gradient-gold {
-    background: linear-gradient(120deg, #E5C599 0%, #A67C52 45%, #8F754F 100%);
+    background: linear-gradient(120deg, #ecd8bb 0%, #C9A46A 45%, #C9A46A 100%);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
   }
 
   .shimmer-line {
-    background: linear-gradient(90deg, transparent, rgba(166, 124, 82, 0.85), transparent);
+    background: linear-gradient(90deg, transparent, rgba(210, 180, 140, 0.85), transparent);
   }
 
-  /* Luxury corporate design tokens */
+  /* Luxury corporate design token utilities */
   .luxury-card {
-    @apply bg-white border border-[#E5E5E5] rounded-[7px] shadow-sm;
+    @apply bg-white border border-[#E7DED2] rounded-sm shadow-md transition-all duration-300 hover:shadow-lg;
   }
 
   .luxury-input {
-    @apply w-full px-4 py-3 text-sm border border-[#E5E5E5] rounded-[7px] bg-white text-[#222222] transition-colors;
-    @apply focus:outline-none focus:ring-2 focus:ring-[#A67C52]/25 focus:border-[#A67C52];
+    @apply w-full px-4 py-3 text-sm border border-[#E7DED2] rounded-sm bg-white text-[#222222] transition-all duration-200 shadow-sm;
+    @apply focus:outline-none focus:ring-2 focus:ring-[#C9A46A]/25 focus:border-[#C9A46A] placeholder-[#7A7169];
   }
 
   .luxury-btn {
-    @apply inline-flex items-center justify-center px-6 py-3 text-sm font-semibold rounded-[7px] transition-colors duration-200;
-    @apply bg-[#A67C52] text-white hover:bg-[#8F754F];
+    @apply inline-flex items-center justify-center px-6 py-3 text-sm font-semibold rounded-sm transition-all duration-200 shadow-sm hover:shadow-md active:scale-98;
+    @apply bg-[#C9A46A] text-white hover:bg-[#C9A46A];
   }
 
   .luxury-btn-outline {
-    @apply inline-flex items-center justify-center px-6 py-3 text-sm font-semibold rounded-[7px] transition-colors duration-200;
-    @apply border border-[#A67C52] text-[#A67C52] bg-transparent hover:bg-[#FAF6F0];
+    @apply inline-flex items-center justify-center px-6 py-3 text-sm font-semibold rounded-sm transition-all duration-200 border border-[#C9A46A] text-[#C9A46A] bg-transparent hover:bg-[#F8F4EF];
+  }
+
+  .luxury-btn-dark {
+    @apply inline-flex items-center justify-center px-6 py-3 text-sm font-semibold rounded-sm transition-all duration-200 shadow-sm hover:shadow-md active:scale-98;
+    @apply bg-gray-900 text-white hover:bg-gray-800;
+  }
+
+  .luxury-badge {
+    @apply inline-flex items-center gap-1.5 px-3 py-1 rounded-sm text-xs font-semibold tracking-wider uppercase bg-[#C9A46A]/15 text-[#C9A46A];
+  }
+
+  /* Spacing system tokens */
+  .section-padding {
+    @apply py-12 md:py-24;
+  }
+
+  .container-padding {
+    @apply px-4 sm:px-6 lg:px-8;
   }
 }
 
@@ -260,13 +272,13 @@
 @keyframes chatbot-pulse-glow {
   0%, 100% {
     box-shadow:
-      0 8px 24px rgba(166, 124, 82, 0.35),
-      0 0 0 0 rgba(166, 124, 82, 0.45);
+      0 8px 24px rgba(210, 180, 140, 0.35),
+      0 0 0 0 rgba(210, 180, 140, 0.45);
   }
   50% {
     box-shadow:
-      0 12px 32px rgba(166, 124, 82, 0.4),
-      0 0 0 14px rgba(166, 124, 82, 0);
+      0 12px 32px rgba(210, 180, 140, 0.4),
+      0 0 0 14px rgba(210, 180, 140, 0);
   }
 }
 
@@ -336,12 +348,12 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #c98b2b;
+  background: #C9A46A;
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #9f6920;
+  background: #C9A46A;
 }
 
 /* Smooth scrolling */
@@ -512,7 +524,7 @@ video {
   width: 13px;
   height: 13px;
   border-radius: 50%;
-  background: #c98b2b;
+  background: #C9A46A;
   animation-timing-function: cubic-bezier(0, 1, 1, 0);
 }
 

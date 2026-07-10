@@ -44,7 +44,7 @@ const MedicalGallery = () => {
       title: 'Hemiarthroplasty',
       description: 'Partial hip replacement surgery procedure',
       icon: Heart,
-      color: 'bg-medical-blue',
+      color: 'bg-[#C9A46A]',
       category: 'procedure',
       images: ['/images/Hemiarthroplasty.jpg']
     },
@@ -53,7 +53,7 @@ const MedicalGallery = () => {
       title: 'Total Hip Replacement',
       description: 'Complete hip joint replacement surgery',
       icon: Heart,
-      color: 'bg-teal-600',
+      color: 'bg-[#C9A46A]',
       category: 'procedure',
       images: ['/images/Total hip replacement.jpg']
     },
@@ -62,7 +62,7 @@ const MedicalGallery = () => {
       title: 'PRP Injection',
       description: 'Platelet Rich Plasma injection therapy',
       icon: Syringe,
-      color: 'bg-medical-teal',
+      color: 'bg-[#C9A46A]',
       category: 'procedure',
       images: [
         '/images/PRP injection .jpg',
@@ -77,7 +77,7 @@ const MedicalGallery = () => {
       title: 'Anesthesia Follow-up and Care',
       description: 'Post-anesthesia patient monitoring and care',
       icon: Activity,
-      color: 'bg-medical-green',
+      color: 'bg-[#C9A46A]',
       category: 'procedure',
       images: [
         '/images/ward rooms/Anesthesia follow up and care.jpg',
@@ -89,7 +89,7 @@ const MedicalGallery = () => {
       title: 'C-arm X-ray',
       description: 'Advanced C-arm X-ray imaging system',
       icon: Camera,
-      color: 'bg-teal-700',
+      color: 'bg-[#C9A46A]',
       category: 'equipment',
       images: ['/images/C-arm Xray.jpg']
     },
@@ -98,7 +98,7 @@ const MedicalGallery = () => {
       title: 'Digital X-ray',
       description: 'State-of-the-art digital X-ray imaging',
       icon: Zap,
-      color: 'bg-medical-blue',
+      color: 'bg-[#C9A46A]',
       category: 'equipment',
       images: [
         '/images/Digital Xray.jpg',
@@ -113,7 +113,7 @@ const MedicalGallery = () => {
       title: 'Medical Laboratory',
       description: 'Comprehensive laboratory testing facility',
       icon: FlaskConical,
-      color: 'bg-medical-green',
+      color: 'bg-[#C9A46A]',
       category: 'equipment',
       images: [
         '/images/Laboratory1.jpg',
@@ -126,7 +126,7 @@ const MedicalGallery = () => {
       title: 'Surgical Procedures',
       description: 'Advanced surgical techniques and procedures',
       icon: Heart,
-      color: 'bg-teal-600',
+      color: 'bg-[#C9A46A]',
       category: 'procedure',
       images: [
         '/images/saron_image_surgery1.jpg',
@@ -145,7 +145,7 @@ const MedicalGallery = () => {
       title: 'Medical Equipment',
       description: 'State-of-the-art medical equipment and technology',
       icon: Zap,
-      color: 'bg-medical-teal',
+      color: 'bg-[#C9A46A]',
       category: 'equipment',
       images: [
         '/images/saron_image_equipement1.jpg',
@@ -160,7 +160,7 @@ const MedicalGallery = () => {
       title: 'Our Facility',
       description: 'Modern medical facility and patient areas',
       icon: Eye,
-      color: 'bg-medical-blue',
+      color: 'bg-[#C9A46A]',
       category: 'facility',
       images: [
         '/images/saron_building.jpg',
@@ -173,7 +173,7 @@ const MedicalGallery = () => {
       title: 'In-patient (Ward) Care',
       description: 'Comfortable orthopedic in-patient wards with continuous nursing care',
       icon: Heart,
-      color: 'bg-medical-green',
+      color: 'bg-[#C9A46A]',
       category: 'facility',
       images: [
         '/images/ward rooms/ward_main.jpg',
@@ -189,7 +189,7 @@ const MedicalGallery = () => {
       title: 'Hospital Rooms',
       description: 'Private and semi-private hospital rooms for in-patient care',
       icon: Camera,
-      color: 'bg-medical-teal',
+      color: 'bg-[#C9A46A]',
       category: 'facility',
       images: [
         '/images/ward rooms/hospital_room_main.jpg',
@@ -250,7 +250,7 @@ const MedicalGallery = () => {
   }, [isPlaying, selectedSequence])
 
   return (
-    <section className="py-20 bg-gradient-to-b from-white to-gray-50">
+    <section className="py-20 bg-gradient-to-b from-white to-[#F8F4EF]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <motion.div
@@ -260,7 +260,7 @@ const MedicalGallery = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold font-heading mb-6">
-            Our <span className="text-gradient">Medical Excellence</span>
+            Our <span className="text-[#C9A46A]">Medical Excellence</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Witness our advanced procedures and state-of-the-art equipment in action
@@ -277,12 +277,12 @@ const MedicalGallery = () => {
           {categories.map((category) => (
             <Button
               key={category.id}
-              variant={selectedCategory === category.id ? "medical" : "outline"}
+              variant={selectedCategory === category.id ? "default" : "outline"}
               onClick={() => setSelectedCategory(category.id as any)}
               className="flex items-center gap-2"
             >
               {category.label}
-              <span className="bg-white/20 text-xs px-2 py-1 rounded-[7px]">
+              <span className="bg-white/20 text-xs px-2 py-1 rounded-sm">
                 {category.count}
               </span>
             </Button>
@@ -316,27 +316,27 @@ const MedicalGallery = () => {
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   
                   {/* Icon */}
-                  <div className={`absolute top-2 left-2 md:top-4 md:left-4 w-8 h-8 md:w-12 md:h-12 ${sequence.color} rounded-[7px] md:rounded-[7px] flex items-center justify-center`}>
+                  <div className={`absolute top-2 left-2 md:top-4 md:left-4 w-8 h-8 md:w-12 md:h-12 ${sequence.color} rounded-sm md:rounded-sm flex items-center justify-center`}>
                     <sequence.icon className="w-4 h-4 md:w-6 md:h-6 text-white" />
                   </div>
                   
                   {/* Image Count Badge */}
                   {sequence.images.length > 1 && (
-                    <div className="absolute top-2 right-2 md:top-4 md:right-4 bg-black/70 text-white text-[10px] md:text-xs px-1.5 py-0.5 md:px-2 md:py-1 rounded-[7px]">
+                    <div className="absolute top-2 right-2 md:top-4 md:right-4 bg-black/70 text-white text-[10px] md:text-xs px-1.5 py-0.5 md:px-2 md:py-1 rounded-sm">
                       {sequence.images.length} images
                     </div>
                   )}
                   
                   {/* Play Button */}
                   <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <div className="w-10 h-10 md:w-16 md:h-16 bg-white/90 rounded-[7px] flex items-center justify-center">
+                    <div className="w-10 h-10 md:w-16 md:h-16 bg-white/90 rounded-sm flex items-center justify-center">
                       <ArrowRight className="w-5 h-5 md:w-8 md:h-8 text-gray-900 ml-0.5 md:ml-1" />
                     </div>
                   </div>
                 </div>
                 
                 <CardContent className="p-3 md:p-4 lg:p-6">
-                  <h3 className="text-sm md:text-base lg:text-lg font-bold text-gray-900 mb-1 md:mb-2 group-hover:text-medical-blue transition-colors line-clamp-2">
+                  <h3 className="text-sm md:text-base lg:text-lg font-bold text-gray-900 mb-1 md:mb-2 group-hover:text-[#C9A46A] transition-colors line-clamp-2">
                     {sequence.title}
                   </h3>
                   <p className="text-gray-600 text-xs md:text-sm line-clamp-2">
@@ -362,13 +362,13 @@ const MedicalGallery = () => {
                 initial={{ scale: 0.8, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
                 exit={{ scale: 0.8, opacity: 0 }}
-                className="relative max-w-4xl w-full bg-white rounded-[8px] overflow-hidden"
+                className="relative max-w-4xl w-full bg-white rounded-sm overflow-hidden"
                 onClick={(e) => e.stopPropagation()}
               >
                 {/* Header */}
                 <div className="flex items-center justify-between p-6 border-b">
                   <div className="flex items-center gap-4">
-                    <div className={`w-12 h-12 ${selectedSequence.color} rounded-[7px] flex items-center justify-center`}>
+                    <div className={`w-12 h-12 ${selectedSequence.color} rounded-sm flex items-center justify-center`}>
                       <selectedSequence.icon className="w-6 h-6 text-white" />
                     </div>
                     <div>
@@ -436,8 +436,8 @@ const MedicalGallery = () => {
                       {selectedSequence.images.map((image, index) => (
                         <button
                           key={index}
-                          className={`relative w-12 h-12 rounded-[7px] overflow-hidden flex-shrink-0 ${
-                            index === currentImageIndex ? 'ring-2 ring-medical-blue' : ''
+                          className={`relative w-12 h-12 rounded-sm overflow-hidden flex-shrink-0 ${
+                            index === currentImageIndex ? 'ring-2 ring-[#C9A46A]' : ''
                           }`}
                           onClick={() => setCurrentImageIndex(index)}
                         >

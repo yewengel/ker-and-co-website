@@ -31,7 +31,7 @@ export default function NewDashboard() {
                 onClick={() => setActiveTab('articles')}
                 className={`pb-4 px-1 border-b-2 font-medium text-sm transition-colors ${
                   activeTab === 'articles'
-                    ? 'border-teal-600 text-teal-600'
+                    ? 'border-[#C9A46A] text-[#C9A46A]'
                     : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
                 }`}
               >
@@ -285,10 +285,10 @@ function ArticlesTab() {
       <div className="flex gap-2 border-b border-gray-200 pb-4">
         <button
           onClick={() => { resetForm(); setActiveView('form') }}
-          className={`px-4 py-2 rounded-[7px] text-sm font-medium transition-colors ${
+          className={`px-4 py-2 rounded-sm text-sm font-medium transition-colors ${
             activeView === 'form'
-              ? 'bg-teal-600 text-white'
-              : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
+                      ? 'bg-[#C9A46A] text-white'
+                      : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
           }`}
         >
           <Edit2 className="w-4 h-4 inline mr-1.5" />
@@ -296,7 +296,7 @@ function ArticlesTab() {
         </button>
         <button
           onClick={() => setActiveView('published')}
-          className={`px-4 py-2 rounded-[7px] text-sm font-medium transition-colors ${
+          className={`px-4 py-2 rounded-sm text-sm font-medium transition-colors ${
             activeView === 'published'
               ? 'bg-teal-600 text-white'
               : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
@@ -307,7 +307,7 @@ function ArticlesTab() {
         </button>
         <button
           onClick={() => setActiveView('drafts')}
-          className={`px-4 py-2 rounded-[7px] text-sm font-medium transition-colors ${
+          className={`px-4 py-2 rounded-sm text-sm font-medium transition-colors ${
             activeView === 'drafts'
               ? 'bg-teal-600 text-white'
               : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
@@ -322,7 +322,7 @@ function ArticlesTab() {
       {activeView === 'form' && (
         <div className="space-y-6">
           {editingId && (
-            <div className="bg-blue-50 text-blue-700 p-4 rounded-[7px] flex items-center justify-between">
+            <div className="bg-blue-50 text-blue-700 p-4 rounded-sm flex items-center justify-between">
               <span className="flex items-center">
                 <Edit2 className="w-4 h-4 mr-2" />
                 Editing article: <strong className="ml-1">{title || '(untitled)'}</strong>
@@ -339,7 +339,7 @@ function ArticlesTab() {
               type="text"
               value={title}
               onChange={(e) => setTitle(e.target.value)}
-              className="w-full px-4 py-2 border border-gray-300 rounded-[7px] focus:ring-2 focus:ring-teal-600 focus:border-transparent outline-none transition-all"
+              className="w-full px-4 py-2 border border-gray-300 rounded-sm focus:ring-2 focus:ring-[#C9A46A] focus:border-transparent outline-none transition-all"
               placeholder="e.g., Operations Update: New Capacity and Delivery Improvements"
             />
           </div>
@@ -349,7 +349,7 @@ function ArticlesTab() {
             <select
               value={category}
               onChange={(e) => setCategory(e.target.value)}
-              className="w-full px-4 py-2 border border-gray-300 rounded-[7px] focus:ring-2 focus:ring-teal-600 focus:border-transparent outline-none transition-all"
+              className="w-full px-4 py-2 border border-gray-300 rounded-sm focus:ring-2 focus:ring-[#C9A46A] focus:border-transparent outline-none transition-all"
             >
               {categories.map(cat => (
                 <option key={cat} value={cat}>{cat}</option>
@@ -363,18 +363,18 @@ function ArticlesTab() {
               <input type="file" accept="image/*" onChange={handleImageSelect} className="hidden" id="article-image" />
               <label
                 htmlFor="article-image"
-                className="cursor-pointer inline-flex items-center px-4 py-2 border border-gray-300 rounded-[7px] shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50"
+                className="cursor-pointer inline-flex items-center px-4 py-2 border border-gray-300 rounded-sm shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50"
               >
                 <Upload className="w-4 h-4 mr-2" />
                 Choose Image
               </label>
               {imagePreview && (
                 <div className="mt-4 relative w-full max-w-md">
-                  <img src={imagePreview} alt="Preview" className="rounded-[7px] shadow-md" />
+                  <img src={imagePreview} alt="Preview" className="rounded-sm shadow-md" />
                   <button
                     type="button"
                     onClick={() => { setImageFile(null); setImagePreview(null); setExistingImageUrl(null) }}
-                    className="absolute top-2 right-2 bg-red-500 text-white p-2 rounded-[7px] hover:bg-red-600"
+                    className="absolute top-2 right-2 bg-red-500 text-white p-2 rounded-sm hover:bg-red-600"
                   >
                     <Trash2 className="w-4 h-4" />
                   </button>
@@ -389,14 +389,14 @@ function ArticlesTab() {
               value={excerpt}
               onChange={(e) => setExcerpt(e.target.value)}
               rows={3}
-              className="w-full px-4 py-2 border border-gray-300 rounded-[7px] focus:ring-2 focus:ring-teal-600 focus:border-transparent outline-none transition-all"
+              className="w-full px-4 py-2 border border-gray-300 rounded-sm focus:ring-2 focus:ring-[#C9A46A] focus:border-transparent outline-none transition-all"
               placeholder="A brief description that appears on the main list..."
             />
           </div>
 
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-2">Full Content</label>
-            <div className="bg-white rounded-[7px] border border-gray-300 overflow-hidden">
+            <div className="bg-white rounded-sm border border-gray-300 overflow-hidden">
               <ReactQuill
                 theme="snow"
                 value={content}
@@ -429,14 +429,14 @@ function ArticlesTab() {
           </div>
 
           {error && (
-            <div className="bg-red-50 text-red-600 p-4 rounded-[7px] flex items-center">
+            <div className="bg-red-50 text-red-600 p-4 rounded-sm flex items-center">
               <AlertCircle className="w-5 h-5 mr-2" />
               {error}
             </div>
           )}
 
           {success && (
-            <div className="bg-green-50 text-green-600 p-4 rounded-[7px] flex items-center">
+            <div className="bg-green-50 text-green-600 p-4 rounded-sm flex items-center">
               <CheckCircle className="w-5 h-5 mr-2" />
               {success}
             </div>
@@ -484,18 +484,18 @@ function ArticlesTab() {
           ) : (
             <div className="space-y-3">
               {publishedArticles.map((article) => (
-                <div key={article.id} className="flex items-center gap-4 bg-white border border-gray-200 rounded-[7px] p-4 hover:shadow-md transition-shadow group">
+                <div key={article.id} className="flex items-center gap-4 bg-white border border-gray-200 rounded-sm p-4 hover:shadow-md transition-shadow group">
                   {article.image_url ? (
-                    <img src={article.image_url} alt="" className="w-16 h-16 rounded-[7px] object-cover flex-shrink-0" />
+                    <img src={article.image_url} alt="" className="w-16 h-16 rounded-sm object-cover flex-shrink-0" />
                   ) : (
-                    <div className="w-16 h-16 rounded-[7px] bg-gray-100 flex items-center justify-center flex-shrink-0">
+                    <div className="w-16 h-16 rounded-sm bg-gray-100 flex items-center justify-center flex-shrink-0">
                       <Newspaper className="w-6 h-6 text-gray-400" />
                     </div>
                   )}
                   <div className="flex-1 min-w-0">
                     <h4 className="font-semibold text-gray-900 text-sm truncate">{article.title}</h4>
                     <div className="flex items-center gap-3 text-xs text-gray-500 mt-1">
-                      <span className="inline-flex items-center px-2 py-0.5 bg-green-50 text-green-700 rounded-[7px] font-medium">Published</span>
+                      <span className="inline-flex items-center px-2 py-0.5 bg-green-50 text-green-700 rounded-sm font-medium">Published</span>
                       <span>{article.category}</span>
                       <span>{new Date(article.created_at).toLocaleDateString()}</span>
                     </div>
@@ -503,21 +503,21 @@ function ArticlesTab() {
                   <div className="flex items-center gap-2 flex-shrink-0">
                     <button
                       onClick={() => handleEdit(article)}
-                      className="p-2 text-gray-400 hover:text-blue-600 hover:bg-blue-50 rounded-[7px] transition-colors"
+                      className="p-2 text-gray-400 hover:text-blue-600 hover:bg-blue-50 rounded-sm transition-colors"
                       title="Edit"
                     >
                       <Edit2 className="w-4 h-4" />
                     </button>
                     <button
                       onClick={() => window.open(`/articles/view/?id=${article.id}`, '_blank')}
-                      className="p-2 text-gray-400 hover:text-green-600 hover:bg-green-50 rounded-[7px] transition-colors"
+                      className="p-2 text-gray-400 hover:text-green-600 hover:bg-green-50 rounded-sm transition-colors"
                       title="View"
                     >
                       <Eye className="w-4 h-4" />
                     </button>
                     <button
                       onClick={() => handleDelete(article)}
-                      className="p-2 text-gray-400 hover:text-red-600 hover:bg-red-50 rounded-[7px] transition-colors"
+                      className="p-2 text-gray-400 hover:text-red-600 hover:bg-red-50 rounded-sm transition-colors"
                       title="Delete"
                     >
                       <Trash2 className="w-4 h-4" />
@@ -543,18 +543,18 @@ function ArticlesTab() {
           ) : (
             <div className="space-y-3">
               {draftArticles.map((article) => (
-                <div key={article.id} className="flex items-center gap-4 bg-white border border-gray-200 rounded-[7px] p-4 hover:shadow-md transition-shadow group">
+                <div key={article.id} className="flex items-center gap-4 bg-white border border-gray-200 rounded-sm p-4 hover:shadow-md transition-shadow group">
                   {article.image_url ? (
-                    <img src={article.image_url} alt="" className="w-16 h-16 rounded-[7px] object-cover flex-shrink-0" />
+                    <img src={article.image_url} alt="" className="w-16 h-16 rounded-sm object-cover flex-shrink-0" />
                   ) : (
-                    <div className="w-16 h-16 rounded-[7px] bg-gray-100 flex items-center justify-center flex-shrink-0">
+                    <div className="w-16 h-16 rounded-sm bg-gray-100 flex items-center justify-center flex-shrink-0">
                       <FileText className="w-6 h-6 text-gray-400" />
                     </div>
                   )}
                   <div className="flex-1 min-w-0">
                     <h4 className="font-semibold text-gray-900 text-sm truncate">{article.title || '(Untitled draft)'}</h4>
                     <div className="flex items-center gap-3 text-xs text-gray-500 mt-1">
-                      <span className="inline-flex items-center px-2 py-0.5 bg-yellow-50 text-yellow-700 rounded-[7px] font-medium">Draft</span>
+                      <span className="inline-flex items-center px-2 py-0.5 bg-yellow-50 text-yellow-700 rounded-sm font-medium">Draft</span>
                       <span>{article.category}</span>
                       <span>Last saved: {new Date(article.created_at).toLocaleDateString()}</span>
                     </div>
@@ -562,21 +562,21 @@ function ArticlesTab() {
                   <div className="flex items-center gap-2 flex-shrink-0">
                     <button
                       onClick={() => handleEdit(article)}
-                      className="p-2 text-gray-400 hover:text-blue-600 hover:bg-blue-50 rounded-[7px] transition-colors"
+                      className="p-2 text-gray-400 hover:text-blue-600 hover:bg-blue-50 rounded-sm transition-colors"
                       title="Edit"
                     >
                       <Edit2 className="w-4 h-4" />
                     </button>
                     <button
                       onClick={() => handlePublishDraft(article)}
-                      className="p-2 text-gray-400 hover:text-green-600 hover:bg-green-50 rounded-[7px] transition-colors"
+                      className="p-2 text-gray-400 hover:text-green-600 hover:bg-green-50 rounded-sm transition-colors"
                       title="Publish"
                     >
                       <Send className="w-4 h-4" />
                     </button>
                     <button
                       onClick={() => handleDelete(article)}
-                      className="p-2 text-gray-400 hover:text-red-600 hover:bg-red-50 rounded-[7px] transition-colors"
+                      className="p-2 text-gray-400 hover:text-red-600 hover:bg-red-50 rounded-sm transition-colors"
                       title="Delete"
                     >
                       <Trash2 className="w-4 h-4" />
@@ -714,7 +714,7 @@ function GalleryTab() {
             value={title}
             onChange={(e) => setTitle(e.target.value)}
             required
-            className="w-full px-4 py-2 border border-gray-300 rounded-[7px] focus:ring-2 focus:ring-teal-600 focus:border-transparent outline-none"
+            className="w-full px-4 py-2 border border-gray-300 rounded-sm focus:ring-2 focus:ring-[#C9A46A] focus:border-transparent outline-none"
             placeholder="e.g., Gold Mining Site 2024"
           />
         </div>
@@ -726,7 +726,7 @@ function GalleryTab() {
           <select
             value={category}
             onChange={(e) => setCategory(e.target.value)}
-            className="w-full px-4 py-2 border border-gray-300 rounded-[7px] focus:ring-2 focus:ring-teal-600 focus:border-transparent outline-none"
+            className="w-full px-4 py-2 border border-gray-300 rounded-sm focus:ring-2 focus:ring-[#C9A46A] focus:border-transparent outline-none"
           >
             {categories.map(cat => (
               <option key={cat} value={cat}>{cat}</option>
@@ -742,7 +742,7 @@ function GalleryTab() {
             value={description}
             onChange={(e) => setDescription(e.target.value)}
             rows={2}
-            className="w-full px-4 py-2 border border-gray-300 rounded-[7px] focus:ring-2 focus:ring-teal-600 focus:border-transparent outline-none"
+            className="w-full px-4 py-2 border border-gray-300 rounded-sm focus:ring-2 focus:ring-[#C9A46A] focus:border-transparent outline-none"
             placeholder="Brief description..."
           />
         </div>
@@ -760,21 +760,21 @@ function GalleryTab() {
           />
           <label
             htmlFor="gallery-image"
-            className="cursor-pointer inline-flex items-center px-4 py-2 border border-gray-300 rounded-[7px] shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50"
+            className="cursor-pointer inline-flex items-center px-4 py-2 border border-gray-300 rounded-sm shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50"
           >
             <ImageIcon className="w-4 h-4 mr-2" />
             Choose Image
           </label>
           {imagePreview && (
             <div className="mt-4 relative w-full max-w-md">
-              <img src={imagePreview} alt="Preview" className="rounded-[7px] shadow-md" />
+              <img src={imagePreview} alt="Preview" className="rounded-sm shadow-md" />
               <button
                 type="button"
                 onClick={() => {
                   setImageFile(null)
                   setImagePreview(null)
                 }}
-                className="absolute top-2 right-2 bg-red-500 text-white p-2 rounded-[7px] hover:bg-red-600"
+                className="absolute top-2 right-2 bg-red-500 text-white p-2 rounded-sm hover:bg-red-600"
               >
                 <Trash2 className="w-4 h-4" />
               </button>
@@ -783,14 +783,14 @@ function GalleryTab() {
         </div>
 
         {error && (
-          <div className="bg-red-50 text-red-600 p-4 rounded-[7px] flex items-center">
+          <div className="bg-red-50 text-red-600 p-4 rounded-sm flex items-center">
             <AlertCircle className="w-5 h-5 mr-2" />
             {error}
           </div>
         )}
 
         {success && (
-          <div className="bg-green-50 text-green-600 p-4 rounded-[7px] flex items-center">
+          <div className="bg-green-50 text-green-600 p-4 rounded-sm flex items-center">
             <CheckCircle className="w-5 h-5 mr-2" />
             Image uploaded successfully!
           </div>
@@ -816,7 +816,7 @@ function GalleryTab() {
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
           {galleryImages.map((img) => (
             <div key={img.id} className="relative group">
-              <div className="aspect-square relative rounded-[7px] overflow-hidden bg-gray-100">
+              <div className="aspect-square relative rounded-sm overflow-hidden bg-gray-100">
                 <Image
                   src={img.image_url}
                   alt={img.title}
@@ -830,7 +830,7 @@ function GalleryTab() {
               </div>
               <button
                 onClick={() => handleDelete(img.id, img.storage_path)}
-                className="absolute top-2 right-2 bg-red-500 text-white p-2 rounded-[7px] opacity-0 group-hover:opacity-100 transition-opacity hover:bg-red-600"
+                className="absolute top-2 right-2 bg-red-500 text-white p-2 rounded-sm opacity-0 group-hover:opacity-100 transition-opacity hover:bg-red-600"
               >
                 <Trash2 className="w-4 h-4" />
               </button>
@@ -978,9 +978,9 @@ function AnnualReportsTab() {
     <div className="space-y-8">
       <form onSubmit={handleSubmit} className="space-y-6 pb-8 border-b border-gray-200">
         <h3 className="text-lg font-semibold text-gray-900 flex items-center gap-2">
-          <BookOpen className="w-5 h-5 text-teal-600" />
-          Upload New Annual Report
-        </h3>
+            <BookOpen className="w-5 h-5 text-[#C9A46A]" />
+            Upload New Annual Report
+          </h3>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div>
@@ -992,7 +992,7 @@ function AnnualReportsTab() {
               value={title}
               onChange={(e) => setTitle(e.target.value)}
               required
-              className="w-full px-4 py-2 border border-gray-300 rounded-[7px] focus:ring-2 focus:ring-teal-600 focus:border-transparent outline-none"
+              className="w-full px-4 py-2 border border-gray-300 rounded-sm focus:ring-2 focus:ring-[#C9A46A] focus:border-transparent outline-none"
               placeholder="e.g., Annual Report 2024"
             />
           </div>
@@ -1004,7 +1004,7 @@ function AnnualReportsTab() {
             <select
               value={year}
               onChange={(e) => setYear(Number(e.target.value))}
-              className="w-full px-4 py-2 border border-gray-300 rounded-[7px] focus:ring-2 focus:ring-teal-600 focus:border-transparent outline-none"
+              className="w-full px-4 py-2 border border-gray-300 rounded-sm focus:ring-2 focus:ring-[#C9A46A] focus:border-transparent outline-none"
             >
               {yearOptions.map(y => (
                 <option key={y} value={y}>{y}</option>
@@ -1021,7 +1021,7 @@ function AnnualReportsTab() {
             value={description}
             onChange={(e) => setDescription(e.target.value)}
             rows={3}
-            className="w-full px-4 py-2 border border-gray-300 rounded-[7px] focus:ring-2 focus:ring-teal-600 focus:border-transparent outline-none"
+            className="w-full px-4 py-2 border border-gray-300 rounded-sm focus:ring-2 focus:ring-[#C9A46A] focus:border-transparent outline-none"
             placeholder="Brief summary of the annual report..."
           />
         </div>
@@ -1040,14 +1040,14 @@ function AnnualReportsTab() {
             />
             <label
               htmlFor="report-pdf"
-              className="cursor-pointer inline-flex items-center px-4 py-2 border border-gray-300 rounded-[7px] shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50"
+              className="cursor-pointer inline-flex items-center px-4 py-2 border border-gray-300 rounded-sm shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50"
             >
               <FileText className="w-4 h-4 mr-2" />
               Choose PDF
             </label>
             {pdfFile && (
-              <div className="mt-3 flex items-center gap-2 text-sm text-gray-600 bg-gray-50 px-3 py-2 rounded-[7px]">
-                <FileText className="w-4 h-4 text-teal-600" />
+              <div className="mt-3 flex items-center gap-2 text-sm text-gray-600 bg-gray-50 px-3 py-2 rounded-sm">
+                <FileText className="w-4 h-4 text-[#C9A46A]" />
                 <span className="truncate">{pdfFile.name}</span>
                 <span className="text-gray-400">({(pdfFile.size / 1024 / 1024).toFixed(1)} MB)</span>
                 <button
@@ -1074,21 +1074,21 @@ function AnnualReportsTab() {
             />
             <label
               htmlFor="report-cover"
-              className="cursor-pointer inline-flex items-center px-4 py-2 border border-gray-300 rounded-[7px] shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50"
+              className="cursor-pointer inline-flex items-center px-4 py-2 border border-gray-300 rounded-sm shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50"
             >
               <ImageIcon className="w-4 h-4 mr-2" />
               Choose Cover
             </label>
             {coverPreview && (
               <div className="mt-3 relative w-32">
-                <img src={coverPreview} alt="Cover Preview" className="rounded-[7px] shadow-md aspect-[3/4] object-cover w-full" />
+                <img src={coverPreview} alt="Cover Preview" className="rounded-sm shadow-md aspect-[3/4] object-cover w-full" />
                 <button
                   type="button"
                   onClick={() => {
                     setCoverFile(null)
                     setCoverPreview(null)
                   }}
-                  className="absolute top-1 right-1 bg-red-500 text-white p-1 rounded-[7px] hover:bg-red-600"
+                  className="absolute top-1 right-1 bg-red-500 text-white p-1 rounded-sm hover:bg-red-600"
                 >
                   <Trash2 className="w-3 h-3" />
                 </button>
@@ -1098,14 +1098,14 @@ function AnnualReportsTab() {
         </div>
 
         {error && (
-          <div className="bg-red-50 text-red-600 p-4 rounded-[7px] flex items-center">
+          <div className="bg-red-50 text-red-600 p-4 rounded-sm flex items-center">
             <AlertCircle className="w-5 h-5 mr-2" />
             {error}
           </div>
         )}
 
         {success && (
-          <div className="bg-green-50 text-green-600 p-4 rounded-[7px] flex items-center">
+          <div className="bg-green-50 text-green-600 p-4 rounded-sm flex items-center">
             <CheckCircle className="w-5 h-5 mr-2" />
             Annual report uploaded successfully!
           </div>
@@ -1137,9 +1137,9 @@ function AnnualReportsTab() {
             {reports.map((report) => (
               <div
                 key={report.id}
-                className="relative group bg-white border border-gray-200 rounded-[7px] overflow-hidden shadow-sm hover:shadow-md transition-shadow"
+                className="relative group bg-white border border-gray-200 rounded-sm overflow-hidden shadow-sm hover:shadow-md transition-shadow"
               >
-                <div className="aspect-[3/4] relative bg-gradient-to-br from-teal-600/10 to-teal-600/5">
+                <div className="aspect-[3/4] relative bg-gradient-to-br from-[#C9A46A]/10 to-[#C9A46A]/5">
                   {report.cover_image_url ? (
                     <Image
                       src={report.cover_image_url}
@@ -1148,12 +1148,12 @@ function AnnualReportsTab() {
                       className="object-cover"
                     />
                   ) : (
-                    <div className="absolute inset-0 flex flex-col items-center justify-center text-teal-600/40">
+                    <div className="absolute inset-0 flex flex-col items-center justify-center text-[#C9A46A]/40">
                       <BookOpen className="w-16 h-16 mb-2" />
                       <span className="text-4xl font-bold">{report.year}</span>
                     </div>
                   )}
-                  <div className="absolute top-2 right-2 bg-teal-600 text-white text-xs font-bold px-2 py-1 rounded-[7px]">
+                  <div className="absolute top-2 right-2 bg-[#C9A46A] text-white text-xs font-bold px-2 py-1 rounded-sm">
                     {report.year}
                   </div>
                 </div>
@@ -1167,7 +1167,7 @@ function AnnualReportsTab() {
                       href={report.pdf_url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-xs text-teal-600 hover:underline flex items-center gap-1"
+                      className="text-xs text-[#C9A46A] hover:underline flex items-center gap-1"
                     >
                       <Download className="w-3 h-3" />
                       View PDF
@@ -1269,7 +1269,7 @@ function InquiriesTab() {
               </td>
               <td className="px-4 py-3">
                 <span
-                  className={`inline-flex items-center px-2.5 py-1 rounded-[7px] text-xs font-semibold ${
+                  className={`inline-flex items-center px-2.5 py-1 rounded-sm text-xs font-semibold ${
                     item.status === 'seen'
                       ? 'bg-green-50 text-green-700'
                       : 'bg-yellow-50 text-yellow-700'

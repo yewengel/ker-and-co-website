@@ -36,9 +36,9 @@ const divisions: Division[] = leadershipGroups.map((group, index) => ({
 }))
 
 const colorMap: Record<string, { bg: string; text: string; badge: string; gradient: string }> = {
-  blue: { bg: 'bg-medical-blue/5', text: 'text-medical-blue', badge: 'bg-medical-blue/10', gradient: 'from-medical-blue to-medical-red' },
-  amber: { bg: 'bg-amber-50', text: 'text-amber-700', badge: 'bg-amber-100', gradient: 'from-amber-500 to-amber-700' },
-  red: { bg: 'bg-medical-red/5', text: 'text-medical-red', badge: 'bg-medical-red/10', gradient: 'from-medical-red to-gray-900' },
+  blue: { bg: 'bg-[#C9A46A]/8', text: 'text-[#C9A46A]', badge: 'bg-[#C9A46A]/14', gradient: 'from-[#C9A46A] to-[#C9A46A]' },
+  amber: { bg: 'bg-[#C9A46A]/8', text: 'text-[#C9A46A]', badge: 'bg-[#C9A46A]/14', gradient: 'from-[#C9A46A] to-[#C9A46A]' },
+  red: { bg: 'bg-[#C9A46A]/8', text: 'text-[#C9A46A]', badge: 'bg-[#C9A46A]/14', gradient: 'from-[#C9A46A] to-[#C9A46A]' },
   charcoal: { bg: 'bg-gray-100', text: 'text-gray-900', badge: 'bg-gray-200', gradient: 'from-gray-800 to-black' },
 }
 
@@ -48,7 +48,7 @@ export default function LeadershipPage() {
   const totalMembers = divisions.reduce((sum, d) => sum + d.members.length, 0)
 
   return (
-    <main className="relative min-h-screen bg-gray-50">
+    <main className="relative min-h-screen bg-[#F8F4EF]">
       <Navigation />
 
       {/* Hero */}
@@ -68,7 +68,7 @@ export default function LeadershipPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7 }}
           >
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-[7px] bg-white/10 backdrop-blur-sm text-medical-blue text-sm font-semibold mb-6">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-sm bg-white/10 backdrop-blur-sm text-medical-blue text-sm font-semibold mb-6">
               <Users className="w-4 h-4" />
               Leadership & Stewardship
             </div>
@@ -82,15 +82,15 @@ export default function LeadershipPage() {
 
           {/* Stats */}
           <div className="mt-6 md:mt-12 grid grid-cols-3 gap-2 md:gap-4 max-w-3xl mx-auto">
-            <div className="bg-white/5 backdrop-blur-sm rounded-[7px] md:rounded-[8px] border border-white/10 p-2.5 md:p-5">
+            <div className="bg-white/5 backdrop-blur-sm rounded-sm md:rounded-sm border border-white/10 p-2.5 md:p-5">
               <div className="text-xl md:text-3xl font-bold text-medical-blue">{divisions.length}</div>
               <div className="text-[10px] md:text-sm text-gray-400">Leadership Groups</div>
             </div>
-            <div className="bg-white/5 backdrop-blur-sm rounded-[7px] md:rounded-[8px] border border-white/10 p-2.5 md:p-5">
+            <div className="bg-white/5 backdrop-blur-sm rounded-sm md:rounded-sm border border-white/10 p-2.5 md:p-5">
               <div className="text-xl md:text-3xl font-bold text-medical-blue">{totalMembers}</div>
               <div className="text-[10px] md:text-sm text-gray-400">Leadership Roles</div>
             </div>
-            <div className="bg-white/5 backdrop-blur-sm rounded-[7px] md:rounded-[8px] border border-white/10 p-2.5 md:p-5">
+            <div className="bg-white/5 backdrop-blur-sm rounded-sm md:rounded-sm border border-white/10 p-2.5 md:p-5">
               <div className="text-xl md:text-3xl font-bold text-medical-blue">1997</div>
               <div className="text-[10px] md:text-sm text-gray-400">Founder Start</div>
             </div>
@@ -114,7 +114,7 @@ export default function LeadershipPage() {
                     const el = document.getElementById(`div-${div.id}`)
                     el?.scrollIntoView({ behavior: 'smooth', block: 'start' })
                   }}
-                  className={`flex-shrink-0 inline-flex items-center gap-2 px-4 py-2 rounded-[7px] text-sm font-semibold transition-all ${
+                  className={`flex-shrink-0 inline-flex items-center gap-2 px-4 py-2 rounded-sm text-sm font-semibold transition-all ${
                     isActive
                       ? `${colors.badge} ${colors.text} shadow-sm`
                       : 'text-gray-600 hover:bg-gray-50'
@@ -137,10 +137,10 @@ export default function LeadershipPage() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="bg-gradient-to-r from-gray-50 to-white rounded-[7px] md:rounded-[8px] border border-gray-100 shadow-lg overflow-hidden"
+            className="bg-gradient-to-r from-gray-50 to-white rounded-sm md:rounded-sm border border-gray-100 shadow-lg overflow-hidden"
           >
             <div className="p-4 md:p-10 flex flex-row items-center gap-4 md:gap-12">
-              <div className="relative w-28 h-64 md:w-52 md:h-68 rounded-[7px] md:rounded-[8px] overflow-hidden shadow-xl flex-shrink-0">
+              <div className="relative w-28 h-64 md:w-52 md:h-68 rounded-sm md:rounded-sm overflow-hidden shadow-xl flex-shrink-0">
                 <Image
                   src={brandMedia.founder.portrait}
                   alt={brand.founderName}
@@ -150,12 +150,12 @@ export default function LeadershipPage() {
                 />
               </div>
               <div className="text-left">
-                <div className="inline-flex items-center gap-1.5 px-2 py-0.5 md:px-3 md:py-1 rounded-[7px] bg-medical-blue/10 text-medical-red text-[9px] md:text-xs font-semibold mb-1.5 md:mb-3">
+                <div className="inline-flex items-center gap-1.5 px-2 py-0.5 md:px-3 md:py-1 rounded-sm bg-[#C9A46A]/14 text-[#C9A46A] text-[9px] md:text-xs font-semibold mb-1.5 md:mb-3">
                   <Shield className="w-3 h-3 md:w-3.5 md:h-3.5" />
                   Founder
                 </div>
                 <h2 className="text-sm md:text-4xl font-bold text-gray-900 mb-0.5 md:mb-1">{brand.founderName}</h2>
-                <p className="text-[10px] md:text-lg text-medical-blue font-semibold mb-1.5 md:mb-4">{brand.founderTitle}</p>
+                <p className="text-[10px] md:text-lg text-[#C9A46A] font-semibold mb-1.5 md:mb-4">{brand.founderTitle}</p>
                 <p className="text-[9px] md:text-base text-gray-600 leading-snug md:leading-relaxed max-w-2xl line-clamp-3 md:line-clamp-none">
                   Keria Ahmed built Ker & Co. Business Group from a humble 1997 import business into a diversified Ethiopian portfolio spanning distribution, paper products, hospitality, wellness, real estate, mining, agriculture, and export ventures.
                 </p>
@@ -179,7 +179,7 @@ export default function LeadershipPage() {
                   transition={{ duration: 0.5 }}
                 >
                   <div className="flex items-center gap-3 mb-2">
-                    <div className={`w-10 h-10 rounded-[7px] ${colors.badge} flex items-center justify-center`}>
+                    <div className={`w-10 h-10 rounded-sm ${colors.badge} flex items-center justify-center`}>
                       <div.icon className={`w-5 h-5 ${colors.text}`} />
                     </div>
                     <span className={`text-sm font-semibold ${colors.text} uppercase tracking-wider`}>{div.members.length} Members</span>
@@ -193,7 +193,7 @@ export default function LeadershipPage() {
                         initial={{ opacity: 0, scale: 0.95 }}
                         whileInView={{ opacity: 1, scale: 1 }}
                         viewport={{ once: true }}
-                        className="group bg-white rounded-[7px] md:rounded-[8px] border border-gray-100 shadow-sm hover:shadow-lg transition-all overflow-hidden"
+                        className="group bg-white rounded-sm md:rounded-sm border border-gray-100 shadow-sm hover:shadow-lg transition-all overflow-hidden"
                       >
                         <div className="relative w-full aspect-[3/4] md:aspect-square bg-gray-100">
                           {member.image ? (

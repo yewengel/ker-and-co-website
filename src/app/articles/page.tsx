@@ -166,7 +166,7 @@ const Articles = () => {
             className="mb-8 md:mb-20"
           >
             <div
-              className="relative overflow-hidden rounded-[7px] md:rounded-[8px] shadow-xl md:shadow-2xl border border-gray-100 bg-white cursor-pointer group"
+              className="relative overflow-hidden rounded-sm md:rounded-sm shadow-xl md:shadow-2xl border border-gray-100 bg-white cursor-pointer group"
               onClick={() => openArticle(featuredArticle.id)}
             >
               <div className="flex flex-col lg:flex-row">
@@ -187,7 +187,7 @@ const Articles = () => {
                     </div>
                   )}
                   <div className="absolute top-4 left-4">
-                    <span className="inline-flex items-center px-3 py-1.5 text-xs font-bold text-white bg-medical-blue rounded-[7px] shadow-lg">
+                    <span className="inline-flex items-center px-3 py-1.5 text-xs font-bold text-white bg-medical-blue rounded-sm shadow-lg">
                       Featured Article
                     </span>
                   </div>
@@ -195,7 +195,7 @@ const Articles = () => {
 
                 {/* Right: Content */}
                 <div className="lg:w-1/2 p-4 md:p-8 lg:p-10 xl:p-12 flex flex-col justify-center">
-                  <span className="inline-flex items-center px-3 py-1 mb-4 text-xs font-semibold text-medical-blue bg-medical-blue/10 rounded-[7px] w-fit">
+                  <span className="inline-flex items-center px-3 py-1 mb-4 text-xs font-semibold text-medical-blue bg-medical-blue/10 rounded-sm w-fit">
                     {featuredArticle.category}
                   </span>
                   <h2 className="text-base md:text-2xl lg:text-3xl font-bold text-gray-900 mb-2 md:mb-4 leading-snug group-hover:text-medical-blue transition-colors">
@@ -239,7 +239,7 @@ const Articles = () => {
                 initial={{ opacity: 0, x: -30 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.8 }}
-                className="bg-white rounded-[7px] md:rounded-[8px] shadow-lg p-3 md:p-6 sticky top-24"
+                className="bg-white rounded-sm md:rounded-sm shadow-lg p-3 md:p-6 sticky top-24"
               >
                 <h3 className="text-sm md:text-xl font-bold text-gray-900 mb-3 md:mb-6">Categories</h3>
                 <div className="grid grid-cols-2 lg:grid-cols-1 gap-1.5 md:gap-0 md:space-y-3">
@@ -250,7 +250,7 @@ const Articles = () => {
                       <button
                         key={index}
                         onClick={() => setActiveCategory(category.name)}
-                        className={`w-full flex items-center justify-between p-1.5 md:p-3 rounded-[7px] transition-colors text-left group ${
+                        className={`w-full flex items-center justify-between p-1.5 md:p-3 rounded-sm transition-colors text-left group ${
                           selected ? 'bg-medical-blue/10 border border-medical-blue/20' : 'hover:bg-gray-50'
                         }`}
                       >
@@ -260,7 +260,7 @@ const Articles = () => {
                             {category.name}
                           </span>
                         </div>
-                        <span className="text-[9px] md:text-sm text-gray-400 bg-gray-100 px-1.5 py-0.5 md:px-2 md:py-1 rounded-[7px]">
+                        <span className="text-[9px] md:text-sm text-gray-400 bg-gray-100 px-1.5 py-0.5 md:px-2 md:py-1 rounded-sm">
                           {category.count}
                         </span>
                       </button>
@@ -312,7 +312,7 @@ const Articles = () => {
                           }}
                         >
                           {/* Book Cover */}
-                          <div className="relative aspect-[3/4] rounded-[7px] overflow-hidden shadow-lg group-hover:shadow-2xl transition-all duration-500 group-hover:-translate-y-2 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900">
+                          <div className="relative aspect-[3/4] rounded-sm overflow-hidden shadow-lg group-hover:shadow-2xl transition-all duration-500 group-hover:-translate-y-2 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900">
                             {report.cover_image_url ? (
                               <img
                                 src={report.cover_image_url}
@@ -322,7 +322,7 @@ const Articles = () => {
                             ) : (
                               /* Default book cover design when no image */
                               <div className="absolute inset-0 flex flex-col items-center justify-center p-6 bg-gradient-to-br from-medical-blue/90 via-medical-blue/80 to-medical-red">
-                                <div className="w-12 h-12 md:w-16 md:h-16 rounded-[7px] bg-white/10 flex items-center justify-center mb-4">
+                                <div className="w-12 h-12 md:w-16 md:h-16 rounded-sm bg-white/10 flex items-center justify-center mb-4">
                                   <BookOpen className="w-6 h-6 md:w-8 md:h-8 text-white" />
                                 </div>
                                 <span className="text-white/90 text-xs md:text-sm font-medium tracking-widest uppercase mb-2">Annual Report</span>
@@ -340,7 +340,7 @@ const Articles = () => {
                             )}
 
                             {/* Year badge */}
-                            <div className="absolute top-3 right-3 bg-medical-blue text-white text-xs font-bold px-2.5 py-1 rounded-[7px] shadow-lg">
+                            <div className="absolute top-3 right-3 bg-medical-blue text-white text-xs font-bold px-2.5 py-1 rounded-sm shadow-lg">
                               {report.year}
                             </div>
 
@@ -358,7 +358,7 @@ const Articles = () => {
 
                             {/* Hover overlay */}
                             <div className="absolute inset-0 bg-medical-blue/0 group-hover:bg-medical-blue/10 transition-colors duration-300 flex items-center justify-center">
-                              <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-white/95 backdrop-blur-sm rounded-[7px] px-5 py-2.5 shadow-xl flex items-center gap-2">
+                              <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-white/95 backdrop-blur-sm rounded-sm px-5 py-2.5 shadow-xl flex items-center gap-2">
                                 <BookOpen className="w-4 h-4 text-medical-blue" />
                                 <span className="text-sm font-semibold text-gray-900">Read Report</span>
                               </div>
@@ -424,7 +424,7 @@ const Articles = () => {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.5, delay: index * 0.1 }}
                         onClick={() => openArticle(article.id)}
-                        className="bg-white rounded-[7px] md:rounded-[8px] shadow-md md:shadow-lg hover:shadow-xl transition-all duration-300 group cursor-pointer overflow-hidden flex flex-col"
+                        className="bg-white rounded-sm md:rounded-sm shadow-md md:shadow-lg hover:shadow-xl transition-all duration-300 group cursor-pointer overflow-hidden flex flex-col"
                       >
                         {/* Image with fixed aspect ratio */}
                         <div className="relative w-full aspect-video overflow-hidden bg-gray-200">
@@ -443,7 +443,7 @@ const Articles = () => {
                             </div>
                           )}
                           <div className="absolute top-3 left-3">
-                            <span className="inline-flex items-center px-2.5 py-1 text-[11px] font-bold text-white bg-medical-blue rounded-[7px] shadow-md">
+                            <span className="inline-flex items-center px-2.5 py-1 text-[11px] font-bold text-white bg-medical-blue rounded-sm shadow-md">
                               {article.category}
                             </span>
                           </div>
@@ -471,7 +471,7 @@ const Articles = () => {
                           </div>
                           <div className="flex items-center justify-between pt-4 mt-4 border-t border-gray-100">
                             <div className="flex items-center space-x-2 text-xs text-gray-500">
-                              <div className="w-6 h-6 rounded-[7px] bg-medical-blue/10 flex items-center justify-center">
+                              <div className="w-6 h-6 rounded-sm bg-medical-blue/10 flex items-center justify-center">
                                 <User className="w-3 h-3 text-medical-blue" />
                               </div>
                               <span className="truncate max-w-[140px]">{article.author}</span>

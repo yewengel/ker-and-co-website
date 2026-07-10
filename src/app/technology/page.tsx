@@ -62,9 +62,9 @@ export default function TechnologyPage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: idx * 0.08 }}
-              className="bg-white rounded-[8px] border border-gray-100 shadow-sm p-8"
+              className="bg-white rounded-sm border border-gray-100 shadow-sm p-8"
             >
-              <div className="inline-flex w-12 h-12 rounded-[8px] bg-teal-600/10 items-center justify-center">
+              <div className="inline-flex w-12 h-12 rounded-sm bg-teal-600/10 items-center justify-center">
                 <item.icon className="w-6 h-6 text-teal-600" />
               </div>
               <h2 className="text-xl font-bold text-gray-900 mt-4">{item.title}</h2>
@@ -73,7 +73,7 @@ export default function TechnologyPage() {
           ))}
         </div>
 
-        <div className="max-w-7xl mx-auto mt-10 bg-white rounded-[8px] border border-gray-100 shadow-lg p-8">
+        <div className="max-w-7xl mx-auto mt-10 bg-white rounded-sm border border-gray-100 shadow-lg p-8">
           <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
             <div>
               <h2 className="text-2xl font-bold text-gray-900">Want to collaborate?</h2>

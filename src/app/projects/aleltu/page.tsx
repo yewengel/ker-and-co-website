@@ -76,18 +76,18 @@ export default function AleltuProjectPage() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
             >
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-[7px] bg-teal-600/10 text-teal-600 text-sm font-semibold">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-sm bg-[#C9A46A]/10 text-[#C9A46A] text-sm font-semibold">
                 <Mountain className="w-4 h-4" />
                 Quarry & Crushing
               </div>
               <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mt-4 mb-5 font-heading">
-                Aleltu <span className="text-teal-600">Quarry & Aggregate Production</span>
+                Aleltu <span className="text-[#C9A46A]">Quarry & Aggregate Production</span>
               </h1>
               <p className="text-lg md:text-xl text-gray-600 leading-relaxed">
                 End-to-end quarry development and aggregate production—from drilling and blasting to crushing, stockpiling, and dispatch.
               </p>
               <div className="mt-8 flex flex-col sm:flex-row gap-3">
-                <Button variant="medical" onClick={() => (window.location.href = '/gallery/')}
+                <Button onClick={() => (window.location.href = '/gallery/')}
                 >
                   View media
                   <ArrowRight className="w-4 h-4 ml-2" />
@@ -103,7 +103,7 @@ export default function AleltuProjectPage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="relative overflow-hidden rounded-[8px] shadow-xl bg-gray-200"
+              className="relative overflow-hidden rounded-sm shadow-xl bg-gray-200"
             >
               <div className="relative aspect-[16/11]">
                 <img
@@ -128,10 +128,10 @@ export default function AleltuProjectPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: idx * 0.08 }}
-                className="rounded-[8px] bg-white border border-gray-100 shadow-sm p-7"
+                className="rounded-sm bg-white border border-gray-100 shadow-sm p-7"
               >
-                <div className="inline-flex w-12 h-12 rounded-[8px] bg-teal-600/10 items-center justify-center">
-                  <h.icon className="w-6 h-6 text-teal-600" />
+                <div className="inline-flex w-12 h-12 rounded-sm bg-[#C9A46A]/10 items-center justify-center">
+                  <h.icon className="w-6 h-6 text-[#C9A46A]" />
                 </div>
                 <h2 className="text-xl font-bold text-gray-900 mt-4">{h.title}</h2>
                 <p className="text-gray-600 mt-2 leading-relaxed">{h.description}</p>
@@ -147,18 +147,18 @@ export default function AleltuProjectPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: idx * 0.05 }}
-                className="grid lg:grid-cols-2 gap-8 items-center rounded-[8px] bg-white border border-gray-100 shadow-lg p-7 md:p-10"
+                className="grid lg:grid-cols-2 gap-8 items-center rounded-sm bg-white border border-gray-100 shadow-lg p-7 md:p-10"
               >
                 <div>
-                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-[7px] bg-gray-50 border border-gray-100 text-gray-700 text-sm font-semibold">
-                    <s.icon className="w-4 h-4 text-teal-600" />
+                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-sm bg-gray-50 border border-gray-100 text-gray-700 text-sm font-semibold">
+                    <s.icon className="w-4 h-4 text-[#C9A46A]" />
                     Section
                   </div>
                   <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mt-4">{s.title}</h3>
                   <p className="text-gray-600 mt-3 leading-relaxed">{s.description}</p>
                 </div>
 
-                <div className="relative overflow-hidden rounded-[8px] bg-gray-200 shadow">
+                <div className="relative overflow-hidden rounded-sm bg-gray-200 shadow">
                   <div className="relative aspect-[16/10]">
                     <img
                       src={encodeURI(s.image)}
@@ -171,9 +171,9 @@ export default function AleltuProjectPage() {
             ))}
           </div>
 
-          <div className="mt-12 rounded-[8px] bg-gray-900 text-white p-8 md:p-10 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+          <div className="mt-12 rounded-sm bg-gradient-to-r from-[#C9A46A] to-[#C9A46A] text-white p-8 md:p-10 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
             <div>
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-[7px] bg-white/10 text-white text-sm font-semibold">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-sm bg-white/10 text-white text-sm font-semibold">
                 <Factory className="w-4 h-4" />
                 Media
               </div>
@@ -186,7 +186,7 @@ export default function AleltuProjectPage() {
               variant="outline"
               size="lg"
               onClick={() => (window.location.href = '/gallery/')}
-              className="bg-white text-gray-900 border-white hover:bg-gray-100"
+              className="bg-white text-[#C9A46A] border-white hover:bg-gray-100"
             >
               Open gallery
               <ArrowRight className="w-5 h-5 ml-2" />

@@ -271,18 +271,18 @@ const ProcedureShowcase = () => {
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   
                   {/* Icon */}
-                  <div className={`absolute top-4 left-4 w-12 h-12 ${procedure.color} rounded-[7px] flex items-center justify-center`}>
+                  <div className={`absolute top-4 left-4 w-12 h-12 ${procedure.color} rounded-sm flex items-center justify-center`}>
                     <procedure.icon className="w-6 h-6 text-white" />
                   </div>
                   
                   {/* Steps Badge */}
-                  <div className="absolute top-4 right-4 bg-black/70 text-white text-xs px-2 py-1 rounded-[7px]">
+                  <div className="absolute top-4 right-4 bg-black/70 text-white text-xs px-2 py-1 rounded-sm">
                     {procedure.steps.length} steps
                   </div>
                   
                   {/* Play Button */}
                   <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <div className="w-16 h-16 bg-white/90 rounded-[7px] flex items-center justify-center">
+                    <div className="w-16 h-16 bg-white/90 rounded-sm flex items-center justify-center">
                       <Play className="w-8 h-8 text-gray-900 ml-1" />
                     </div>
                   </div>
@@ -296,7 +296,7 @@ const ProcedureShowcase = () => {
                     {procedure.description}
                   </p>
                   <div className="flex items-center justify-between">
-                    <span className={`text-xs px-3 py-1 rounded-[7px] ${
+                    <span className={`text-xs px-3 py-1 rounded-sm ${
                       procedure.category === 'surgical' ? 'bg-red-100 text-red-700' :
                       procedure.category === 'diagnostic' ? 'bg-blue-100 text-blue-700' :
                       'bg-green-100 text-green-700'
@@ -318,10 +318,10 @@ const ProcedureShowcase = () => {
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            className="bg-gradient-to-r from-gray-50 to-white rounded-[8px] p-8 shadow-lg"
+            className="bg-gradient-to-r from-gray-50 to-white rounded-sm p-8 shadow-lg"
           >
             <div className="flex items-center gap-4 mb-8">
-              <div className={`w-16 h-16 ${selectedProcedure.color} rounded-[8px] flex items-center justify-center`}>
+              <div className={`w-16 h-16 ${selectedProcedure.color} rounded-sm flex items-center justify-center`}>
                 <selectedProcedure.icon className="w-8 h-8 text-white" />
               </div>
               <div>
@@ -333,7 +333,7 @@ const ProcedureShowcase = () => {
             <div className="grid lg:grid-cols-2 gap-8 items-center">
               {/* Image Display */}
               <div className="relative">
-                <div className="relative aspect-video bg-gray-100 rounded-[7px] overflow-hidden">
+                <div className="relative aspect-video bg-gray-100 rounded-sm overflow-hidden">
                   <Image
                     src={selectedProcedure.steps[currentStep].image}
                     alt={selectedProcedure.steps[currentStep].title}
@@ -359,7 +359,7 @@ const ProcedureShowcase = () => {
                       {selectedProcedure.steps.map((_, index) => (
                         <button
                           key={index}
-                          className={`w-3 h-3 rounded-[7px] transition-colors ${
+                          className={`w-3 h-3 rounded-sm transition-colors ${
                             index === currentStep ? 'bg-medical-blue' : 'bg-gray-300'
                           }`}
                           onClick={() => setCurrentStep(index)}
@@ -402,12 +402,12 @@ const ProcedureShowcase = () => {
                   {selectedProcedure.steps.map((step, index) => (
                     <div
                       key={index}
-                      className={`flex items-center gap-3 p-3 rounded-[7px] cursor-pointer transition-colors ${
+                      className={`flex items-center gap-3 p-3 rounded-sm cursor-pointer transition-colors ${
                         index === currentStep ? 'bg-medical-blue/10 border border-medical-blue/20' : 'bg-gray-50 hover:bg-gray-100'
                       }`}
                       onClick={() => setCurrentStep(index)}
                     >
-                      <div className={`w-8 h-8 rounded-[7px] flex items-center justify-center text-sm font-medium ${
+                      <div className={`w-8 h-8 rounded-sm flex items-center justify-center text-sm font-medium ${
                         index === currentStep ? 'bg-medical-blue text-white' : 'bg-gray-300 text-gray-700'
                       }`}>
                         {index + 1}

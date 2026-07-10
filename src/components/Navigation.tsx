@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { MapPin, ChevronDown, Phone } from 'lucide-react'
+import { MapPin, ChevronDown, Phone, Menu, X } from 'lucide-react'
 import { usePathname } from 'next/navigation'
 import { brand } from '@/lib/brand'
 import { cn } from '@/lib/utils'
@@ -13,6 +13,7 @@ const Navigation = () => {
   const pathname = usePathname()
   const [scrolled, setScrolled] = useState(false)
   const [openDropdown, setOpenDropdown] = useState<string | null>(null)
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   useEffect(() => {
     const handleScroll = () => {
@@ -60,6 +61,7 @@ const Navigation = () => {
         { name: 'Careers', href: '/careers' },
       ],
     },
+    { name: 'Location', href: '#contact' },
     { name: 'Contact Us', href: '#contact', variant: 'contact' },
   ]
 
@@ -88,9 +90,11 @@ const Navigation = () => {
         }
       }
       setOpenDropdown(null)
+      setMobileMenuOpen(false)
     } else {
       window.location.href = href
       setOpenDropdown(null)
+      setMobileMenuOpen(false)
     }
   }
 
@@ -105,8 +109,8 @@ const Navigation = () => {
       navLinkBase,
       'after:absolute after:left-0 after:-bottom-2 after:h-[2px] after:transition-all after:duration-300',
       active
-        ? 'text-[#A67C52] after:w-full after:bg-[#A67C52]'
-        : 'text-[#222222] after:w-0 after:bg-[#A67C52] hover:text-[#A67C52] hover:after:w-full'
+        ? 'text-[#C9A46A] after:w-full after:bg-[#C9A46A]'
+        : 'text-[#222222] after:w-0 after:bg-[#C9A46A] hover:text-[#C9A46A] hover:after:w-full'
     )
 
   const renderNavItem = (item: NavLeafItem | NavGroupItem) => {
@@ -116,7 +120,7 @@ const Navigation = () => {
           key={item.name}
           type="button"
           onClick={() => handleNavigation(item.href)}
-          className="shrink-0 inline-flex items-center h-10 md:h-11 px-6 md:px-7 text-[14px] md:text-[15px] lg:text-[16px] font-semibold text-white rounded-[7px] bg-[#A67C52] hover:bg-[#8E6844] transition-colors duration-200 shadow-sm ml-1"
+          className="shrink-0 inline-flex items-center h-10 md:h-11 px-6 md:px-7 text-[14px] md:text-[15px] lg:text-[16px] font-semibold text-white rounded-sm bg-[#C9A46A] hover:bg-[#C9A46A] transition-colors duration-200 shadow-sm ml-1"
         >
           {item.name}
         </button>
@@ -153,12 +157,12 @@ const Navigation = () => {
               type="button"
               aria-label={`Toggle ${item.name} menu`}
               onClick={() => setOpenDropdown(isActive ? null : item.name)}
-              className="p-1 rounded-[6px] text-[#222222] transition-colors hover:text-[#A67C52] hover:bg-[#F8F4EF]"
+              className="p-1 rounded-[6px] text-[#222222] transition-colors hover:text-[#C9A46A] hover:bg-[#F8F4EF]"
             >
               <ChevronDown
                 className={cn(
                   'w-4 h-4 transition-transform duration-200',
-                  isActive ? 'rotate-180 text-[#A67C52]' : 'rotate-0'
+                  isActive ? 'rotate-180 text-[#C9A46A]' : 'rotate-0'
                 )}
                 strokeWidth={1.75}
               />
@@ -172,7 +176,7 @@ const Navigation = () => {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: 6 }}
                 transition={{ duration: 0.15 }}
-                className="absolute top-full left-1/2 -translate-x-1/2 mt-4 w-72 rounded-[7px] bg-white shadow-[0_16px_48px_rgba(0,0,0,0.08)] border border-[#E8E2DA] overflow-hidden z-50"
+                className="absolute top-full left-1/2 -translate-x-1/2 mt-4 w-72 rounded-sm bg-white shadow-[0_20px_48px_rgba(34,34,34,0.08)] border border-[#E7DED2] overflow-hidden z-50"
               >
                 <div className="py-2">
                   {item.children?.map((child) => (
@@ -180,7 +184,7 @@ const Navigation = () => {
                       key={child.name}
                       type="button"
                       onClick={() => handleNavigation(child.href)}
-                      className="w-full text-left px-5 py-3 text-[14px] text-[#222222] hover:bg-[#F8F4EF] hover:text-[#A67C52] transition-colors"
+                      className="w-full text-left px-5 py-3 text-[14px] text-[#222222] hover:bg-[#F8F4EF] hover:text-[#C9A46A] transition-colors"
                     >
                       {child.name}
                     </button>
@@ -218,26 +222,21 @@ const Navigation = () => {
         style={{ backgroundColor: BEIGE }}
       >
         <div className="flex h-[52px] items-center justify-between gap-8 max-w-[1600px] mx-auto">
-          <a
-            href={brand.phoneHref}
-            className="inline-flex items-center gap-2.5 text-[13px] md:text-[14px] lg:text-[15px] font-medium text-[#222222] transition-colors hover:text-[#A67C52] shrink-0"
-          >
-            <Phone className="w-4 h-4 text-[#A67C52]" strokeWidth={1.75} />
-            <span className="whitespace-nowrap">{brand.phone}</span>
-          </a>
+          <div className="inline-flex items-center gap-8">
+            <a
+              href={brand.phoneHref}
+              className="inline-flex items-center gap-2.5 text-[13px] md:text-[14px] lg:text-[15px] font-medium text-[#222222] transition-colors hover:text-[#C9A46A] shrink-0"
+            >
+              <Phone className="w-5 h-5 text-[#C9A46A]" strokeWidth={1.75} />
+              <span className="whitespace-nowrap">{brand.phone}</span>
+            </a>
 
-          <div className="hidden md:inline-flex items-center justify-center gap-2.5 flex-1 min-w-0 px-8">
-            <MapPin className="w-4 h-4 text-[#A67C52] shrink-0" strokeWidth={1.75} />
-            <span className="text-[13px] md:text-[14px] lg:text-[15px] font-medium text-[#222222] truncate">
-              {brand.location}
-            </span>
-          </div>
-
-          <div className="inline-flex md:hidden items-center gap-1.5 min-w-0 flex-1 justify-end">
-            <MapPin className="w-3.5 h-3.5 text-[#A67C52] shrink-0" strokeWidth={1.75} />
-            <span className="text-[12px] font-medium text-[#222222] truncate">
-              {brand.location}
-            </span>
+            <div className="inline-flex items-center gap-2.5 min-w-0">
+              <MapPin className="w-5 h-5 text-[#C9A46A] shrink-0" strokeWidth={1.75} />
+              <span className="text-[13px] md:text-[14px] lg:text-[15px] font-medium text-[#222222] truncate">
+                {brand.location}
+              </span>
+            </div>
           </div>
         </div>
       </div>
@@ -257,7 +256,7 @@ const Navigation = () => {
             className="flex shrink-0 items-center cursor-pointer group lg:justify-self-start"
             onClick={() => handleNavigation('/')}
           >
-            <div className="w-[64px] h-[64px] sm:w-[72px] sm:h-[72px] md:w-[80px] md:h-[80px] lg:w-[84px] lg:h-[84px] rounded-[7px] overflow-hidden bg-white border border-[#E8E2DA] flex items-center justify-center shrink-0 transition-shadow duration-300 group-hover:shadow-[0_6px_20px_rgba(166,124,82,0.14)]">
+            <div className="w-[64px] h-[64px] sm:w-[72px] sm:h-[72px] md:w-[80px] md:h-[80px] lg:w-[84px] lg:h-[84px] rounded-sm overflow-hidden bg-white border border-[#E7DED2] flex items-center justify-center shrink-0 transition-shadow duration-300 group-hover:shadow-[0_8px_24px_rgba(210,180,140,0.2)]">
               <img
                 src={brand.logoPath}
                 alt={`${brand.name} Logo`}
@@ -274,8 +273,8 @@ const Navigation = () => {
             </div>
           </motion.div>
 
-          {/* Centered navigation links */}
-          <div className="flex items-center justify-end lg:justify-center min-w-0 overflow-x-auto scrollbar-none lg:justify-self-center">
+          {/* Centered navigation links (desktop only) */}
+          <div className="hidden lg:flex items-center justify-center min-w-0 overflow-x-auto scrollbar-none justify-self-center">
             <div className="flex items-center gap-x-7 md:gap-x-9 lg:gap-x-11 xl:gap-x-14 px-2">
               {navItems.map((item) => renderNavItem(item))}
             </div>
@@ -291,7 +290,107 @@ const Navigation = () => {
               </div>
             </div>
           </div>
+
+          {/* Hamburger button (mobile/tablet only) */}
+          <div className="flex justify-end lg:hidden">
+            <button
+              type="button"
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              className="p-2 text-[#C9A46A]"
+              aria-label="Toggle navigation menu"
+            >
+              {mobileMenuOpen ? <X className="w-8 h-8" /> : <Menu className="w-8 h-8" />}
+            </button>
+          </div>
         </div>
+
+        {/* Mobile menu */}
+        <AnimatePresence>
+          {mobileMenuOpen && (
+            <motion.div
+              initial={{ opacity: 0, height: 0, y: -10 }}
+              animate={{ opacity: 1, height: 'auto', y: 0 }}
+              exit={{ opacity: 0, height: 0, y: -10 }}
+              transition={{ duration: 0.3, ease: 'easeInOut' }}
+              className="lg:hidden bg-white border-b border-[#E8E2DA] overflow-hidden"
+            >
+              <div className="px-6 sm:px-10 md:px-14 py-6 space-y-4">
+                {navItems.map((item) => {
+                  if ('variant' in item && item.variant === 'contact') {
+                    return (
+                      <button
+                        key={item.name}
+                        type="button"
+                        onClick={() => handleNavigation(item.href)}
+                        className="w-full inline-flex items-center justify-center h-10 md:h-11 px-6 md:px-7 text-[14px] md:text-[15px] font-semibold text-white rounded-sm bg-[#C9A46A] hover:bg-[#C9A46A] transition-colors duration-200 shadow-sm"
+                      >
+                        {item.name}
+                      </button>
+                    )
+                  }
+
+                  if ('children' in item) {
+                    const isActive = openDropdown === item.name
+                    const isCurrent = isGroupActive(item as any)
+                    return (
+                      <div key={item.name} className="space-y-2">
+                        <button
+                          type="button"
+                          onClick={() => setOpenDropdown(isActive ? null : item.name)}
+                          className={cn(
+                            'w-full flex items-center justify-between text-left',
+                            getNavLinkClass(isCurrent)
+                          )}
+                        >
+                          <span>{item.name}</span>
+                          <ChevronDown
+                            className={cn(
+                              'w-5 h-5 transition-transform duration-200',
+                              isActive ? 'rotate-180' : ''
+                            )}
+                            strokeWidth={1.75}
+                          />
+                        </button>
+                        <AnimatePresence>
+                          {isActive && (
+                            <motion.div
+                              initial={{ opacity: 0, height: 0 }}
+                              animate={{ opacity: 1, height: 'auto' }}
+                              exit={{ opacity: 0, height: 0 }}
+                              className="pl-4 space-y-2"
+                            >
+                              {item.children?.map((child) => (
+                                <button
+                                  key={child.name}
+                                  type="button"
+                                  onClick={() => handleNavigation(child.href)}
+                                  className="w-full text-left py-2 text-[14px] text-[#222222] hover:text-[#C9A46A] transition-colors"
+                                >
+                                  {child.name}
+                                </button>
+                              ))}
+                            </motion.div>
+                          )}
+                        </AnimatePresence>
+                      </div>
+                    )
+                  }
+
+                  return (
+                    <button
+                      key={item.name}
+                      type="button"
+                      onClick={() => handleNavigation(item.href)}
+                      className={cn('w-full text-left', getNavLinkClass(isNavActive(item.href)))}
+                    >
+                      {item.name}
+                    </button>
+                  )
+                })}
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </nav>
     </header>
   )

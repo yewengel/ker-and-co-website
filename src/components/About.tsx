@@ -73,16 +73,16 @@ const About = () => {
   ]
 
   const stats = [
-    { icon: Award, value: 'Since 1997', label: 'Founder Journey', color: 'text-medical-blue' },
-    { icon: Globe, value: '4', label: 'Ker Fitness Locations', color: 'text-medical-blue' },
-    { icon: MapPin, value: '3', label: 'Hotel Awards', color: 'text-medical-blue' },
-    { icon: Users, value: '4', label: 'Luxury Towers', color: 'text-medical-blue' }
+    { icon: Award, value: 'Since 1997', label: 'Founder Journey', color: 'text-[#C9A46A]' },
+    { icon: Globe, value: '4', label: 'Ker Fitness Locations', color: 'text-[#C9A46A]' },
+    { icon: MapPin, value: '3', label: 'Hotel Awards', color: 'text-[#C9A46A]' },
+    { icon: Users, value: '4', label: 'Luxury Towers', color: 'text-[#C9A46A]' }
   ]
 
   const achievements = founderStory.map((item) => `${item.title} — ${item.description}`)
 
   return (
-    <section id="about" className="py-10 md:py-20 bg-gray-50">
+    <section id="about" className="py-10 md:py-20 bg-[#F8F4EF]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <motion.div
@@ -93,7 +93,7 @@ const About = () => {
           className="text-center mb-8 md:mb-16"
         >
           <h2 className="text-2xl md:text-5xl font-bold font-heading mb-3 md:mb-6">
-            About <span className="text-gradient">{brand.name}</span>
+            About <span className="text-[#C9A46A]">{brand.name}</span>
           </h2>
           <p className="text-xs md:text-xl text-gray-600 max-w-3xl mx-auto">
             {brand.name} tells the story of our founder’s rise from a small 1997 import business into a diversified Ethiopian group spanning distribution, paper products, hospitality, wellness, real estate, mining, agriculture, and export ventures.
@@ -116,8 +116,8 @@ const About = () => {
               transition={{ delay: index * 0.1 }}
               className="text-center group"
             >
-              <div className={`inline-flex items-center justify-center w-12 h-12 md:w-16 md:h-16 rounded-[7px] md:rounded-[8px] bg-gray-50 mb-2 md:mb-4 group-hover:bg-medical-blue/10 transition-colors ${stat.color}`}>
-                <stat.icon className="w-6 h-6 md:w-8 md:h-8" />
+              <div className="inline-flex items-center justify-center w-12 h-12 md:w-16 md:h-16 rounded-sm bg-[#C9A46A] mb-2 md:mb-4 shadow-sm">
+                <stat.icon className="w-6 h-6 md:w-8 md:h-8 text-white" />
               </div>
               <div className="text-xl md:text-2xl lg:text-3xl font-bold text-gray-900 mb-1 md:mb-2">{stat.value}</div>
               <div className="text-xs md:text-sm text-gray-600">{stat.label}</div>
@@ -134,7 +134,7 @@ const About = () => {
           className="mb-10 md:mb-20"
         >
           <div className="grid lg:grid-cols-2 gap-4 md:gap-8 items-center">
-            <div className="relative overflow-hidden rounded-[7px] md:rounded-[8px] shadow-xl">
+            <div className="relative overflow-hidden rounded-sm md:rounded-sm shadow-xl">
               <img
                 src={brandMedia.founder.beginnings}
                 alt="Our founder's beginnings"
@@ -166,10 +166,10 @@ const About = () => {
               viewport={{ once: true }}
               transition={{ delay: index * 0.2 }}
             >
-              <Card className="h-full border border-gray-100 shadow-sm hover-lift bg-white">
+              <Card className="h-full border border-[#E7DED2] shadow-sm hover-lift bg-white">
                 <CardContent className="p-3 md:p-8 text-center">
-                  <div className="w-10 h-10 md:w-20 md:h-20 mx-auto rounded-[7px] md:rounded-[8px] bg-[#A67C52]/10 border border-[#A67C52]/20 flex items-center justify-center mb-2 md:mb-6">
-                    <item.icon className="w-5 h-5 md:w-10 md:h-10 text-[#A67C52]" />
+                  <div className="w-10 h-10 md:w-20 md:h-20 mx-auto rounded-sm bg-[#C9A46A] flex items-center justify-center mb-2 md:mb-6 shadow-sm">
+                    <item.icon className="w-5 h-5 md:w-10 md:h-10 text-white" />
                   </div>
                   <h3 className="text-sm md:text-2xl font-bold text-gray-900 mb-1 md:mb-4">{item.title}</h3>
                   <p className="text-[10px] md:text-lg text-gray-600 leading-relaxed">{item.description}</p>
@@ -186,8 +186,8 @@ const About = () => {
           viewport={{ once: true }}
           className="mb-10 md:mb-20"
         >
-          <div className="bg-gradient-to-r from-gray-900 via-black to-gray-900 rounded-[7px] md:rounded-[8px] p-4 md:p-12 text-center shadow-xl">
-            <p className="text-[10px] md:text-sm uppercase tracking-widest text-medical-blue/80 mb-2 md:mb-3">Our Promise</p>
+          <div className="bg-gradient-to-r from-gray-900 via-black to-gray-900 rounded-sm md:rounded-sm p-4 md:p-12 text-center shadow-xl">
+            <p className="text-[10px] md:text-sm uppercase tracking-widest text-[#C9A46A]/85 mb-2 md:mb-3">Our Promise</p>
             <h3 className="text-base md:text-4xl lg:text-5xl font-bold text-white italic">
               &ldquo;{brand.tagline}&rdquo;
             </h3>
@@ -220,10 +220,10 @@ const About = () => {
               viewport={{ once: true }}
               transition={{ delay: index * 0.08 }}
             >
-              <Card className="h-full border border-gray-100 shadow-sm hover-lift bg-white">
+              <Card className="h-full border border-[#E7DED2] shadow-sm hover-lift bg-white">
                 <CardContent className="p-4 md:p-5 lg:p-6 text-center">
-                  <div className="w-10 h-10 md:w-12 md:h-12 lg:w-14 lg:h-14 mx-auto rounded-[7px] md:rounded-[8px] bg-medical-blue/10 flex items-center justify-center mb-3 md:mb-4">
-                    <value.icon className="w-5 h-5 md:w-6 md:h-6 lg:w-7 lg:h-7 text-[#A67C52]" />
+                  <div className="w-10 h-10 md:w-12 md:h-12 lg:w-14 lg:h-14 mx-auto rounded-sm bg-[#C9A46A] flex items-center justify-center mb-3 md:mb-4 shadow-sm">
+                    <value.icon className="w-5 h-5 md:w-6 md:h-6 lg:w-7 lg:h-7 text-white" />
                   </div>
                   <h3 className="text-xs md:text-sm lg:text-base font-bold text-gray-900 mb-2 md:mb-3 line-clamp-2">{value.title}</h3>
                   <p className="text-[10px] md:text-xs lg:text-sm text-gray-600 leading-relaxed line-clamp-3">{value.description}</p>
@@ -253,7 +253,7 @@ const About = () => {
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="relative overflow-hidden rounded-[7px] md:rounded-[8px] shadow-xl group"
+              className="relative overflow-hidden rounded-sm md:rounded-sm shadow-xl group"
             >
               <img
                 src={brandMedia.ventures.distribution}
@@ -271,7 +271,7 @@ const About = () => {
               initial={{ opacity: 0, x: 30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="relative overflow-hidden rounded-[7px] md:rounded-[8px] shadow-xl group"
+              className="relative overflow-hidden rounded-sm md:rounded-sm shadow-xl group"
             >
               <img
                 src={brandMedia.ventures.paper}
@@ -291,7 +291,7 @@ const About = () => {
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="relative overflow-hidden rounded-[7px] md:rounded-[8px] shadow-xl group"
+              className="relative overflow-hidden rounded-sm md:rounded-sm shadow-xl group"
             >
               <img
                 src={brandMedia.ventures.fitness}
@@ -310,7 +310,7 @@ const About = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="relative overflow-hidden rounded-[7px] md:rounded-[8px] shadow-xl group"
+              className="relative overflow-hidden rounded-sm md:rounded-sm shadow-xl group"
             >
               <img
                 src={brandMedia.ventures.hotel}
@@ -329,7 +329,7 @@ const About = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.2 }}
-              className="relative overflow-hidden rounded-[7px] md:rounded-[8px] shadow-xl group"
+              className="relative overflow-hidden rounded-sm md:rounded-sm shadow-xl group"
             >
               <img
                 src={brandMedia.ventures.partner}
@@ -370,7 +370,7 @@ const About = () => {
                   transition={{ delay: index * 0.1 }}
                   className="flex items-start space-x-3"
                 >
-                  <CheckCircle className="w-4 h-4 md:w-6 md:h-6 text-medical-blue flex-shrink-0 mt-0.5" />
+                  <CheckCircle className="w-4 h-4 md:w-6 md:h-6 text-[#C9A46A] flex-shrink-0 mt-0.5" />
                   <span className="text-[10px] md:text-base text-gray-700">{achievement}</span>
                 </motion.div>
               ))}
@@ -383,7 +383,7 @@ const About = () => {
             viewport={{ once: true }}
             className="relative"
           >
-            <div className="relative w-full h-96 rounded-[8px] overflow-hidden shadow-2xl">
+            <div className="relative w-full h-96 rounded-sm overflow-hidden shadow-2xl">
               <img
                 src={brandMedia.founder.portrait}
                 alt="Our founder portrait"
@@ -394,10 +394,10 @@ const About = () => {
               <motion.div
                 animate={{ y: [-5, 5, -5] }}
                 transition={{ duration: 3, repeat: Infinity }}
-                className="absolute top-6 right-6 bg-white/90 backdrop-blur-sm rounded-[7px] px-4 py-2 shadow-lg"
+                className="absolute top-6 right-6 bg-white/90 backdrop-blur-sm rounded-sm px-4 py-2 shadow-lg"
               >
                 <div className="flex items-center space-x-2">
-                  <ShieldCheck className="w-5 h-5 text-medical-blue" />
+                  <ShieldCheck className="w-5 h-5 text-[#C9A46A]" />
                   <span className="text-sm font-medium text-gray-900">Founder-Led Since 1997</span>
                 </div>
               </motion.div>

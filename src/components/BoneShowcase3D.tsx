@@ -61,11 +61,11 @@ const BoneShowcase3D = () => {
   const currentModel = models[activeModel]
 
   return (
-    <section className="py-20 bg-gradient-to-br from-white via-gray-50 to-medical-teal/5 relative overflow-hidden">
+    <section className="py-20 bg-gradient-to-br from-white via-[#F8F4EF] to-[#C9A46A]/5 relative overflow-hidden">
       {/* Background Decoration */}
       <div className="absolute inset-0 opacity-30">
-        <div className="absolute top-10 right-10 w-72 h-72 bg-medical-teal/10 rounded-[7px] blur-3xl"></div>
-        <div className="absolute bottom-10 left-10 w-96 h-96 bg-medical-green/10 rounded-[7px] blur-3xl"></div>
+        <div className="absolute top-10 right-10 w-72 h-72 bg-[#C9A46A]/10 rounded-sm blur-3xl"></div>
+        <div className="absolute bottom-10 left-10 w-96 h-96 bg-[#C9A46A]/10 rounded-sm blur-3xl"></div>
       </div>
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -77,7 +77,7 @@ const BoneShowcase3D = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold font-heading mb-6">
-            Orthopedic <span className="text-gradient">Anatomy</span>
+            Orthopedic <span className="text-[#C9A46A]">Anatomy</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Explore detailed models of bones and joints
@@ -92,7 +92,7 @@ const BoneShowcase3D = () => {
             viewport={{ once: true }}
             className="relative"
           >
-            <div className="relative aspect-video bg-gradient-to-br from-gray-900 via-gray-800 to-black rounded-[8px] overflow-hidden shadow-2xl border border-gray-700">
+            <div className="relative aspect-video bg-gradient-to-br from-gray-900 via-gray-800 to-black rounded-sm overflow-hidden shadow-2xl border border-gray-700">
               <AnimatePresence mode="wait">
                 <motion.div
                   key={activeModel}
@@ -123,12 +123,12 @@ const BoneShowcase3D = () => {
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.95 }}
                   onClick={prevModel}
-                  className="w-12 h-12 rounded-[7px] bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center hover:bg-white/20 transition-all"
+                  className="w-12 h-12 rounded-sm bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center hover:bg-white/20 transition-all"
                 >
                   <ChevronLeft className="w-5 h-5 text-white" />
                 </motion.button>
                 
-                <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-[7px] px-4 py-2">
+                <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-sm px-4 py-2">
                   <span className="text-sm font-medium text-white">
                     {activeModel + 1} / {models.length}
                   </span>
@@ -138,7 +138,7 @@ const BoneShowcase3D = () => {
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.95 }}
                   onClick={nextModel}
-                  className="w-12 h-12 rounded-[7px] bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center hover:bg-white/20 transition-all"
+                  className="w-12 h-12 rounded-sm bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center hover:bg-white/20 transition-all"
                 >
                   <ChevronRight className="w-5 h-5 text-white" />
                 </motion.button>
@@ -173,7 +173,7 @@ const BoneShowcase3D = () => {
 
                 <div className="space-y-4">
                   <div className="flex items-center space-x-2">
-                    <Info className="w-5 h-5 text-medical-teal" />
+                    <Info className="w-5 h-5 text-[#C9A46A]" />
                     <h4 className="text-lg font-semibold text-gray-900">Key Features:</h4>
                   </div>
                   <ul className="space-y-2">
@@ -185,7 +185,7 @@ const BoneShowcase3D = () => {
                         transition={{ delay: index * 0.1 }}
                         className="flex items-start space-x-3"
                       >
-                        <div className="w-2 h-2 bg-medical-teal rounded-[7px] mt-2 flex-shrink-0"></div>
+                        <div className="w-2 h-2 bg-[#C9A46A] rounded-sm mt-2 flex-shrink-0"></div>
                         <span className="text-gray-700">{detail}</span>
                       </motion.li>
                     ))}
@@ -194,7 +194,6 @@ const BoneShowcase3D = () => {
 
                 <div className="pt-4">
                   <Button
-                    variant="gradient"
                     size="lg"
                     onClick={() => document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' })}
                   >
@@ -221,10 +220,10 @@ const BoneShowcase3D = () => {
                 whileTap={{ scale: 0.95 }}
                 onClick={() => setActiveModel(index)}
                 className={`
-                  px-6 py-3 rounded-[7px] font-medium transition-all duration-300 shadow-lg
+                  px-6 py-3 rounded-sm font-medium transition-all duration-300 shadow-lg
                   ${activeModel === index 
-                    ? 'bg-gradient-to-r from-medical-teal to-medical-green text-white shadow-medical-teal/50' 
-                    : 'bg-white text-gray-700 hover:bg-gray-50 border-2 border-gray-200 hover:border-medical-teal/50'
+                    ? 'bg-gradient-to-r from-[#C9A46A] to-[#C9A46A] text-white shadow-[#C9A46A]/50' 
+                    : 'bg-white text-gray-700 hover:bg-gray-50 border-2 border-gray-200 hover:border-[#C9A46A]/50'
                   }
                 `}
               >
