@@ -424,7 +424,7 @@ const About = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 lg:gap-10">
+          <div className="flex sm:grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 lg:gap-10 overflow-x-auto sm:overflow-x-visible scrollbar-none -mx-4 px-4 sm:mx-0 sm:px-0">
             {milestones.map((milestone, index) => (
               <motion.div
                 key={index}
@@ -436,7 +436,7 @@ const About = () => {
                   y: -6,
                   transition: { duration: 0.3, ease: [0.22, 1, 0.36, 1] }
                 }}
-                className="group relative p-6 md:p-8 rounded-sm transition-all duration-300 ease-in-out"
+                className="group relative min-w-[280px] sm:min-w-0 sm:w-full p-6 md:p-8 rounded-sm transition-all duration-300 ease-in-out"
               >
                 <div className="absolute inset-0 rounded-sm border border-transparent group-hover:border-[#C9A46A] transition-all duration-300 ease-in-out" />
                 <div className="absolute inset-0 rounded-sm opacity-0 group-hover:opacity-100 shadow-lg transition-all duration-300 ease-in-out" />
