@@ -225,8 +225,8 @@ const Navigation = () => {
         className={cn('w-full border-b border-[#E8E2DA]', headerPadding)}
         style={{ backgroundColor: BEIGE }}
       >
-        <div className="flex h-[52px] items-center justify-between gap-8 max-w-[1600px] mx-auto">
-          <div className="inline-flex items-center gap-8">
+        <div className="flex min-h-[52px] h-auto sm:h-[52px] items-center justify-end py-2 sm:py-0 max-w-[1600px] mx-auto">
+          <div className="inline-flex flex-wrap justify-end items-center gap-x-6 md:gap-x-8 gap-y-2">
             <a
               href={brand.phoneHref}
               className="inline-flex items-center gap-2.5 text-[13px] md:text-[14px] lg:text-[15px] font-medium text-[#222222] transition-colors hover:text-[#C9A46A] shrink-0"

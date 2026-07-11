@@ -27,7 +27,7 @@ const Hero = () => {
   }, [])
 
   return (
-    <section id="home" className="relative mt-navbar min-h-[calc(100svh-var(--navbar-offset))] flex items-center overflow-hidden bg-black">
+    <section id="home" className="relative mt-navbar min-h-[calc(100svh-var(--navbar-offset))] flex flex-col justify-start overflow-hidden bg-black">
       {/* Background image slideshow (replaces the old hero video) */}
       <div className="absolute inset-0 z-0">
         {slides.map((slide, index) => (
@@ -51,13 +51,13 @@ const Hero = () => {
       <div className="absolute inset-0 bg-gradient-to-r from-[#222222]/88 via-[#222222]/45 to-transparent z-[1]"></div>
       <div className="absolute inset-0 bg-gradient-to-t from-[#222222]/72 via-transparent to-[#222222]/18 z-[1]"></div>
 
-      <div className="relative z-10 w-full px-4 sm:px-6 lg:px-8">
+      <div className="relative z-10 w-full px-4 sm:px-6 lg:px-8 pt-10 sm:pt-14 md:pt-16 lg:pt-20 pb-36 sm:pb-40 md:pb-44">
         <div className="max-w-4xl">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3, duration: 0.8 }}
-            className="space-y-5 md:space-y-8"
+            className="flex flex-col gap-6 sm:gap-7 md:gap-8"
           >
             {/* Eyebrow */}
             <div className="flex items-center gap-3">
@@ -72,7 +72,7 @@ const Hero = () => {
               <span className="block text-gradient-gold">Business Group</span>
             </h1>
 
-            <div className="h-9 sm:h-10 md:h-12 relative overflow-hidden max-w-2xl">
+            <div className="min-h-[2.5rem] sm:min-h-[2.75rem] md:min-h-[3.5rem] max-w-2xl">
               <AnimatePresence mode="wait">
                 <motion.p
                   key={currentTextIndex}
@@ -80,14 +80,14 @@ const Hero = () => {
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -18 }}
                   transition={{ duration: 0.5 }}
-                  className="text-base sm:text-lg md:text-2xl text-white/85 font-light absolute inset-0"
+                  className="text-base sm:text-lg md:text-2xl text-white/85 font-light leading-snug"
                 >
                   {rotatingTexts[currentTextIndex]}
                 </motion.p>
               </AnimatePresence>
             </div>
 
-            <div className="flex flex-wrap gap-3 md:gap-4 pt-2">
+            <div className="flex flex-col sm:flex-row sm:flex-wrap gap-4 sm:gap-5">
               <motion.button
                 whileHover={{ scale: 1.04 }}
                 whileTap={{ scale: 0.96 }}
