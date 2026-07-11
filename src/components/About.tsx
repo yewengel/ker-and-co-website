@@ -424,7 +424,7 @@ const About = () => {
             </p>
           </div>
 
-          <div className="flex sm:grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 lg:gap-10 overflow-x-auto sm:overflow-x-visible scrollbar-none -mx-4 px-4 sm:mx-0 sm:px-0">
+          <div className="grid grid-cols-3 gap-3 md:gap-6 lg:gap-10">
             {milestones.map((milestone, index) => (
               <motion.div
                 key={index}
@@ -436,30 +436,30 @@ const About = () => {
                   y: -6,
                   transition: { duration: 0.3, ease: [0.22, 1, 0.36, 1] }
                 }}
-                className="group relative min-w-[280px] sm:min-w-0 sm:w-full p-6 md:p-8 rounded-sm transition-all duration-300 ease-in-out"
+                className="group relative w-full p-3 md:p-6 lg:p-8 rounded-sm transition-all duration-300 ease-in-out"
               >
                 <div className="absolute inset-0 rounded-sm border border-transparent group-hover:border-[#C9A46A] transition-all duration-300 ease-in-out" />
                 <div className="absolute inset-0 rounded-sm opacity-0 group-hover:opacity-100 shadow-lg transition-all duration-300 ease-in-out" />
                 
                 {milestone.year && (
-                  <div className="text-[#C9A46A] font-bold text-sm md:text-base mb-3 md:mb-4">
+                  <div className="text-[#C9A46A] font-bold text-[10px] md:text-sm lg:text-base mb-1 md:mb-3 lg:mb-4">
                     {milestone.year}
                   </div>
                 )}
                 {!milestone.year && (
-                  <div className="h-5 mb-3 md:mb-4" />
+                  <div className="h-3 mb-1 md:mb-3 lg:mb-4" />
                 )}
                 
-                <div className="flex items-center mb-4 md:mb-5">
-                  <div className="w-10 h-10 md:w-12 md:h-12 rounded-sm bg-[#C9A46A]/10 flex items-center justify-center group-hover:bg-[#C9A46A]/20 transition-all duration-300 ease-in-out">
-                    <milestone.icon className="w-5 h-5 md:w-6 md:h-6 text-[#C9A46A]" />
+                <div className="flex items-center mb-2 md:mb-4 lg:mb-5">
+                  <div className="w-7 h-7 md:w-10 lg:w-12 md:h-10 lg:h-12 rounded-sm bg-[#C9A46A]/10 flex items-center justify-center group-hover:bg-[#C9A46A]/20 transition-all duration-300 ease-in-out">
+                    <milestone.icon className="w-3.5 h-3.5 md:w-5 lg:w-6 md:h-5 lg:h-6 text-[#C9A46A]" />
                   </div>
                 </div>
                 
-                <h4 className="font-bold text-base md:text-lg text-gray-900 mb-2 md:mb-3">
+                <h4 className="font-bold text-[11px] md:text-base lg:text-lg text-gray-900 mb-1 md:mb-2 lg:mb-3">
                   {milestone.title}
                 </h4>
-                <p className="text-xs md:text-sm text-gray-600 leading-relaxed">
+                <p className="text-[9px] md:text-xs lg:text-sm text-gray-600 leading-relaxed">
                   {milestone.description}
                 </p>
               </motion.div>
