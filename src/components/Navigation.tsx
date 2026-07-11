@@ -104,16 +104,20 @@ const Navigation = () => {
   const navLinkBase =
     'relative whitespace-nowrap text-[14px] md:text-[15px] lg:text-[16px] font-medium tracking-[0.03em] transition-colors duration-200 py-1'
 
-  const getNavLinkClass = (active: boolean, isHome?: boolean) =>
+  const getNavLinkClass = (active: boolean, isHome?: boolean, isTransparent?: boolean) =>
     cn(
       navLinkBase,
       'after:absolute after:left-0 after:-bottom-2 after:h-[2px] after:transition-all after:duration-300',
       active
-        ? (isHome ? 'text-black after:w-full after:bg-black' : 'text-[#C9A46A] after:w-full after:bg-[#C9A46A]')
-        : (isHome ? 'text-black after:w-0 after:bg-black hover:after:w-full' : 'text-[#222222] after:w-0 after:bg-[#C9A46A] hover:text-[#C9A46A] hover:after:w-full')
+        ? (isTransparent
+            ? 'text-white after:w-full after:bg-white'
+            : (isHome ? 'text-black after:w-full after:bg-black' : 'text-[#C9A46A] after:w-full after:bg-[#C9A46A]'))
+        : (isTransparent
+            ? 'text-white after:w-0 after:bg-white hover:after:w-full'
+            : (isHome ? 'text-black after:w-0 after:bg-black hover:after:w-full' : 'text-[#222222] after:w-0 after:bg-[#C9A46A] hover:text-[#C9A46A] hover:after:w-full'))
     )
 
-  const renderNavItem = (item: NavLeafItem | NavGroupItem) => {
+  const renderNavItem = (item: NavLeafItem | NavGroupItem, isTransparent?: boolean) => {
     if ('variant' in item && item.variant === 'contact') {
       return (
         <button
@@ -122,7 +126,7 @@ const Navigation = () => {
           onClick={() => handleNavigation(item.href)}
           className={cn(
             'shrink-0 inline-flex items-center justify-center rounded-none bg-[#C9A46A] text-white px-4 md:px-5',
-            getNavLinkClass(false),
+            getNavLinkClass(false, undefined, isTransparent),
             'after:hidden' // Hide the underline pseudo-element since we have a solid background
           )}
         >
@@ -152,7 +156,7 @@ const Navigation = () => {
                 }
                 setOpenDropdown(isActive ? null : item.name)
               }}
-              className={cn('inline-flex items-center', getNavLinkClass(isCurrent))}
+              className={cn('inline-flex items-center', getNavLinkClass(isCurrent, undefined, isTransparent))}
             >
               <span>{item.name}</span>
             </button>
@@ -161,7 +165,10 @@ const Navigation = () => {
               type="button"
               aria-label={`Toggle ${item.name} menu`}
               onClick={() => setOpenDropdown(isActive ? null : item.name)}
-              className="p-1 rounded-[6px] text-[#222222] transition-colors hover:text-[#C9A46A] hover:bg-[#F8F4EF]"
+              className={cn(
+                'p-1 rounded-[6px] transition-colors hover:bg-[#F8F4EF]',
+                isTransparent ? 'text-white hover:text-[#C9A46A]' : 'text-[#222222] hover:text-[#C9A46A]'
+              )}
             >
               <ChevronDown
                 className={cn(
@@ -206,7 +213,7 @@ const Navigation = () => {
         key={item.name}
         type="button"
         onClick={() => handleNavigation(item.href)}
-        className={cn('shrink-0', getNavLinkClass(isNavActive(item.href), item.name === 'Home'))}
+        className={cn('shrink-0', getNavLinkClass(isNavActive(item.href), item.name === 'Home', isTransparent))}
       >
         {item.name}
       </button>
@@ -216,13 +223,23 @@ const Navigation = () => {
   return (
     <header
       className={cn(
-        'fixed top-0 left-0 right-0 z-50 w-full transition-shadow duration-300',
+        'fixed top-0 left-0 right-0 z-50 w-full transition-all duration-300 ease-in-out',
         scrolled && 'shadow-[0_4px_32px_rgba(0,0,0,0.07)]'
       )}
     >
-      {/* Top information bar — beige/cream */}
-      <div
-        className={cn('w-full border-b border-[#E8E2DA]', headerPadding)}
+      {/* Top information bar — beige/cream, hidden when transparent */}
+      <motion.div
+        initial={false}
+        animate={{
+          height: scrolled ? 'auto' : 0,
+          opacity: scrolled ? 1 : 0,
+          borderBottomWidth: scrolled ? 1 : 0
+        }}
+        transition={{ duration: 0.3, ease: 'easeInOut' }}
+        className={cn(
+          'w-full overflow-hidden border-b border-[#E8E2DA]',
+          headerPadding
+        )}
         style={{ backgroundColor: BEIGE }}
       >
         <div className="flex min-h-[52px] h-auto sm:h-[52px] items-center justify-end py-2 sm:py-0 max-w-[1600px] mx-auto">
@@ -243,12 +260,15 @@ const Navigation = () => {
             </div>
           </div>
         </div>
-      </div>
+      </motion.div>
 
-      {/* Main navigation bar — white */}
+      {/* Main navigation bar */}
       <nav
         className={cn(
-          'w-full bg-white border-b border-[#E8E2DA]',
+          'w-full transition-all duration-300 ease-in-out border-b',
+          scrolled
+            ? 'bg-white border-[#E8E2DA]'
+            : 'bg-transparent border-transparent',
           headerPadding
         )}
       >
@@ -268,10 +288,16 @@ const Navigation = () => {
               />
             </div>
             <div className="ml-4 sm:ml-5 md:ml-6 leading-tight">
-              <div className="font-heading font-bold text-lg sm:text-xl md:text-2xl lg:text-[1.65rem] text-[#222222] whitespace-nowrap tracking-tight">
+              <div className={cn(
+                'font-heading font-bold text-lg sm:text-xl md:text-2xl lg:text-[1.65rem] whitespace-nowrap tracking-tight transition-colors duration-300',
+                scrolled ? 'text-[#222222]' : 'text-white'
+              )}>
                 Ker &amp; Co.
               </div>
-              <div className="text-[9px] sm:text-[10px] md:text-[11px] uppercase tracking-[0.26em] text-[#666666] whitespace-nowrap mt-1">
+              <div className={cn(
+                'text-[9px] sm:text-[10px] md:text-[11px] uppercase tracking-[0.26em] whitespace-nowrap mt-1 transition-colors duration-300',
+                scrolled ? 'text-[#666666]' : 'text-white/80'
+              )}>
                 Business Group
               </div>
             </div>
@@ -280,7 +306,7 @@ const Navigation = () => {
           {/* Centered navigation links (desktop only) */}
           <div className="hidden lg:flex items-center justify-center min-w-0 overflow-x-auto scrollbar-none justify-self-center">
             <div className="flex items-center gap-x-6 md:gap-x-8 lg:gap-x-10 xl:gap-x-13 px-2">
-              {navItems.map((item) => renderNavItem(item))}
+              {navItems.map((item) => renderNavItem(item, !scrolled))}
             </div>
           </div>
 

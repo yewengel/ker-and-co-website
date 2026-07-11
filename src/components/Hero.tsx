@@ -27,7 +27,7 @@ const Hero = () => {
   }, [])
 
   return (
-    <section id="home" className="relative mt-navbar min-h-[calc(100svh-var(--navbar-offset))] flex flex-col justify-start overflow-hidden bg-black">
+    <section id="home" className="relative min-h-screen flex flex-col justify-start overflow-hidden bg-black">
       {/* Background image slideshow (replaces the old hero video) */}
       <div className="absolute inset-0 z-0">
         {slides.map((slide, index) => (
@@ -51,7 +51,7 @@ const Hero = () => {
       <div className="absolute inset-0 bg-gradient-to-r from-[#222222]/88 via-[#222222]/45 to-transparent z-[1]"></div>
       <div className="absolute inset-0 bg-gradient-to-t from-[#222222]/72 via-transparent to-[#222222]/18 z-[1]"></div>
 
-      <div className="relative z-10 w-full px-4 sm:px-6 lg:px-8 pt-10 sm:pt-14 md:pt-16 lg:pt-20 pb-36 sm:pb-40 md:pb-44">
+      <div className="relative z-10 w-full px-4 sm:px-6 lg:px-8 pt-28 sm:pt-32 md:pt-36 lg:pt-40 pb-36 sm:pb-40 md:pb-44">
         <div className="max-w-4xl">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
