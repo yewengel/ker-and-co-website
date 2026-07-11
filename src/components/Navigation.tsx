@@ -277,7 +277,7 @@ const Navigation = () => {
           <motion.div
             initial={{ opacity: 0, x: -12 }}
             animate={{ opacity: 1, x: 0 }}
-            className="flex shrink-0 items-center cursor-pointer group lg:justify-self-start lg:mr-8"
+            className="flex shrink-0 items-center cursor-pointer group lg:justify-self-start lg:mr-32"
             onClick={() => handleNavigation('/')}
           >
             <div className="w-[48px] h-[48px] sm:w-[56px] sm:h-[56px] md:w-[64px] md:h-[64px] lg:w-[68px] lg:h-[68px] rounded-sm overflow-hidden bg-white border border-[#E7DED2] flex items-center justify-center shrink-0 transition-shadow duration-300 group-hover:shadow-[0_8px_24px_rgba(210,180,140,0.2)]">
