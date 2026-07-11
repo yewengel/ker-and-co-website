@@ -6,7 +6,6 @@ import {
   Target, 
   Award, 
   Users, 
-  CheckCircle,
   Heart,
   Shield,
   Eye,
@@ -15,10 +14,18 @@ import {
   Scale,
   MapPin,
   Building2,
-  ShieldCheck
+  ShieldCheck,
+  ShoppingBag,
+  Scroll,
+  Dumbbell,
+  Hotel,
+  Home,
+  Factory,
+  Sprout,
+  TrendingUp
 } from 'lucide-react'
 import { Card, CardContent } from '@/components/ui/card'
-import { brand, founderStory, brandMedia } from '@/lib/brand'
+import { brand, brandMedia } from '@/lib/brand'
 
 const About = () => {
   const visionMission = {
@@ -79,7 +86,62 @@ const About = () => {
     { icon: Users, value: '4', label: 'Luxury Towers', color: 'text-[#C9A46A]' }
   ]
 
-  const achievements = founderStory.map((item) => `${item.title} — ${item.description}`)
+  const milestones = [
+    {
+      year: '1997',
+      title: 'Entrepreneurial Journey',
+      description: 'Started with importing hair accessories, laying the foundation for future growth.',
+      icon: ShoppingBag
+    },
+    {
+      year: '',
+      title: 'Consumer Goods',
+      description: 'Expanded into nationwide import, export, and rural distribution across Ethiopia.',
+      icon: Scroll
+    },
+    {
+      year: '',
+      title: 'Paper Products',
+      description: 'Became Ethiopia\'s leading distributor of paper and sanitary products.',
+      icon: Building2
+    },
+    {
+      year: '',
+      title: 'Ker Fitness',
+      description: 'Launched a premium fitness and wellness brand with multiple locations.',
+      icon: Dumbbell
+    },
+    {
+      year: '2023',
+      title: 'Grand Palace Suites',
+      description: 'Opened an award-winning luxury hotel recognized internationally.',
+      icon: Hotel
+    },
+    {
+      year: '',
+      title: 'Real Estate',
+      description: 'Developed luxury residential properties in Addis Ababa.',
+      icon: Home
+    },
+    {
+      year: '',
+      title: 'Mining',
+      description: 'Expanded into coal mining through Minch Mining PLC.',
+      icon: Factory
+    },
+    {
+      year: '',
+      title: 'Agriculture',
+      description: 'Established Green Farm PLC for sustainable farming and exports.',
+      icon: Sprout
+    },
+    {
+      year: '',
+      title: 'Global Expansion',
+      description: 'Growing international coffee and meat export partnerships.',
+      icon: TrendingUp
+    }
+  ]
 
   return (
     <section id="about" className="py-10 md:py-20 bg-[#F8F4EF]">
@@ -345,65 +407,65 @@ const About = () => {
           </div>
         </div>
 
-        {/* Content Grid */}
-        <div className="grid lg:grid-cols-2 gap-6 md:gap-12 items-center">
-          <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            className="space-y-3 md:space-y-6"
-          >
-            <h3 className="text-xl md:text-3xl font-bold text-gray-900">
+        {/* Our Commitment */}
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+          className="mb-10 md:mb-20"
+        >
+          <div className="text-center mb-8 md:mb-12">
+            <h3 className="text-xl md:text-3xl font-bold text-gray-900 mb-3 md:mb-4">
               Our Commitment
             </h3>
-            <p className="text-xs md:text-lg text-gray-600 leading-relaxed">
-              {brand.name} operates with a long-term vision rooted in resilience, trust, and meaningful growth. We do not chase isolated transactions—we build ventures, relationships, and capabilities that can stand the test of time.
+            <p className="text-xs md:text-lg text-gray-600 max-w-3xl mx-auto">
+              Building trusted businesses that create lasting value across hospitality, wellness, real estate, agriculture, mining, and international trade.
             </p>
-            
-            <div className="space-y-4">
-              {achievements.map((achievement, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, x: -20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.1 }}
-                  className="flex items-start space-x-3"
-                >
-                  <CheckCircle className="w-4 h-4 md:w-6 md:h-6 text-[#C9A46A] flex-shrink-0 mt-0.5" />
-                  <span className="text-[10px] md:text-base text-gray-700">{achievement}</span>
-                </motion.div>
-              ))}
-            </div>
-          </motion.div>
+          </div>
 
-          <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            className="relative"
-          >
-            <div className="relative w-full h-96 rounded-sm overflow-hidden shadow-2xl">
-              <img
-                src={brandMedia.founder.portrait}
-                alt="Our founder portrait"
-                className="w-full h-full object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
-              
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 lg:gap-10">
+            {milestones.map((milestone, index) => (
               <motion.div
-                animate={{ y: [-5, 5, -5] }}
-                transition={{ duration: 3, repeat: Infinity }}
-                className="absolute top-6 right-6 bg-white/90 backdrop-blur-sm rounded-sm px-4 py-2 shadow-lg"
+                key={index}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.08, ease: [0.22, 1, 0.36, 1] }}
+                whileHover={{ 
+                  y: -6,
+                  transition: { duration: 0.3, ease: [0.22, 1, 0.36, 1] }
+                }}
+                className="group relative p-6 md:p-8 rounded-sm transition-all duration-300 ease-in-out"
               >
-                <div className="flex items-center space-x-2">
-                  <ShieldCheck className="w-5 h-5 text-[#C9A46A]" />
-                  <span className="text-sm font-medium text-gray-900">Founder-Led Since 1997</span>
+                <div className="absolute inset-0 rounded-sm border border-transparent group-hover:border-[#C9A46A] transition-all duration-300 ease-in-out" />
+                <div className="absolute inset-0 rounded-sm opacity-0 group-hover:opacity-100 shadow-lg transition-all duration-300 ease-in-out" />
+                
+                {milestone.year && (
+                  <div className="text-[#C9A46A] font-bold text-sm md:text-base mb-3 md:mb-4">
+                    {milestone.year}
+                  </div>
+                )}
+                {!milestone.year && (
+                  <div className="h-5 mb-3 md:mb-4" />
+                )}
+                
+                <div className="flex items-center mb-4 md:mb-5">
+                  <div className="w-10 h-10 md:w-12 md:h-12 rounded-sm bg-[#C9A46A]/10 flex items-center justify-center group-hover:bg-[#C9A46A]/20 transition-all duration-300 ease-in-out">
+                    <milestone.icon className="w-5 h-5 md:w-6 md:h-6 text-[#C9A46A]" />
+                  </div>
                 </div>
+                
+                <h4 className="font-bold text-base md:text-lg text-gray-900 mb-2 md:mb-3">
+                  {milestone.title}
+                </h4>
+                <p className="text-xs md:text-sm text-gray-600 leading-relaxed">
+                  {milestone.description}
+                </p>
               </motion.div>
-            </div>
-          </motion.div>
-        </div>
+            ))}
+          </div>
+        </motion.div>
       </div>
     </section>
   )
