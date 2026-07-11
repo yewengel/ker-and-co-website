@@ -242,7 +242,7 @@ const Navigation = () => {
         )}
         style={{ backgroundColor: BEIGE }}
       >
-        <div className="flex min-h-[52px] h-auto sm:h-[52px] items-center justify-end py-2 sm:py-0 max-w-[1600px] mx-auto">
+        <div className="flex min-h-[36px] h-auto sm:h-[36px] items-center justify-end py-1.5 sm:py-0 max-w-[1600px] mx-auto">
           <div className="inline-flex flex-wrap justify-end items-center gap-x-6 md:gap-x-8 gap-y-2">
             <a
               href={brand.phoneHref}
@@ -272,30 +272,30 @@ const Navigation = () => {
           headerPadding
         )}
       >
-        <div className="grid grid-cols-[auto_1fr] lg:grid-cols-[1fr_auto_1fr] items-center h-[92px] md:h-[100px] lg:h-[108px] gap-4 lg:gap-10 max-w-[1600px] mx-auto">
+        <div className="grid grid-cols-[auto_1fr] lg:grid-cols-[1fr_auto_1fr] items-center h-[72px] md:h-[80px] lg:h-[88px] gap-3 lg:gap-8 max-w-[1600px] mx-auto">
           {/* Logo + company name */}
           <motion.div
             initial={{ opacity: 0, x: -12 }}
             animate={{ opacity: 1, x: 0 }}
-            className="flex shrink-0 items-center cursor-pointer group lg:justify-self-start lg:mr-10"
+            className="flex shrink-0 items-center cursor-pointer group lg:justify-self-start lg:mr-8"
             onClick={() => handleNavigation('/')}
           >
-            <div className="w-[64px] h-[64px] sm:w-[72px] sm:h-[72px] md:w-[80px] md:h-[80px] lg:w-[84px] lg:h-[84px] rounded-sm overflow-hidden bg-white border border-[#E7DED2] flex items-center justify-center shrink-0 transition-shadow duration-300 group-hover:shadow-[0_8px_24px_rgba(210,180,140,0.2)]">
+            <div className="w-[48px] h-[48px] sm:w-[56px] sm:h-[56px] md:w-[64px] md:h-[64px] lg:w-[68px] lg:h-[68px] rounded-sm overflow-hidden bg-white border border-[#E7DED2] flex items-center justify-center shrink-0 transition-shadow duration-300 group-hover:shadow-[0_8px_24px_rgba(210,180,140,0.2)]">
               <img
                 src={brand.logoPath}
                 alt={`${brand.name} Logo`}
                 className="w-[90%] h-[90%] object-contain"
               />
             </div>
-            <div className="ml-4 sm:ml-5 md:ml-6 leading-tight">
+            <div className="ml-3 sm:ml-4 md:ml-5 leading-tight">
               <div className={cn(
-                'font-heading font-bold text-lg sm:text-xl md:text-2xl lg:text-[1.65rem] whitespace-nowrap tracking-tight transition-colors duration-300',
+                'font-heading font-bold text-base sm:text-lg md:text-xl lg:text-[1.35rem] whitespace-nowrap tracking-tight transition-colors duration-300',
                 scrolled ? 'text-[#222222]' : 'text-white'
               )}>
                 Ker &amp; Co.
               </div>
               <div className={cn(
-                'text-[9px] sm:text-[10px] md:text-[11px] uppercase tracking-[0.26em] whitespace-nowrap mt-1 transition-colors duration-300',
+                'text-[8px] sm:text-[9px] md:text-[10px] uppercase tracking-[0.26em] whitespace-nowrap mt-0.5 transition-colors duration-300',
                 scrolled ? 'text-[#666666]' : 'text-white/80'
               )}>
                 Business Group
@@ -313,10 +313,10 @@ const Navigation = () => {
           {/* Balance column for centered nav on desktop */}
           <div className="hidden lg:block lg:justify-self-end" aria-hidden="true">
             <div className="flex items-center opacity-0 pointer-events-none">
-              <div className="w-[84px] h-[84px]" />
-              <div className="ml-6 leading-tight">
-                <div className="font-heading font-bold text-[1.65rem]">Ker &amp; Co.</div>
-                <div className="text-[11px] uppercase tracking-[0.26em]">Business Group</div>
+              <div className="w-[68px] h-[68px]" />
+              <div className="ml-5 leading-tight">
+                <div className="font-heading font-bold text-[1.35rem]">Ker &amp; Co.</div>
+                <div className="text-[10px] uppercase tracking-[0.26em]">Business Group</div>
               </div>
             </div>
           </div>
