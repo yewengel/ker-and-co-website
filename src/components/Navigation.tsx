@@ -130,9 +130,13 @@ const Navigation = () => {
           type="button"
           onClick={() => handleNavigation(item.href)}
           className={cn(
-            'shrink-0 inline-flex items-center justify-center rounded-none bg-[#C9A46A] text-white px-4 md:px-5',
+            'shrink-0 inline-flex items-center justify-center rounded-none transition-all duration-300',
+            isTransparent
+              ? 'border border-[#C9A46A] text-[#C9A46A] hover:bg-[#C9A46A] hover:text-white'
+              : 'bg-[#C9A46A] text-white',
+            'px-4 md:px-5',
             getNavLinkClass(false, undefined, isTransparent),
-            'after:hidden' // Hide the underline pseudo-element since we have a solid background
+            'after:hidden' // Hide the underline pseudo-element
           )}
         >
           {item.name}
@@ -247,13 +251,13 @@ const Navigation = () => {
           <motion.div
             initial={{ opacity: 0, x: -12 }}
             animate={{ opacity: 1, x: 0 }}
-            className="flex shrink-0 items-center cursor-pointer group"
+            className="flex shrink-0 items-center cursor-pointer group -ml-2"
             onClick={() => handleNavigation('/')}
           >
             <img
               src={brand.logoPath}
               alt={`${brand.name} Logo`}
-              className="w-[160px] h-[64px] sm:w-[180px] sm:h-[72px] md:w-[200px] md:h-[80px] lg:w-[220px] lg:h-[88px] object-contain"
+              className="w-[160px] h-[64px] sm:w-[180px] sm:h-[72px] md:w-[200px] md:h-[80px] lg:w-[220px] lg:h-[88px] object-contain mix-blend-multiply"
             />
           </motion.div>
 

@@ -48,10 +48,9 @@ const Hero = () => {
         ))}
       </div>
 
-      <div className="absolute inset-0 bg-gradient-to-r from-[#222222]/88 via-[#222222]/45 to-transparent z-[1]"></div>
-      <div className="absolute inset-0 bg-gradient-to-t from-[#222222]/72 via-transparent to-[#222222]/18 z-[1]"></div>
+      <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-black/10 to-black/20 z-[1]"></div>
 
-      <div className="relative z-10 w-full px-4 sm:px-6 lg:px-8 pt-28 sm:pt-32 md:pt-36 lg:pt-40 pb-36 sm:pb-40 md:pb-44">
+      <div className="relative z-10 w-full px-4 sm:px-6 lg:px-8 flex flex-col justify-center min-h-screen">
         <div className="max-w-4xl">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
