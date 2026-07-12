@@ -250,13 +250,11 @@ const Navigation = () => {
             className="flex shrink-0 items-center cursor-pointer group"
             onClick={() => handleNavigation('/')}
           >
-            <div className="w-[48px] h-[48px] sm:w-[56px] sm:h-[56px] md:w-[64px] md:h-[64px] lg:w-[68px] lg:h-[68px] rounded-sm overflow-hidden bg-white border border-[#E7DED2] flex items-center justify-center shrink-0 transition-shadow duration-300 group-hover:shadow-[0_8px_24px_rgba(210,180,140,0.2)]">
-              <img
-                src={brand.logoPath}
-                alt={`${brand.name} Logo`}
-                className="w-[90%] h-[90%] object-contain"
-              />
-            </div>
+            <img
+              src={brand.logoPath}
+              alt={`${brand.name} Logo`}
+              className="w-[160px] h-[64px] sm:w-[180px] sm:h-[72px] md:w-[200px] md:h-[80px] lg:w-[220px] lg:h-[88px] object-contain"
+            />
           </motion.div>
 
           {/* Centered navigation links (desktop only) */}
