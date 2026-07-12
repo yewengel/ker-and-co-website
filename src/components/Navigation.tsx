@@ -62,8 +62,13 @@ const Navigation = () => {
       ],
     },
     { name: 'Location', href: '#contact' },
-    { name: 'Contact Us', href: '#contact', variant: 'contact' },
   ]
+
+  const contactUsItem: NavLeafItem = { 
+    name: 'Contact Us', 
+    href: '#contact', 
+    variant: 'contact' 
+  }
 
   const isNavActive = (href: string) => {
     if (href.startsWith('#')) return false
@@ -237,7 +242,7 @@ const Navigation = () => {
           headerPadding
         )}
       >
-        <div className="flex items-center justify-between h-[72px] md:h-[80px] lg:h-[88px] gap-3 lg:gap-8 max-w-[1600px] mx-auto">
+        <div className="flex items-center justify-between h-[72px] md:h-[80px] lg:h-[88px] gap-3 lg:gap-8 lg:grid lg:grid-cols-[auto_1fr_auto] max-w-[1600px] mx-auto">
           {/* Logo + company name */}
           <motion.div
             initial={{ opacity: 0, x: -12 }}
@@ -275,8 +280,10 @@ const Navigation = () => {
             </div>
           </div>
 
-          {/* Balance column for spacing */}
-          <div className="hidden lg:flex w-0" aria-hidden="true" />
+          {/* Contact Us button (desktop only) */}
+          <div className="hidden lg:flex items-center justify-end">
+            {renderNavItem(contactUsItem, !scrolled)}
+          </div>
 
           {/* Hamburger button (mobile/tablet only) */}
           <div className="flex lg:hidden">
@@ -303,19 +310,6 @@ const Navigation = () => {
             >
               <div className="px-6 sm:px-10 md:px-14 py-6 space-y-4">
                 {navItems.map((item) => {
-                  if ('variant' in item && item.variant === 'contact') {
-                    return (
-                      <button
-                        key={item.name}
-                        type="button"
-                        onClick={() => handleNavigation(item.href)}
-                        className="w-full inline-flex items-center justify-center h-10 md:h-11 px-6 md:px-7 text-[14px] md:text-[15px] font-semibold text-white rounded-sm bg-[#C9A46A] hover:bg-[#C9A46A] transition-colors duration-200 shadow-sm"
-                      >
-                        {item.name}
-                      </button>
-                    )
-                  }
-
                   if ('children' in item) {
                     const isActive = openDropdown === item.name
                     const isCurrent = isGroupActive(item as any)
@@ -374,6 +368,15 @@ const Navigation = () => {
                     </button>
                   )
                 })}
+                {/* Contact Us button in mobile menu */}
+                <button
+                  key={contactUsItem.name}
+                  type="button"
+                  onClick={() => handleNavigation(contactUsItem.href)}
+                  className="w-full inline-flex items-center justify-center h-10 md:h-11 px-6 md:px-7 text-[14px] md:text-[15px] font-semibold text-white rounded-sm bg-[#C9A46A] hover:bg-[#C9A46A] transition-colors duration-200 shadow-sm"
+                >
+                  {contactUsItem.name}
+                </button>
               </div>
             </motion.div>
           )}
