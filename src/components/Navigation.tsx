@@ -227,41 +227,6 @@ const Navigation = () => {
         scrolled && 'shadow-[0_4px_32px_rgba(0,0,0,0.07)]'
       )}
     >
-      {/* Top information bar — beige/cream, hidden when transparent */}
-      <motion.div
-        initial={false}
-        animate={{
-          height: scrolled ? 'auto' : 0,
-          opacity: scrolled ? 1 : 0,
-          borderBottomWidth: scrolled ? 1 : 0
-        }}
-        transition={{ duration: 0.3, ease: 'easeInOut' }}
-        className={cn(
-          'w-full overflow-hidden border-b border-[#E8E2DA]',
-          headerPadding
-        )}
-        style={{ backgroundColor: BEIGE }}
-      >
-        <div className="flex min-h-[36px] h-auto sm:h-[36px] items-center justify-end py-1.5 sm:py-0 max-w-[1600px] mx-auto">
-          <div className="inline-flex flex-wrap justify-end items-center gap-x-6 md:gap-x-8 gap-y-2">
-            <a
-              href={brand.phoneHref}
-              className="inline-flex items-center gap-2.5 text-[13px] md:text-[14px] lg:text-[15px] font-medium text-[#222222] transition-colors hover:text-[#C9A46A] shrink-0"
-            >
-              <Phone className="w-5 h-5 text-[#C9A46A]" strokeWidth={1.75} />
-              <span className="whitespace-nowrap">{brand.phone}</span>
-            </a>
-
-            <div className="inline-flex items-center gap-2.5 min-w-0">
-              <MapPin className="w-5 h-5 text-[#C9A46A] shrink-0" strokeWidth={1.75} />
-              <span className="text-[13px] md:text-[14px] lg:text-[15px] font-medium text-[#222222] truncate">
-                {brand.location}
-              </span>
-            </div>
-          </div>
-        </div>
-      </motion.div>
-
       {/* Main navigation bar */}
       <nav
         className={cn(
@@ -272,12 +237,12 @@ const Navigation = () => {
           headerPadding
         )}
       >
-        <div className="grid grid-cols-[auto_1fr] lg:grid-cols-[1fr_auto_1fr] items-center h-[72px] md:h-[80px] lg:h-[88px] gap-3 lg:gap-8 max-w-[1600px] mx-auto">
+        <div className="flex items-center justify-between h-[72px] md:h-[80px] lg:h-[88px] gap-3 lg:gap-8 max-w-[1600px] mx-auto">
           {/* Logo + company name */}
           <motion.div
             initial={{ opacity: 0, x: -12 }}
             animate={{ opacity: 1, x: 0 }}
-            className="flex shrink-0 items-center cursor-pointer group lg:justify-self-start lg:mr-32"
+            className="flex shrink-0 items-center cursor-pointer group"
             onClick={() => handleNavigation('/')}
           >
             <div className="w-[48px] h-[48px] sm:w-[56px] sm:h-[56px] md:w-[64px] md:h-[64px] lg:w-[68px] lg:h-[68px] rounded-sm overflow-hidden bg-white border border-[#E7DED2] flex items-center justify-center shrink-0 transition-shadow duration-300 group-hover:shadow-[0_8px_24px_rgba(210,180,140,0.2)]">
@@ -304,25 +269,17 @@ const Navigation = () => {
           </motion.div>
 
           {/* Centered navigation links (desktop only) */}
-          <div className="hidden lg:flex items-center justify-center min-w-0 overflow-x-auto scrollbar-none justify-self-center">
+          <div className="hidden lg:flex items-center justify-center min-w-0 overflow-x-auto scrollbar-none">
             <div className="flex items-center gap-x-6 md:gap-x-8 lg:gap-x-10 xl:gap-x-13 px-2">
               {navItems.map((item) => renderNavItem(item, !scrolled))}
             </div>
           </div>
 
-          {/* Balance column for centered nav on desktop */}
-          <div className="hidden lg:block lg:justify-self-end" aria-hidden="true">
-            <div className="flex items-center opacity-0 pointer-events-none">
-              <div className="w-[68px] h-[68px]" />
-              <div className="ml-5 leading-tight">
-                <div className="font-heading font-bold text-[1.35rem]">Ker &amp; Co.</div>
-                <div className="text-[10px] uppercase tracking-[0.26em]">Business Group</div>
-              </div>
-            </div>
-          </div>
+          {/* Balance column for spacing */}
+          <div className="hidden lg:flex w-0" aria-hidden="true" />
 
           {/* Hamburger button (mobile/tablet only) */}
-          <div className="flex justify-end lg:hidden">
+          <div className="flex lg:hidden">
             <button
               type="button"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
