@@ -336,10 +336,10 @@ const About = () => {
               className="relative overflow-hidden rounded-sm md:rounded-sm shadow-xl group"
             >
               <img
-                src={brandMedia.ventures.paper}
-                alt="MAMCO distribution"
-                className="w-full h-32 md:h-56 lg:h-64 object-cover group-hover:scale-105 transition-transform duration-500"
-              />
+  src="/Ker & Co. Business Group/mamco distribution.jpg"
+  alt="MAMCO distribution"
+  style={{ width: "100%", height: "300px", objectFit: "contain", background: "white" }}
+/>
               <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
               <div className="absolute bottom-2 left-2 md:bottom-4 md:left-4 lg:bottom-6 lg:left-6 text-white">
                 <h4 className="text-xs md:text-lg lg:text-xl font-bold mb-0.5 md:mb-2">Paper & Sanitary Products</h4>

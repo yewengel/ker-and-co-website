@@ -243,7 +243,7 @@ const Navigation = () => {
         )}
       >
         <div className="flex items-center justify-between h-[72px] md:h-[80px] lg:h-[88px] gap-3 lg:gap-8 lg:grid lg:grid-cols-[auto_1fr_auto] max-w-[1600px] mx-auto">
-          {/* Logo + company name */}
+          {/* Logo */}
           <motion.div
             initial={{ opacity: 0, x: -12 }}
             animate={{ opacity: 1, x: 0 }}
@@ -256,20 +256,6 @@ const Navigation = () => {
                 alt={`${brand.name} Logo`}
                 className="w-[90%] h-[90%] object-contain"
               />
-            </div>
-            <div className="ml-3 sm:ml-4 md:ml-5 leading-tight">
-              <div className={cn(
-                'font-heading font-bold text-base sm:text-lg md:text-xl lg:text-[1.35rem] whitespace-nowrap tracking-tight transition-colors duration-300',
-                scrolled ? 'text-[#222222]' : 'text-white'
-              )}>
-                Ker &amp; Co.
-              </div>
-              <div className={cn(
-                'text-[8px] sm:text-[9px] md:text-[10px] uppercase tracking-[0.26em] whitespace-nowrap mt-0.5 transition-colors duration-300',
-                scrolled ? 'text-[#666666]' : 'text-white/80'
-              )}>
-                Business Group
-              </div>
             </div>
           </motion.div>
 
