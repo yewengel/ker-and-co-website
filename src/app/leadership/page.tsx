@@ -83,15 +83,15 @@ export default function LeadershipPage() {
           {/* Stats */}
           <div className="mt-6 md:mt-12 grid grid-cols-3 gap-2 md:gap-4 max-w-3xl mx-auto">
             <div className="bg-white/5 backdrop-blur-sm rounded-sm md:rounded-sm border border-white/10 p-2.5 md:p-5">
-              <div className="text-xl md:text-3xl font-bold text-medical-blue">{divisions.length}</div>
+              <div className="text-xl md:text-3xl font-bold text-white">{divisions.length}</div>
               <div className="text-[10px] md:text-sm text-gray-400">Leadership Groups</div>
             </div>
             <div className="bg-white/5 backdrop-blur-sm rounded-sm md:rounded-sm border border-white/10 p-2.5 md:p-5">
-              <div className="text-xl md:text-3xl font-bold text-medical-blue">{totalMembers}</div>
+              <div className="text-xl md:text-3xl font-bold text-white">{totalMembers}</div>
               <div className="text-[10px] md:text-sm text-gray-400">Leadership Roles</div>
             </div>
             <div className="bg-white/5 backdrop-blur-sm rounded-sm md:rounded-sm border border-white/10 p-2.5 md:p-5">
-              <div className="text-xl md:text-3xl font-bold text-medical-blue">1997</div>
+              <div className="text-xl md:text-3xl font-bold text-white">1997</div>
               <div className="text-[10px] md:text-sm text-gray-400">Founder Start</div>
             </div>
           </div>
@@ -187,7 +187,10 @@ export default function LeadershipPage() {
                   <h2 className="text-lg md:text-3xl font-bold text-gray-900 mb-4 md:mb-8">{div.title}</h2>
 
                   <div className="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-2 md:gap-4">
-                    {div.members.map((member) => (
+                    {div.members.map((member) => {
+                      const memberCardColors = div.id === 'export-corporate-services' ? colorMap.red : colors
+
+                      return (
                       <motion.div
                         key={member.name}
                         initial={{ opacity: 0, scale: 0.95 }}
@@ -205,20 +208,21 @@ export default function LeadershipPage() {
                               unoptimized
                             />
                           ) : (
-                            <div className={`w-full h-full bg-gradient-to-br ${colors.gradient} flex items-center justify-center`}>
+                            <div className={`w-full h-full bg-gradient-to-br ${memberCardColors.gradient} flex items-center justify-center`}>
                               <User className="w-12 h-12 text-white/60" />
                             </div>
                           )}
                         </div>
                         <div className="p-1.5 md:p-3">
                           <h3 className="font-semibold text-gray-900 text-[9px] md:text-sm leading-tight">{member.name}</h3>
-                          <p className={`text-[8px] md:text-xs ${colors.text} mt-0.5 md:mt-1 leading-tight`}>{member.title}</p>
+                          <p className={`text-[8px] md:text-xs ${memberCardColors.text} mt-0.5 md:mt-1 leading-tight`}>{member.title}</p>
                           {member.bio && (
                             <p className="text-[8px] md:text-xs text-gray-500 mt-1 leading-relaxed line-clamp-3">{member.bio}</p>
                           )}
                         </div>
                       </motion.div>
-                    ))}
+                      )
+                    })}
                   </div>
                 </motion.div>
               </div>

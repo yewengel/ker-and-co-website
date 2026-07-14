@@ -39,7 +39,7 @@ export default function AboutPage() {
     { country: 'Addis Ababa', role: 'Group Headquarters', city: 'Corporate leadership and venture coordination' },
     { country: 'Mercato', role: 'Paper Products Legacy', city: 'Landmark retail and warehouse presence' },
     { country: 'Addis Ababa', role: 'Ker Fitness Locations', city: 'Four wellness and lifestyle sites' },
-    { country: 'Grand Palace Suites', role: 'Hospitality Platform', city: 'Award-winning hotel operations' },
+    { country: 'Hospitality Platform', role: 'Grand Palace Suites Hotel', city: 'Award-winning hotel operations' },
     { country: 'Arba Minch', role: 'Agriculture & Sourcing', city: 'Cultivation and farmer partnerships' },
     { country: 'Industrial Field Sites', role: 'Mining & Operations', city: 'Local resource and industrial supply ventures' },
   ]
@@ -72,8 +72,8 @@ export default function AboutPage() {
               <Building2 className="w-4 h-4" />
               About {brand.shortName}
             </div>
-            <h1 className="text-2xl md:text-6xl lg:text-7xl font-bold text-white mb-3 md:mb-6 font-heading">
-              Built Through <span className="text-[#C9A46A]">Vision</span>
+            <h1 className="text-2xl md:text-6xl lg:text-7xl font-bold text-[#C9A46A] mb-3 md:mb-6 font-heading">
+              Built Through Vision
             </h1>
             <p className="text-xs md:text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
               {brand.name} is the story of Keria Ahmed’s rise from a modest 1997 import business into a diversified Ethiopian business group spanning distribution, paper products, hospitality, wellness, real estate, mining, agriculture, and export ventures.
@@ -183,13 +183,13 @@ export default function AboutPage() {
       </section>
 
       {/* Mission, Vision, Values */}
-      <section className="py-10 md:py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-[#222222] to-[#3d352d] text-white">
+      <section className="py-10 md:py-20 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-7xl mx-auto">
           <motion.div {...fadeIn} className="text-center mb-16">
-            <h2 className="text-xl md:text-4xl font-bold mb-2 md:mb-4">
-              Our <span className="text-[#C9A46A]">Commitment</span>
+            <h2 className="text-xl md:text-4xl font-bold mb-2 md:mb-4 text-[#111111]">
+              Our Commitment
             </h2>
-            <p className="text-xs md:text-lg text-gray-300 max-w-3xl mx-auto">
+            <p className="text-xs md:text-lg text-[#333333] max-w-3xl mx-auto">
               {brand.name} operates with a long-term vision rooted in resilience, trust, and meaningful growth.
             </p>
           </motion.div>
@@ -200,13 +200,13 @@ export default function AboutPage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-sm md:rounded-sm p-3 md:p-8"
+              className="bg-white border border-[#E5E5E5] rounded-sm md:rounded-sm p-3 md:p-8 shadow-sm hover:shadow-md transition-shadow"
             >
               <div className="w-8 h-8 md:w-14 md:h-14 rounded-sm md:rounded-sm bg-[#C9A46A]/20 flex items-center justify-center mb-2 md:mb-6">
                 <Target className="w-4 h-4 md:w-7 md:h-7 text-[#C9A46A]" />
               </div>
-              <h3 className="text-[11px] md:text-xl font-bold mb-1 md:mb-3">Our Mission</h3>
-              <p className="text-[9px] md:text-base text-gray-300 leading-snug md:leading-relaxed">
+              <h3 className="text-[11px] md:text-xl font-bold mb-1 md:mb-3 text-[#111111]">Our Mission</h3>
+              <p className="text-[9px] md:text-base text-[#333333] leading-snug md:leading-relaxed">
                 To grow trusted ventures that solve real market needs, create long-term value, and open new opportunities for communities, partners, and investors.
               </p>
             </motion.div>
@@ -216,13 +216,13 @@ export default function AboutPage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.2 }}
-              className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-sm md:rounded-sm p-3 md:p-8"
+              className="bg-white border border-[#E5E5E5] rounded-sm md:rounded-sm p-3 md:p-8 shadow-sm hover:shadow-md transition-shadow"
             >
               <div className="w-8 h-8 md:w-14 md:h-14 rounded-sm md:rounded-sm bg-[#C9A46A]/20 flex items-center justify-center mb-2 md:mb-6">
                 <Eye className="w-4 h-4 md:w-7 md:h-7 text-[#C9A46A]" />
               </div>
-              <h3 className="text-[11px] md:text-xl font-bold mb-1 md:mb-3">Our Vision</h3>
-              <p className="text-[9px] md:text-base text-gray-300 leading-snug md:leading-relaxed">
+              <h3 className="text-[11px] md:text-xl font-bold mb-1 md:mb-3 text-[#111111]">Our Vision</h3>
+              <p className="text-[9px] md:text-base text-[#333333] leading-snug md:leading-relaxed">
                 To build an enduring Ethiopian business group known for resilience, service quality, and transformational growth across multiple sectors.
               </p>
             </motion.div>
@@ -232,13 +232,13 @@ export default function AboutPage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.3 }}
-              className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-sm md:rounded-sm p-3 md:p-8"
+              className="bg-white border border-[#E5E5E5] rounded-sm md:rounded-sm p-3 md:p-8 shadow-sm hover:shadow-md transition-shadow"
             >
               <div className="w-8 h-8 md:w-14 md:h-14 rounded-sm md:rounded-sm bg-[#C9A46A]/20 flex items-center justify-center mb-2 md:mb-6">
                 <Shield className="w-4 h-4 md:w-7 md:h-7 text-[#C9A46A]" />
               </div>
-              <h3 className="text-[11px] md:text-xl font-bold mb-1 md:mb-3">Our Values</h3>
-              <p className="text-[9px] md:text-base text-gray-300 leading-snug md:leading-relaxed">
+              <h3 className="text-[11px] md:text-xl font-bold mb-1 md:mb-3 text-[#111111]">Our Values</h3>
+              <p className="text-[9px] md:text-base text-[#333333] leading-snug md:leading-relaxed">
                 Resilience, trust, service excellence, and long-term investment discipline. We build ventures and relationships designed to endure.
               </p>
             </motion.div>

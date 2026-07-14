@@ -98,8 +98,8 @@ export default function PartnershipsPage() {
               <Globe className="w-4 h-4" />
               Global Partnerships
             </div>
-            <h1 className="text-2xl md:text-6xl lg:text-7xl font-bold text-white mb-3 md:mb-6 font-heading">
-              Strategic <span className="text-[#C9A46A]">Partnerships</span>
+            <h1 className="text-2xl md:text-6xl lg:text-7xl font-bold text-[#C9A46A] mb-3 md:mb-6 font-heading">
+              Strategic Partnerships
             </h1>
             <p className="text-xs md:text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
               {brand.name} is open to strategic relationships with investors, operators, suppliers, buyers, and growth partners who align with a founder-led, diversified Ethiopian business group.
@@ -116,8 +116,8 @@ export default function PartnershipsPage() {
               <Globe className="w-4 h-4" />
               Global Network
             </div>
-            <h2 className="text-xl md:text-5xl font-bold text-gray-900 mb-3 md:mb-6">
-              Partnership <span className="text-[#C9A46A]">Priorities</span>
+            <h2 className="text-xl md:text-5xl font-bold text-black mb-3 md:mb-6">
+              Partnership Priorities
             </h2>
           </motion.div>
 
@@ -166,8 +166,8 @@ export default function PartnershipsPage() {
               <Star className="w-4 h-4" />
               Our Partners
             </div>
-            <h2 className="text-xl md:text-5xl font-bold text-gray-900 mb-2 md:mb-4">
-              Meet Our <span className="text-[#C9A46A]">Partner Network</span>
+            <h2 className="text-xl md:text-5xl font-bold text-black mb-2 md:mb-4">
+              Meet Our Partner Network
             </h2>
           </motion.div>
 
@@ -258,8 +258,8 @@ export default function PartnershipsPage() {
               <Heart className="w-4 h-4" />
               Our Purpose
             </div>
-            <h2 className="text-xl md:text-5xl font-bold text-gray-900 mb-2 md:mb-4">
-              Our Commitment to <span className="text-[#C9A46A]">the Future</span>
+            <h2 className="text-xl md:text-5xl font-bold text-black mb-2 md:mb-4">
+              Our Commitment to the Future
             </h2>
           </motion.div>
 
@@ -308,8 +308,8 @@ export default function PartnershipsPage() {
               <Gem className="w-4 h-4" />
               Partnership Value
             </div>
-            <h2 className="text-xl md:text-5xl font-bold text-gray-900 mb-2 md:mb-4">
-              Why Partner With <span className="text-[#C9A46A]">{brand.shortName}</span>
+            <h2 className="text-xl md:text-5xl font-bold text-black mb-2 md:mb-4">
+              Why Partner With {brand.shortName}
             </h2>
           </motion.div>
 

@@ -47,7 +47,7 @@ const colorMap: Record<string, { bg: string; text: string; badge: string; border
   charcoal: { bg: 'bg-[#C9A46A]/8', text: 'text-[#C9A46A]', badge: 'bg-[#C9A46A]', border: 'border-[#C9A46A]/25', light: 'bg-[#C9A46A]' },
 }
 
-function DeptImageCarousel({ image1, image2, title, isEven }: { image1: string; image2: string; title: string; isEven: boolean }) {
+function DeptImageCarousel({ image1, image2, title, isEven, expandSingleImage = false }: { image1: string; image2: string; title: string; isEven: boolean; expandSingleImage?: boolean }) {
   const [activeIdx, setActiveIdx] = useState(0)
   const isDuplicate = image1 === image2
   const images = isDuplicate ? [image1] : [image1, image2]
@@ -101,7 +101,7 @@ function DeptImageCarousel({ image1, image2, title, isEven }: { image1: string; 
 
       {/* Desktop: stacked images */}
       <div className="hidden md:block space-y-4">
-        <div className="relative h-80 rounded-sm overflow-hidden shadow-xl">
+        <div className={`relative ${expandSingleImage && isDuplicate ? 'h-[35rem]' : 'h-80'} rounded-sm overflow-hidden shadow-xl`}>
           <Image
             src={image1}
             alt={title}
@@ -143,8 +143,8 @@ export default function DepartmentsPage() {
               <Globe className="w-4 h-4" />
               Our Departments
             </div>
-            <h1 className="text-2xl md:text-6xl font-bold text-gray-900 mb-3 md:mb-6 font-heading">
-              {departments.length} Ventures, <span className="text-[#C9A46A]">One Vision</span>
+            <h1 className="text-2xl md:text-6xl font-bold text-black mb-3 md:mb-6 font-heading">
+              {departments.length} Ventures, One Vision
             </h1>
             <p className="text-xs md:text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
               Explore the core ventures behind {brand.name}—a diversified platform built through distribution, hospitality, real estate, industrial activity, agriculture, and export growth.
@@ -224,9 +224,10 @@ export default function DepartmentsPage() {
 
                   <DeptImageCarousel
                     image1={dept.image}
-                    image2={dept.image2}
+                    image2={dept.id === 'distribution' || dept.id === 'paper' ? dept.image : dept.image2}
                     title={dept.title}
                     isEven={isEven}
+                    expandSingleImage={dept.id === 'distribution' || dept.id === 'paper'}
                   />
                 </div>
               </motion.div>
