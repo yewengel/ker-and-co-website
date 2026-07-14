@@ -1,7 +1,7 @@
- const assetBase = '/Ker & Co. Business Group'
+const assetBase = '/Ker & Co. Business Group'
 
  export const brandMedia = {
-   logo: `${assetBase}/KER&CO LOGO-04.jpg`,
+   logo: `${assetBase}/KER&CO LOGO-04.png`,
    hero: {
      desktopVideo: `${assetBase}/ker_computer_hero.mp4`,
      mobileVideo: `${assetBase}/ker_Mobile_hero.mp4`,
@@ -18,7 +18,7 @@
      fitness: `${assetBase}/Ker Fitness.jpg`,
      hotel: `${assetBase}/The Grand Palace Suites Hotel.jpg`,
      realEstate: `${assetBase}/Real Estate.jpg`,
-     mining: `${assetBase}/Minch Mining PLC.jpg`,
+     mining: `${assetBase}/Minch coal Mining PLC.jpg`,
      coalMining: `${assetBase}/Minch coal Mining PLC.jpg`,
      agriculture: `${assetBase}/Green Farm PLC.jpg`,
      export: `${assetBase}/coffe export.jpg`,

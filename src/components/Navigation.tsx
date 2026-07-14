@@ -249,7 +249,7 @@ const Navigation = () => {
             <img
               src={brand.logoPath}
               alt={`${brand.name} Logo`}
-              className="w-[160px] h-[64px] sm:w-[180px] sm:h-[72px] md:w-[200px] md:h-[80px] lg:w-[220px] lg:h-[88px] object-contain mix-blend-multiply"
+              className="w-[130px] h-[52px] sm:w-[145px] sm:h-[58px] md:w-[160px] md:h-[64px] lg:w-[180px] lg:h-[72px] object-contain mix-blend-multiply"
             />
           </motion.div>
 
