@@ -27,7 +27,7 @@ const Hero = () => {
   }, [])
 
   return (
-    <section id="home" className="relative min-h-screen flex flex-col justify-start overflow-hidden bg-black">
+    <section id="home" className="relative flex min-h-[84svh] flex-col justify-start overflow-hidden bg-black sm:min-h-screen">
       {/* Background image slideshow (replaces the old hero video) */}
       <div className="absolute inset-0 z-0">
         {slides.map((slide, index) => (
@@ -50,13 +50,13 @@ const Hero = () => {
 
       <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-black/10 to-black/20 z-[1]"></div>
 
-      <div className="relative z-10 w-full px-4 sm:px-6 lg:px-8 flex flex-col justify-center min-h-screen">
+      <div className="relative z-10 w-full px-4 pb-16 pt-20 sm:px-6 sm:pb-0 sm:pt-0 lg:px-8 flex flex-col justify-center min-h-[84svh] sm:min-h-screen">
         <div className="max-w-4xl">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3, duration: 0.8 }}
-            className="flex flex-col gap-6 sm:gap-7 md:gap-8"
+            className="flex flex-col gap-4 sm:gap-7 md:gap-8"
           >
             {/* Eyebrow */}
             <div className="flex items-center gap-3">
@@ -66,12 +66,12 @@ const Hero = () => {
               </span>
             </div>
 
-            <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold font-heading leading-[1.05]">
+            <h1 className="text-[2.1rem] sm:text-5xl md:text-7xl lg:text-8xl font-bold font-heading leading-[1.05]">
               <span className="block text-white">Ker &amp; Co.</span>
               <span className="block text-gradient-gold">Business Group</span>
             </h1>
 
-            <div className="min-h-[2.5rem] sm:min-h-[2.75rem] md:min-h-[3.5rem] max-w-2xl">
+            <div className="min-h-[2rem] sm:min-h-[2.75rem] md:min-h-[3.5rem] max-w-2xl">
               <AnimatePresence mode="wait">
                 <motion.p
                   key={currentTextIndex}
@@ -79,7 +79,7 @@ const Hero = () => {
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -18 }}
                   transition={{ duration: 0.5 }}
-                  className="text-base sm:text-lg md:text-2xl text-white/85 font-light leading-snug"
+                  className="text-sm sm:text-lg md:text-2xl text-white/85 font-light leading-snug"
                 >
                   {rotatingTexts[currentTextIndex]}
                 </motion.p>
