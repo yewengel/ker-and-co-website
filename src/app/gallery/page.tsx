@@ -215,8 +215,8 @@ const Gallery = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <h1 className="text-2xl md:text-6xl font-bold text-gray-900 mb-3 md:mb-6 font-heading">
-              Our <span className="text-gradient">Gallery</span>
+            <h1 className="text-2xl md:text-6xl font-bold text-black mb-3 md:mb-6 font-heading">
+              Our Gallery
             </h1>
             <p className="text-xs md:text-xl text-gray-600 max-w-3xl mx-auto">
               Explore photos and videos from the ventures, facilities, operations, and brand story of {brand.name}.

@@ -48,8 +48,8 @@ export default function CareersPage() {
             transition={{ duration: 0.6 }}
             className="text-center"
           >
-            <h1 className="text-2xl md:text-6xl font-bold text-gray-900 mb-3 md:mb-5 font-heading">
-              Careers at <span className="text-[#C9A46A]">{brand.shortName}</span>
+            <h1 className="text-2xl md:text-6xl font-bold text-black mb-3 md:mb-5 font-heading">
+              Careers at {brand.shortName}
             </h1>
             <p className="text-xs md:text-xl text-gray-600 max-w-4xl mx-auto">
               Join a founder-led business group building ventures across distribution, hospitality, real estate, industrial operations, agriculture, and export.
