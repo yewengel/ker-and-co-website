@@ -117,8 +117,8 @@ export default function AboutPage() {
         <div className="max-w-7xl mx-auto">
           <motion.div {...fadeIn} className="grid lg:grid-cols-2 gap-6 md:gap-12 items-center">
             <div>
-              <h2 className="text-xl md:text-4xl font-bold text-[#222222] mb-3 md:mb-6">
-                Our <span className="text-[#C9A46A]">Story</span>
+              <h2 className="text-xl md:text-4xl font-bold text-black mb-3 md:mb-6">
+                Our <span className="text-black">Story</span>
               </h2>
               <div className="space-y-2 md:space-y-4 text-xs md:text-base text-gray-600 leading-relaxed">
                 <p>
@@ -163,8 +163,8 @@ export default function AboutPage() {
                 <Heart className="w-3 h-3 md:w-4 md:h-4" />
                 Founder Journey
               </div>
-              <h2 className="text-xl md:text-4xl font-bold text-[#222222] mb-3 md:mb-6">
-                From Humble Beginnings to <span className="text-[#C9A46A]">Diversification</span>
+              <h2 className="text-xl md:text-4xl font-bold text-black mb-3 md:mb-6">
+                From Humble Beginnings to <span className="text-black">Diversification</span>
               </h2>
               <div className="space-y-3 md:space-y-4 text-xs md:text-base text-gray-600 leading-relaxed">
                 {journeyHighlights.map((item) => (
@@ -254,8 +254,8 @@ export default function AboutPage() {
               <Globe className="w-3 h-3 md:w-4 md:h-4" />
               Growth Footprint
             </div>
-            <h2 className="text-xl md:text-4xl font-bold text-[#222222] mb-2 md:mb-4">
-              Operational Presence & <span className="text-[#C9A46A]">Expansion</span>
+            <h2 className="text-xl md:text-4xl font-bold text-black mb-2 md:mb-4">
+              Operational Presence & <span className="text-black">Expansion</span>
             </h2>
             <p className="text-xs md:text-lg text-gray-600 max-w-3xl mx-auto">
               {brand.shortName} continues to grow through anchored local ventures, strong operational hubs, and expansion-minded businesses positioned for broader market reach.
@@ -298,8 +298,8 @@ export default function AboutPage() {
       <section className="py-10 md:py-20 px-4 sm:px-6 lg:px-8 bg-[#F8F4EF]">
         <div className="max-w-7xl mx-auto">
           <motion.div {...fadeIn} className="text-center mb-6 md:mb-16">
-            <h2 className="text-xl md:text-4xl font-bold text-[#222222] mb-2 md:mb-4">
-              Diversified <span className="text-[#C9A46A]">Sectors</span>
+            <h2 className="text-xl md:text-4xl font-bold text-black mb-2 md:mb-4">
+              Diversified <span className="text-black">Sectors</span>
             </h2>
             <p className="text-xs md:text-lg text-gray-600 max-w-3xl mx-auto">
               {brand.name} grows through multiple complementary ventures, reflecting a business model built on diversification, market understanding, and long-term value creation.

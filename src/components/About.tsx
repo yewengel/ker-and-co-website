@@ -40,6 +40,12 @@ const ventures = [
     description: "Legacy distribution leadership in Ethiopia",
   },
   {
+    image: "/Ker & Co. Business Group/mamco distribution.jpg",
+    alt: "MAMCO distribution",
+    title: "Paper & Sanitary Products",
+    description: "Legacy distribution leadership in Ethiopia",
+  },
+  {
     image: brandMedia.ventures.fitness,
     alt: "Ker Fitness",
     title: "Ker Fitness",
@@ -253,13 +259,13 @@ const About = () => {
               viewport={{ once: true }}
               transition={{ delay: index * 0.2 }}
             >
-              <Card className="h-full border border-transparent shadow-sm hover-lift bg-[#222222]">
+              <Card className="h-full border border-transparent shadow-sm hover-lift bg-white">
                 <CardContent className="p-3 md:p-8 text-center">
                   <div className="w-10 h-10 md:w-20 md:h-20 mx-auto rounded-sm bg-[#C9A46A] flex items-center justify-center mb-2 md:mb-6 shadow-sm">
                     <item.icon className="w-5 h-5 md:w-10 md:h-10 text-white" />
                   </div>
-                  <h3 className="text-sm md:text-2xl font-bold text-white mb-1 md:mb-4">{item.title}</h3>
-                  <p className="text-[10px] md:text-lg text-gray-300 leading-relaxed">{item.description}</p>
+                  <h3 className="text-sm md:text-2xl font-bold text-[#111111] mb-1 md:mb-4">{item.title}</h3>
+                  <p className="text-[10px] md:text-lg text-[#333333] leading-relaxed">{item.description}</p>
                 </CardContent>
               </Card>
             </motion.div>
@@ -273,12 +279,12 @@ const About = () => {
           viewport={{ once: true }}
           className="mb-10 md:mb-20"
         >
-          <div className="bg-gradient-to-r from-gray-900 via-black to-gray-900 rounded-sm md:rounded-sm p-4 md:p-12 text-center shadow-xl">
-            <p className="text-[10px] md:text-sm uppercase tracking-widest text-[#C9A46A]/85 mb-2 md:mb-3">Our Promise</p>
-            <h3 className="text-base md:text-4xl lg:text-5xl font-bold text-white italic">
+          <div className="bg-white rounded-sm md:rounded-sm p-4 md:p-12 text-center shadow-xl">
+            <p className="text-[10px] md:text-sm uppercase tracking-widest text-[#C9A46A] mb-2 md:mb-3">Our Promise</p>
+            <h3 className="text-base md:text-4xl lg:text-5xl font-bold text-[#111111] italic">
               &ldquo;{brand.tagline}&rdquo;
             </h3>
-            <p className="text-[10px] md:text-base text-white/60 mt-2 md:mt-4 max-w-2xl mx-auto">
+            <p className="text-[10px] md:text-base text-[#333333] mt-2 md:mt-4 max-w-2xl mx-auto">
               A founder-led business journey built on practical trade, bold expansion, and ventures designed for long-term value.
             </p>
           </div>
@@ -307,13 +313,13 @@ const About = () => {
               viewport={{ once: true }}
               transition={{ delay: index * 0.08 }}
             >
-              <Card className="h-full border border-transparent shadow-sm hover-lift bg-[#222222]">
+              <Card className="h-full border border-transparent shadow-sm hover-lift bg-white">
                 <CardContent className="p-4 md:p-5 lg:p-6 text-center">
                   <div className="w-10 h-10 md:w-12 md:h-12 lg:w-14 lg:h-14 mx-auto rounded-sm bg-[#C9A46A] flex items-center justify-center mb-3 md:mb-4 shadow-sm">
                     <value.icon className="w-5 h-5 md:w-6 md:h-6 lg:w-7 lg:h-7 text-white" />
                   </div>
-                  <h3 className="text-xs md:text-sm lg:text-base font-bold text-white mb-2 md:mb-3 line-clamp-2">{value.title}</h3>
-                  <p className="text-[10px] md:text-xs lg:text-sm text-gray-300 leading-relaxed line-clamp-3">{value.description}</p>
+                  <h3 className="text-xs md:text-sm lg:text-base font-bold text-[#111111] mb-2 md:mb-3 line-clamp-2">{value.title}</h3>
+                  <p className="text-[10px] md:text-xs lg:text-sm text-[#333333] leading-relaxed line-clamp-3">{value.description}</p>
                 </CardContent>
               </Card>
             </motion.div>
@@ -412,7 +418,7 @@ const About = () => {
           className="mb-10 md:mb-20"
         >
           <div className="text-center mb-8 md:mb-12">
-            <h3 className="text-xl md:text-3xl font-bold text-[#C9A46A] mb-3 md:mb-4">
+            <h3 className="text-xl md:text-3xl font-bold text-black mb-3 md:mb-4">
               Our Commitment
             </h3>
             <p className="text-xs md:text-lg text-gray-600 max-w-3xl mx-auto">
