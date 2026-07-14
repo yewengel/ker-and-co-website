@@ -40,12 +40,6 @@ const ventures = [
     description: "Legacy distribution leadership in Ethiopia",
   },
   {
-    image: "/Ker & Co. Business Group/mamco distribution.jpg",
-    alt: "MAMCO distribution",
-    title: "Paper & Sanitary Products",
-    description: "Legacy distribution leadership in Ethiopia",
-  },
-  {
     image: brandMedia.ventures.fitness,
     alt: "Ker Fitness",
     title: "Ker Fitness",
