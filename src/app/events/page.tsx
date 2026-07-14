@@ -40,7 +40,7 @@ export default function EventsPage() {
               Events & Engagement
             </div>
             <h1 className="text-2xl md:text-6xl font-bold text-gray-900 mb-3 md:mb-5 font-heading">
-              Events & <span className="text-[#C9A46A]">Engagement</span>
+              Events & Engagement
             </h1>
             <p className="text-xs md:text-xl text-gray-600 max-w-4xl mx-auto">
               Highlights from founder showcases, hospitality engagements, export meetings, and venture strategy sessions that shape the growth story of {brand.name}.

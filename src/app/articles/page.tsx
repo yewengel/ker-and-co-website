@@ -151,7 +151,7 @@ const Articles = () => {
             className="text-center mb-6 md:mb-16"
           >
             <h1 className="text-2xl md:text-6xl font-bold text-gray-900 mb-3 md:mb-6">
-              Company <span className="text-gradient">News</span>
+              Company News
             </h1>
             <p className="text-xs md:text-xl text-gray-600 max-w-3xl mx-auto">
               Updates and insights on the ventures, partnerships, milestones, and growth story of {brand.name}.
