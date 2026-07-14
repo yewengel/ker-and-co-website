@@ -252,7 +252,7 @@ const Contact = () => {
                     type="submit"
                     size="lg"
                     disabled={isSubmitting}
-                    className="w-full"
+                    className="w-full bg-[#C9A46A] hover:bg-[#C9A46A] text-white shadow-xl shadow-[#C9A46A]/20 transition-all duration-300"
                   >
                     {isSubmitting ? (
                       <div className="flex items-center">

@@ -26,7 +26,32 @@ import {
 } from 'lucide-react'
 import { Card, CardContent } from '@/components/ui/card'
 import { brand, brandMedia } from '@/lib/brand'
-
+const ventures = [
+  {
+    image: brandMedia.ventures.distribution,
+    alt: "Import, export and rural Ethiopia",
+    title: "Import, Export & Rural Distribution",
+    description: "Foundational trading and market reach",
+  },
+  {
+    image: "/Ker & Co. Business Group/mamco distribution.jpg",
+    alt: "MAMCO distribution",
+    title: "Paper & Sanitary Products",
+    description: "Legacy distribution leadership in Ethiopia",
+  },
+  {
+    image: brandMedia.ventures.fitness,
+    alt: "Ker Fitness",
+    title: "Ker Fitness",
+    description: "Wellness and lifestyle expansion",
+  },
+  {
+    image: brandMedia.ventures.hotel,
+    alt: "Grand Palace Suites Hotel",
+    title: "Grand Palace Suites Hotel",
+    description: "Award-winning hospitality and service",
+  },
+];
 const About = () => {
   const visionMission = {
     vision: {
@@ -228,13 +253,13 @@ const About = () => {
               viewport={{ once: true }}
               transition={{ delay: index * 0.2 }}
             >
-              <Card className="h-full border border-[#E7DED2] shadow-sm hover-lift bg-white">
+              <Card className="h-full border border-transparent shadow-sm hover-lift bg-[#222222]">
                 <CardContent className="p-3 md:p-8 text-center">
                   <div className="w-10 h-10 md:w-20 md:h-20 mx-auto rounded-sm bg-[#C9A46A] flex items-center justify-center mb-2 md:mb-6 shadow-sm">
                     <item.icon className="w-5 h-5 md:w-10 md:h-10 text-white" />
                   </div>
-                  <h3 className="text-sm md:text-2xl font-bold text-gray-900 mb-1 md:mb-4">{item.title}</h3>
-                  <p className="text-[10px] md:text-lg text-gray-600 leading-relaxed">{item.description}</p>
+                  <h3 className="text-sm md:text-2xl font-bold text-white mb-1 md:mb-4">{item.title}</h3>
+                  <p className="text-[10px] md:text-lg text-gray-300 leading-relaxed">{item.description}</p>
                 </CardContent>
               </Card>
             </motion.div>
@@ -282,13 +307,13 @@ const About = () => {
               viewport={{ once: true }}
               transition={{ delay: index * 0.08 }}
             >
-              <Card className="h-full border border-[#E7DED2] shadow-sm hover-lift bg-white">
+              <Card className="h-full border border-transparent shadow-sm hover-lift bg-[#222222]">
                 <CardContent className="p-4 md:p-5 lg:p-6 text-center">
                   <div className="w-10 h-10 md:w-12 md:h-12 lg:w-14 lg:h-14 mx-auto rounded-sm bg-[#C9A46A] flex items-center justify-center mb-3 md:mb-4 shadow-sm">
                     <value.icon className="w-5 h-5 md:w-6 md:h-6 lg:w-7 lg:h-7 text-white" />
                   </div>
-                  <h3 className="text-xs md:text-sm lg:text-base font-bold text-gray-900 mb-2 md:mb-3 line-clamp-2">{value.title}</h3>
-                  <p className="text-[10px] md:text-xs lg:text-sm text-gray-600 leading-relaxed line-clamp-3">{value.description}</p>
+                  <h3 className="text-xs md:text-sm lg:text-base font-bold text-white mb-2 md:mb-3 line-clamp-2">{value.title}</h3>
+                  <p className="text-[10px] md:text-xs lg:text-sm text-gray-300 leading-relaxed line-clamp-3">{value.description}</p>
                 </CardContent>
               </Card>
             </motion.div>
@@ -309,102 +334,73 @@ const About = () => {
               Signature ventures and brands that define the Ker &amp; Co. Business Group portfolio.
             </p>
           </motion.div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-4 md:gap-6 lg:gap-8">
+  {ventures.map((venture, index) => (
+    <motion.div
+      key={venture.title}
+      initial={{
+        opacity: 0,
+        x: index % 2 === 0 ? -30 : 30,
+      }}
+      whileInView={{
+        opacity: 1,
+        x: 0,
+      }}
+      viewport={{ once: true }}
+      transition={{
+        delay: index * 0.1,
+      }}
+      className="relative overflow-hidden rounded-sm shadow-xl group"
+    >
+      <img
+        src={venture.image}
+        alt={venture.alt}
+        className="
+          w-full 
+          h-40 
+          sm:h-52 
+          md:h-60 
+          lg:h-64 
+          object-cover 
+          group-hover:scale-105 
+          transition-transform 
+          duration-500
+        "
+      />
+
+      <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
+
+      <div className="
+        absolute 
+        bottom-3 
+        left-3 
+        md:bottom-5 
+        md:left-5 
+        text-white
+      ">
+        <h4 className="
+          text-sm 
+          text-white
+          md:text-lg 
+          lg:text-xl 
+          font-bold 
+          mb-1
+        ">
+          {venture.title}
+        </h4>
+
+        <p className="
+          text-xs 
+          md:text-sm 
+          text-white
+        ">
+          {venture.description}
+        </p>
+      </div>
+    </motion.div>
+  ))}
+</div>
           
-          <div className="grid md:grid-cols-2 gap-4 md:gap-6 lg:gap-8">
-            <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              className="relative overflow-hidden rounded-sm md:rounded-sm shadow-xl group"
-            >
-              <img
-                src={brandMedia.ventures.distribution}
-                alt="Import, export and rural Ethiopia"
-                className="w-full h-32 md:h-56 lg:h-64 object-cover group-hover:scale-105 transition-transform duration-500"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
-              <div className="absolute bottom-2 left-2 md:bottom-4 md:left-4 lg:bottom-6 lg:left-6 text-white">
-                <h4 className="text-xs md:text-lg lg:text-xl font-bold mb-0.5 md:mb-2">Import, Export & Rural Distribution</h4>
-                <p className="text-xs md:text-sm text-gray-200">Foundational trading and market reach</p>
-              </div>
-            </motion.div>
-            
-            <motion.div
-              initial={{ opacity: 0, x: 30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              className="relative overflow-hidden rounded-sm md:rounded-sm shadow-xl group"
-            >
-              <img
-  src="/Ker & Co. Business Group/mamco distribution.jpg"
-  alt="MAMCO distribution"
-  style={{ width: "100%", height: "300px", objectFit: "contain", background: "white" }}
-/>
-              <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
-              <div className="absolute bottom-2 left-2 md:bottom-4 md:left-4 lg:bottom-6 lg:left-6 text-white">
-                <h4 className="text-xs md:text-lg lg:text-xl font-bold mb-0.5 md:mb-2">Paper & Sanitary Products</h4>
-                <p className="text-xs md:text-sm text-gray-200">Legacy distribution leadership in Ethiopia</p>
-              </div>
-            </motion.div>
-          </div>
-
-          <div className="grid grid-cols-3 gap-2 md:gap-6 lg:gap-8 mt-2 md:mt-6 lg:mt-8">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="relative overflow-hidden rounded-sm md:rounded-sm shadow-xl group"
-            >
-              <img
-                src={brandMedia.ventures.fitness}
-                alt="Ker Fitness"
-                className="w-full h-28 md:h-52 object-cover group-hover:scale-105 transition-transform duration-500"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
-              <div className="absolute bottom-1.5 left-1.5 md:bottom-4 md:left-4 text-white">
-                <h4 className="text-[10px] md:text-base lg:text-lg font-bold mb-0.5 md:mb-1">Ker Fitness</h4>
-                <p className="text-[8px] md:text-xs text-gray-200 hidden sm:block">Wellness and lifestyle expansion</p>
-              </div>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.1 }}
-              className="relative overflow-hidden rounded-sm md:rounded-sm shadow-xl group"
-            >
-              <img
-                src={brandMedia.ventures.hotel}
-                alt="Grand Palace Suites Hotel"
-                className="w-full h-28 md:h-52 object-cover group-hover:scale-105 transition-transform duration-500"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
-              <div className="absolute bottom-1.5 left-1.5 md:bottom-4 md:left-4 text-white">
-                <h4 className="text-[10px] md:text-base lg:text-lg font-bold mb-0.5 md:mb-1">Grand Palace Suites Hotel</h4>
-                <p className="text-[8px] md:text-xs text-gray-200 hidden sm:block">Award-winning hospitality and service</p>
-              </div>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.2 }}
-              className="relative overflow-hidden rounded-sm md:rounded-sm shadow-xl group"
-            >
-              <img
-                src={brandMedia.ventures.partner}
-                alt="MAMCO partnership"
-                className="w-full h-28 md:h-52 object-cover group-hover:scale-105 transition-transform duration-500"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
-              <div className="absolute bottom-1.5 left-1.5 md:bottom-4 md:left-4 text-white">
-                <h4 className="text-[10px] md:text-base lg:text-lg font-bold mb-0.5 md:mb-1">MAMCO Partnership</h4>
-                <p className="text-[8px] md:text-xs text-gray-200 hidden sm:block">Trusted strategic product relationships</p>
-              </div>
-            </motion.div>
-          </div>
         </div>
 
         {/* Our Commitment */}
@@ -416,7 +412,7 @@ const About = () => {
           className="mb-10 md:mb-20"
         >
           <div className="text-center mb-8 md:mb-12">
-            <h3 className="text-xl md:text-3xl font-bold text-gray-900 mb-3 md:mb-4">
+            <h3 className="text-xl md:text-3xl font-bold text-[#C9A46A] mb-3 md:mb-4">
               Our Commitment
             </h3>
             <p className="text-xs md:text-lg text-gray-600 max-w-3xl mx-auto">

@@ -193,7 +193,7 @@ const Footer = () => {
         >
           <div className="flex flex-col md:flex-row items-center justify-between">
             <div className="mb-3 md:mb-0">
-              <h4 className="text-sm md:text-xl font-bold mb-1 md:mb-2">Work With Us</h4>
+              <h4 className="text-sm md:text-xl font-bold mb-1 md:mb-2 text-white">Work With Us</h4>
               <p className="text-[10px] md:text-base text-white/80">Contact us to discuss partnerships, hospitality, agriculture, real estate, mining, or export opportunities.</p>
             </div>
             <Button

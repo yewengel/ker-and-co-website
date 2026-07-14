@@ -333,13 +333,13 @@ const ServicesCondensed = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <button 
-                className="px-8 py-3 bg-[#C9A46A] text-white rounded-sm font-semibold hover:bg-[#C9A46A] transition-colors"
+                className="px-8 py-3 bg-[#C9A46A] text-white rounded-sm font-semibold hover:bg-[#b08e56] transition-all duration-300 shadow-sm"
                 onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
               >
                 Get In Touch
               </button>
               <button 
-                className="px-8 py-3 border border-[#C9A46A] text-[#C9A46A] rounded-sm font-semibold hover:bg-[#C9A46A]/10 transition-colors"
+                className="px-8 py-3 bg-[#C9A46A] text-white rounded-sm font-semibold hover:bg-[#b08e56] transition-all duration-300 shadow-sm"
                 onClick={() => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })}
               >
                 Learn More About Us

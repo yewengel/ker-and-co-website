@@ -49,7 +49,8 @@ const colorMap: Record<string, { bg: string; text: string; badge: string; border
 
 function DeptImageCarousel({ image1, image2, title, isEven }: { image1: string; image2: string; title: string; isEven: boolean }) {
   const [activeIdx, setActiveIdx] = useState(0)
-  const images = [image1, image2]
+  const isDuplicate = image1 === image2
+  const images = isDuplicate ? [image1] : [image1, image2]
 
   return (
     <div className={`${!isEven ? 'lg:order-1' : ''}`}>
@@ -57,7 +58,11 @@ function DeptImageCarousel({ image1, image2, title, isEven }: { image1: string; 
       <div className="md:hidden relative">
         <div
           className="relative h-48 rounded-sm overflow-hidden shadow-xl cursor-pointer"
-          onClick={() => setActiveIdx((prev) => (prev + 1) % images.length)}
+          onClick={() => {
+            if (images.length > 1) {
+              setActiveIdx((prev) => (prev + 1) % images.length)
+            }
+          }}
         >
           {images.map((img, i) => (
             <div
@@ -75,18 +80,22 @@ function DeptImageCarousel({ image1, image2, title, isEven }: { image1: string; 
             </div>
           ))}
           {/* Tap hint */}
-          <div className="absolute bottom-2 right-2 bg-black/50 text-white text-[8px] px-2 py-0.5 rounded-sm">
-            Tap to slide
-          </div>
+          {images.length > 1 && (
+            <div className="absolute bottom-2 right-2 bg-black/50 text-white text-[8px] px-2 py-0.5 rounded-sm">
+              Tap to slide
+            </div>
+          )}
           {/* Dots indicator */}
-          <div className="absolute bottom-2 left-1/2 -translate-x-1/2 flex gap-1.5">
-            {images.map((_, i) => (
-              <div
-                key={i}
-                className={`w-1.5 h-1.5 rounded-sm transition-colors ${i === activeIdx ? 'bg-white' : 'bg-white/40'}`}
-              />
-            ))}
-          </div>
+          {images.length > 1 && (
+            <div className="absolute bottom-2 left-1/2 -translate-x-1/2 flex gap-1.5">
+              {images.map((_, i) => (
+                <div
+                  key={i}
+                  className={`w-1.5 h-1.5 rounded-sm transition-colors ${i === activeIdx ? 'bg-white' : 'bg-white/40'}`}
+                />
+              ))}
+            </div>
+          )}
         </div>
       </div>
 
@@ -101,15 +110,17 @@ function DeptImageCarousel({ image1, image2, title, isEven }: { image1: string; 
             unoptimized
           />
         </div>
-        <div className="relative h-56 rounded-sm overflow-hidden shadow-lg">
-          <Image
-            src={image2}
-            alt={`${title} operations`}
-            fill
-            className="object-cover"
-            unoptimized
-          />
-        </div>
+        {!isDuplicate && (
+          <div className="relative h-56 rounded-sm overflow-hidden shadow-lg">
+            <Image
+              src={image2}
+              alt={`${title} operations`}
+              fill
+              className="object-cover"
+              unoptimized
+            />
+          </div>
+        )}
       </div>
     </div>
   )
@@ -228,7 +239,7 @@ export default function DepartmentsPage() {
       <section className="py-10 md:py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-[#C9A46A] to-[#C9A46A] text-white">
         <div className="max-w-4xl mx-auto text-center">
           <motion.div {...fadeIn}>
-            <h2 className="text-xl md:text-4xl font-bold mb-2 md:mb-4">Ready to Work With Us?</h2>
+            <h2 className="text-xl md:text-4xl font-bold mb-2 md:mb-4 text-white">Ready to Work With Us?</h2>
             <p className="text-xs md:text-lg text-white/80 mb-4 md:mb-8">
               Whether you are exploring distribution, hospitality, industrial supply, agriculture, or export opportunities, {brand.shortName} is ready to build meaningful partnerships.
             </p>

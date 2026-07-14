@@ -129,15 +129,7 @@ const Navigation = () => {
           key={item.name}
           type="button"
           onClick={() => handleNavigation(item.href)}
-          className={cn(
-            'shrink-0 inline-flex items-center justify-center rounded-none transition-all duration-300',
-            isTransparent
-              ? 'border border-[#C9A46A] text-[#C9A46A] hover:bg-[#C9A46A] hover:text-white'
-              : 'bg-[#C9A46A] text-white',
-            'px-4 md:px-5',
-            getNavLinkClass(false, undefined, isTransparent),
-            'after:hidden' // Hide the underline pseudo-element
-          )}
+          className="shrink-0 inline-flex items-center justify-center h-10 md:h-11 px-5 md:px-6 text-[14px] md:text-[15px] font-semibold text-white bg-[#C9A46A] hover:bg-[#b08e56] transition-all duration-300 shadow-sm rounded-sm"
         >
           {item.name}
         </button>

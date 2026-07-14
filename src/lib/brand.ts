@@ -14,7 +14,7 @@
    ventures: {
      distribution: `${assetBase}/Import  Export and Rural Ethiopia.jpg`,
      paper: `${assetBase}/mamco distribution.jpg`,
-     partner: `${assetBase}/Partener mamco.png`,
+     partner: `${assetBase}/Import  Export and Rural Ethiopia.jpg`,
      fitness: `${assetBase}/Ker Fitness.jpg`,
      hotel: `${assetBase}/The Grand Palace Suites Hotel.jpg`,
      realEstate: `${assetBase}/Real Estate.jpg`,

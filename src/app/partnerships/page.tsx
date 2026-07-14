@@ -21,11 +21,6 @@ const fadeIn = {
 
 const partnerCompanies = [
   {
-    name: 'MAMCO Partnership',
-    image: brandMedia.ventures.partner,
-    description: 'Trusted strategic relationships in paper and sanitary product distribution.',
-  },
-  {
     name: 'MAMCO Distribution',
     image: brandMedia.ventures.paper,
     description: 'A long-standing distribution platform serving Ethiopian households and retailers.',
@@ -86,7 +81,7 @@ export default function PartnershipsPage() {
       <section className="relative pt-navbar pb-10 md:pb-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-gray-900 via-gray-800 to-black overflow-hidden">
         <div className="absolute inset-0 opacity-15">
           <Image
-            src={brandMedia.ventures.partner}
+            src={brandMedia.ventures.distribution}
             alt="Ker & Co. partnerships"
             fill
             className="object-cover"
@@ -99,12 +94,12 @@ export default function PartnershipsPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7 }}
           >
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-sm bg-white/10 backdrop-blur-sm text-medical-blue text-sm font-semibold mb-6">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-sm bg-white/10 backdrop-blur-sm text-[#C9A46A] text-sm font-semibold mb-6">
               <Globe className="w-4 h-4" />
               Global Partnerships
             </div>
             <h1 className="text-2xl md:text-6xl lg:text-7xl font-bold text-white mb-3 md:mb-6 font-heading">
-              Strategic <span className="text-medical-blue">Partnerships</span>
+              Strategic <span className="text-[#C9A46A]">Partnerships</span>
             </h1>
             <p className="text-xs md:text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
               {brand.name} is open to strategic relationships with investors, operators, suppliers, buyers, and growth partners who align with a founder-led, diversified Ethiopian business group.
@@ -117,12 +112,12 @@ export default function PartnershipsPage() {
       <section className="py-10 md:py-20 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-7xl mx-auto">
           <motion.div {...fadeIn} className="text-center mb-10 md:mb-16">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-sm bg-medical-blue/10 text-medical-red text-sm font-semibold mb-4">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-sm bg-[#C9A46A]/10 text-[#C9A46A] text-sm font-semibold mb-4">
               <Globe className="w-4 h-4" />
               Global Network
             </div>
             <h2 className="text-xl md:text-5xl font-bold text-gray-900 mb-3 md:mb-6">
-              Partnership <span className="text-medical-blue">Priorities</span>
+              Partnership <span className="text-[#C9A46A]">Priorities</span>
             </h2>
           </motion.div>
 
@@ -137,7 +132,7 @@ export default function PartnershipsPage() {
                 transition={{ delay: i * 0.08 }}
                 className="flex items-center gap-2 px-3 md:px-5 py-2 md:py-3 bg-gray-50 rounded-sm border border-gray-200 shadow-sm"
               >
-                <Globe className="w-3 h-3 md:w-4 md:h-4 text-medical-blue" />
+                <Globe className="w-3 h-3 md:w-4 md:h-4 text-[#C9A46A]" />
                 <span className="text-xs md:text-sm font-semibold text-gray-800">{c}</span>
               </motion.div>
             ))}
@@ -167,12 +162,12 @@ export default function PartnershipsPage() {
       <section className="py-10 md:py-20 px-4 sm:px-6 lg:px-8 bg-gray-50">
         <div className="max-w-7xl mx-auto">
           <motion.div {...fadeIn} className="text-center mb-8 md:mb-14">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-sm bg-medical-blue/10 text-medical-red text-sm font-semibold mb-4">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-sm bg-[#C9A46A]/10 text-[#C9A46A] text-sm font-semibold mb-4">
               <Star className="w-4 h-4" />
               Our Partners
             </div>
             <h2 className="text-xl md:text-5xl font-bold text-gray-900 mb-2 md:mb-4">
-              Meet Our <span className="text-medical-blue">Partner Network</span>
+              Meet Our <span className="text-[#C9A46A]">Partner Network</span>
             </h2>
           </motion.div>
 
@@ -183,7 +178,7 @@ export default function PartnershipsPage() {
           >
             <div className="flex-shrink-0 w-2/5 md:w-1/2 relative rounded-sm md:rounded-sm overflow-hidden shadow-2xl border border-gray-100 bg-white">
               <Image
-                src={brandMedia.ventures.partner}
+                src={brandMedia.ventures.distribution}
                 alt="Ker & Co. partner network overview"
                 width={900}
                 height={600}
@@ -211,8 +206,8 @@ export default function PartnershipsPage() {
                   { label: '4', desc: 'Ker Fitness Sites' },
                   { label: '3', desc: 'Hotel Awards' },
                 ].map((stat) => (
-                  <div key={stat.label} className="bg-medical-blue/5 rounded-sm md:rounded-sm p-1.5 md:p-4 border border-medical-blue/20 text-center">
-                    <div className="text-sm md:text-3xl font-bold text-medical-blue">{stat.label}</div>
+                  <div key={stat.label} className="bg-[#C9A46A]/5 rounded-sm md:rounded-sm p-1.5 md:p-4 border border-[#C9A46A]/20 text-center">
+                    <div className="text-sm md:text-3xl font-bold text-[#C9A46A]">{stat.label}</div>
                     <div className="text-[8px] md:text-sm text-gray-600 mt-0.5 leading-tight">{stat.desc}</div>
                   </div>
                 ))}
@@ -225,7 +220,7 @@ export default function PartnershipsPage() {
             <h3 className="text-base md:text-2xl font-bold text-gray-800 text-center mb-6 md:mb-10">
               Our Partner Companies
             </h3>
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 justify-center justify-items-center">
               {partnerCompanies.map((company, i) => (
                 <motion.div
                   key={company.name}
@@ -233,20 +228,20 @@ export default function PartnershipsPage() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.06 }}
-                  className="group overflow-hidden rounded-sm md:rounded-sm border border-gray-100 bg-white shadow-sm hover:shadow-xl transition-all duration-300"
+                  className="group flex flex-col h-full w-full max-w-sm overflow-hidden rounded-xl border border-gray-100 bg-white shadow-sm hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 ease-out"
                 >
-                  <div className="relative aspect-[4/3] bg-gray-50">
+                  <div className="relative aspect-[4/3] bg-gray-50 overflow-hidden">
                     <Image
                       src={company.image}
                       alt={company.name}
                       fill
-                      className="object-cover group-hover:scale-105 transition-transform duration-500"
+                      className="object-cover group-hover:scale-105 transition-transform duration-500 ease-out"
                       unoptimized
                     />
                   </div>
-                  <div className="p-3 md:p-5">
-                    <h4 className="text-xs md:text-lg font-bold text-gray-900 leading-tight">{company.name}</h4>
-                    <p className="text-[9px] md:text-sm text-gray-600 mt-1.5 md:mt-2 leading-relaxed">{company.description}</p>
+                  <div className="p-5 md:p-6 flex flex-col flex-grow">
+                    <h4 className="text-base md:text-lg font-bold text-gray-900 leading-snug mb-2">{company.name}</h4>
+                    <p className="text-xs md:text-sm text-gray-600 leading-relaxed flex-grow">{company.description}</p>
                   </div>
                 </motion.div>
               ))}
@@ -259,12 +254,12 @@ export default function PartnershipsPage() {
       <section className="py-10 md:py-20 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-7xl mx-auto">
           <motion.div {...fadeIn} className="text-center mb-8 md:mb-14">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-sm bg-medical-blue/10 text-medical-red text-sm font-semibold mb-4">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-sm bg-[#C9A46A]/10 text-[#C9A46A] text-sm font-semibold mb-4">
               <Heart className="w-4 h-4" />
               Our Purpose
             </div>
             <h2 className="text-xl md:text-5xl font-bold text-gray-900 mb-2 md:mb-4">
-              Our Commitment to <span className="text-medical-blue">the Future</span>
+              Our Commitment to <span className="text-[#C9A46A]">the Future</span>
             </h2>
           </motion.div>
 
@@ -309,12 +304,12 @@ export default function PartnershipsPage() {
       <section className="py-10 md:py-20 px-4 sm:px-6 lg:px-8 bg-gray-50">
         <div className="max-w-7xl mx-auto">
           <motion.div {...fadeIn} className="text-center mb-8 md:mb-14">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-sm bg-medical-blue/10 text-medical-red text-sm font-semibold mb-4">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-sm bg-[#C9A46A]/10 text-[#C9A46A] text-sm font-semibold mb-4">
               <Gem className="w-4 h-4" />
               Partnership Value
             </div>
             <h2 className="text-xl md:text-5xl font-bold text-gray-900 mb-2 md:mb-4">
-              Why Partner With <span className="text-medical-blue">{brand.shortName}</span>
+              Why Partner With <span className="text-[#C9A46A]">{brand.shortName}</span>
             </h2>
           </motion.div>
 
@@ -328,8 +323,8 @@ export default function PartnershipsPage() {
                 transition={{ delay: i * 0.08 }}
                 className={`bg-white rounded-sm p-5 md:p-7 border border-gray-100 shadow-sm hover:shadow-md transition-shadow ${i === 6 ? 'sm:col-span-2 lg:col-span-1' : ''}`}
               >
-                <div className="w-10 h-10 md:w-12 md:h-12 rounded-sm bg-medical-blue/10 flex items-center justify-center mb-3 md:mb-4">
-                  <reason.icon className="w-5 h-5 md:w-6 md:h-6 text-medical-blue" />
+                <div className="w-10 h-10 md:w-12 md:h-12 rounded-sm bg-[#C9A46A]/10 flex items-center justify-center mb-3 md:mb-4">
+                  <reason.icon className="w-5 h-5 md:w-6 md:h-6 text-[#C9A46A]" />
                 </div>
                 <h3 className="text-sm md:text-lg font-bold text-gray-900 mb-2 md:mb-3">{reason.title}</h3>
                 <p className="text-xs md:text-sm text-gray-600 leading-relaxed">{reason.description}</p>
@@ -340,7 +335,7 @@ export default function PartnershipsPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-10 md:py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-medical-blue to-medical-red text-white">
+      <section className="py-10 md:py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-gray-900 via-gray-800 to-black text-white">
         <div className="max-w-4xl mx-auto text-center">
           <motion.div {...fadeIn}>
             <Gem className="w-8 h-8 md:w-12 md:h-12 mx-auto mb-3 md:mb-6 text-white/80" />
@@ -348,15 +343,16 @@ export default function PartnershipsPage() {
             <p className="text-xs md:text-lg text-white/80 mb-4 md:mb-8 leading-relaxed">
               If you are exploring investment, supply, operating collaboration, or export growth, let&apos;s discuss how we can build a long-term partnership with shared ambition.
             </p>
-            <div className="flex flex-wrap justify-center gap-4">
-              <Button
-                size="lg"
-                className="bg-white text-medical-red hover:bg-gray-100"
+            <div className="flex flex-wrap justify-center items-center gap-4">
+              <motion.button
+                whileHover={{ scale: 1.04 }}
+                whileTap={{ scale: 0.96 }}
                 onClick={() => window.location.href = '/#contact'}
+                className="px-7 py-3.5 md:px-9 md:py-4 bg-[#C9A46A] text-white rounded-sm font-semibold text-sm md:text-base shadow-xl shadow-[#C9A46A]/30 hover:bg-[#C9A46A] transition-all duration-300 flex items-center gap-2"
               >
                 Get In Touch
-                <ArrowRight className="w-5 h-5 ml-2" />
-              </Button>
+                <ArrowRight className="w-4 h-4 md:w-5 md:h-5 group-hover:translate-x-1 transition-transform" />
+              </motion.button>
               <Button
                 variant="outline"
                 size="lg"

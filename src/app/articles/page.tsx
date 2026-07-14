@@ -182,12 +182,12 @@ const Articles = () => {
                       <div className="absolute inset-0 bg-gradient-to-r from-black/10 via-transparent to-transparent lg:bg-gradient-to-l lg:from-white/20 lg:via-transparent lg:to-transparent" />
                     </>
                   ) : (
-                    <div className="absolute inset-0 bg-gradient-to-br from-medical-blue/10 via-gray-100 to-gray-200 flex items-center justify-center">
+                    <div className="absolute inset-0 bg-gradient-to-br from-[#C9A46A]/10 via-gray-100 to-gray-200 flex items-center justify-center">
                       <Newspaper className="w-20 h-20 text-gray-300" />
                     </div>
                   )}
                   <div className="absolute top-4 left-4">
-                    <span className="inline-flex items-center px-3 py-1.5 text-xs font-bold text-white bg-medical-blue rounded-sm shadow-lg">
+                    <span className="inline-flex items-center px-3 py-1.5 text-xs font-bold text-white bg-[#C9A46A] rounded-sm shadow-lg">
                       Featured Article
                     </span>
                   </div>
@@ -195,10 +195,10 @@ const Articles = () => {
 
                 {/* Right: Content */}
                 <div className="lg:w-1/2 p-4 md:p-8 lg:p-10 xl:p-12 flex flex-col justify-center">
-                  <span className="inline-flex items-center px-3 py-1 mb-4 text-xs font-semibold text-medical-blue bg-medical-blue/10 rounded-sm w-fit">
+                  <span className="inline-flex items-center px-3 py-1 mb-4 text-xs font-semibold text-[#C9A46A] bg-[#C9A46A]/10 rounded-sm w-fit">
                     {featuredArticle.category}
                   </span>
-                  <h2 className="text-base md:text-2xl lg:text-3xl font-bold text-gray-900 mb-2 md:mb-4 leading-snug group-hover:text-medical-blue transition-colors">
+                  <h2 className="text-base md:text-2xl lg:text-3xl font-bold text-gray-900 mb-2 md:mb-4 leading-snug group-hover:text-[#C9A46A] transition-colors">
                     {featuredArticle.title}
                   </h2>
                   <p className="text-[10px] md:text-base text-gray-600 mb-3 md:mb-6 leading-relaxed line-clamp-2 md:line-clamp-3">
@@ -251,12 +251,12 @@ const Articles = () => {
                         key={index}
                         onClick={() => setActiveCategory(category.name)}
                         className={`w-full flex items-center justify-between p-1.5 md:p-3 rounded-sm transition-colors text-left group ${
-                          selected ? 'bg-medical-blue/10 border border-medical-blue/20' : 'hover:bg-gray-50'
+                          selected ? 'bg-[#C9A46A]/10 border border-[#C9A46A]/20' : 'hover:bg-gray-50'
                         }`}
                       >
                         <div className="flex items-center space-x-1.5 md:space-x-3">
-                          <IconComponent className={`w-3.5 h-3.5 md:w-5 md:h-5 ${selected ? 'text-medical-blue' : 'text-medical-blue'}`} />
-                          <span className={`text-[10px] md:text-base transition-colors ${selected ? 'text-medical-blue font-semibold' : 'text-gray-700 group-hover:text-medical-blue'}`}>
+                          <IconComponent className={`w-3.5 h-3.5 md:w-5 md:h-5 ${selected ? 'text-[#C9A46A]' : 'text-[#C9A46A]'}`} />
+                          <span className={`text-[10px] md:text-base transition-colors ${selected ? 'text-[#C9A46A] font-semibold' : 'text-gray-700 group-hover:text-[#C9A46A]'}`}>
                             {category.name}
                           </span>
                         </div>
@@ -321,7 +321,7 @@ const Articles = () => {
                               />
                             ) : (
                               /* Default book cover design when no image */
-                              <div className="absolute inset-0 flex flex-col items-center justify-center p-6 bg-gradient-to-br from-medical-blue/90 via-medical-blue/80 to-medical-red">
+                              <div className="absolute inset-0 flex flex-col items-center justify-center p-6 bg-gradient-to-br from-[#C9A46A]/90 via-[#C9A46A]/80 to-[#BE9C72]">
                                 <div className="w-12 h-12 md:w-16 md:h-16 rounded-sm bg-white/10 flex items-center justify-center mb-4">
                                   <BookOpen className="w-6 h-6 md:w-8 md:h-8 text-white" />
                                 </div>
@@ -340,7 +340,7 @@ const Articles = () => {
                             )}
 
                             {/* Year badge */}
-                            <div className="absolute top-3 right-3 bg-medical-blue text-white text-xs font-bold px-2.5 py-1 rounded-sm shadow-lg">
+                            <div className="absolute top-3 right-3 bg-[#C9A46A] text-white text-xs font-bold px-2.5 py-1 rounded-sm shadow-lg">
                               {report.year}
                             </div>
 
@@ -357,9 +357,9 @@ const Articles = () => {
                             )}
 
                             {/* Hover overlay */}
-                            <div className="absolute inset-0 bg-medical-blue/0 group-hover:bg-medical-blue/10 transition-colors duration-300 flex items-center justify-center">
+                            <div className="absolute inset-0 bg-[#C9A46A]/0 group-hover:bg-[#C9A46A]/10 transition-colors duration-300 flex items-center justify-center">
                               <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-white/95 backdrop-blur-sm rounded-sm px-5 py-2.5 shadow-xl flex items-center gap-2">
-                                <BookOpen className="w-4 h-4 text-medical-blue" />
+                                <BookOpen className="w-4 h-4 text-[#C9A46A]" />
                                 <span className="text-sm font-semibold text-gray-900">Read Report</span>
                               </div>
                             </div>
@@ -370,7 +370,7 @@ const Articles = () => {
 
                           {/* Book info below cover */}
                           <div className="mt-4 px-1">
-                            <h3 className="font-bold text-gray-900 text-sm md:text-base leading-tight group-hover:text-medical-blue transition-colors line-clamp-2">
+                            <h3 className="font-bold text-gray-900 text-sm md:text-base leading-tight group-hover:text-[#C9A46A] transition-colors line-clamp-2">
                               {report.title}
                             </h3>
                             {report.description && (
@@ -388,7 +388,7 @@ const Articles = () => {
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 onClick={(e) => e.stopPropagation()}
-                                className="text-xs text-medical-blue hover:underline flex items-center gap-1"
+                                className="text-xs text-[#C9A46A] hover:underline flex items-center gap-1"
                               >
                                 <Download className="w-3 h-3" />
                                 Download PDF
@@ -443,7 +443,7 @@ const Articles = () => {
                             </div>
                           )}
                           <div className="absolute top-3 left-3">
-                            <span className="inline-flex items-center px-2.5 py-1 text-[11px] font-bold text-white bg-medical-blue rounded-sm shadow-md">
+                            <span className="inline-flex items-center px-2.5 py-1 text-[11px] font-bold text-white bg-[#C9A46A] rounded-sm shadow-md">
                               {article.category}
                             </span>
                           </div>
@@ -462,7 +462,7 @@ const Articles = () => {
                         {/* Card body */}
                         <div className="p-2.5 md:p-5 flex flex-col justify-between flex-1">
                           <div>
-                            <h3 className="text-[11px] md:text-lg font-bold text-gray-900 mb-1 md:mb-2 leading-tight md:leading-snug group-hover:text-medical-blue transition-colors line-clamp-2">
+                            <h3 className="text-[11px] md:text-lg font-bold text-gray-900 mb-1 md:mb-2 leading-tight md:leading-snug group-hover:text-[#C9A46A] transition-colors line-clamp-2">
                               {article.title}
                             </h3>
                             <p className="text-[9px] md:text-sm text-gray-500 leading-snug md:leading-relaxed line-clamp-2">
@@ -471,12 +471,12 @@ const Articles = () => {
                           </div>
                           <div className="flex items-center justify-between pt-4 mt-4 border-t border-gray-100">
                             <div className="flex items-center space-x-2 text-xs text-gray-500">
-                              <div className="w-6 h-6 rounded-sm bg-medical-blue/10 flex items-center justify-center">
-                                <User className="w-3 h-3 text-medical-blue" />
+                              <div className="w-6 h-6 rounded-sm bg-[#C9A46A]/10 flex items-center justify-center">
+                                <User className="w-3 h-3 text-[#C9A46A]" />
                               </div>
                               <span className="truncate max-w-[140px]">{article.author}</span>
                             </div>
-                            <span className="text-xs font-semibold text-medical-blue flex items-center gap-1 group-hover:gap-2 transition-all">
+                            <span className="text-xs font-semibold text-[#C9A46A] flex items-center gap-1 group-hover:gap-2 transition-all">
                               Read More
                               <ArrowRight className="w-3.5 h-3.5" />
                             </span>
