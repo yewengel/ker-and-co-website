@@ -91,16 +91,16 @@ const Hero = () => {
                 whileHover={{ scale: 1.04 }}
                 whileTap={{ scale: 0.96 }}
                 onClick={() => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })}
-                className="group inline-flex w-fit items-center justify-start gap-2 self-start px-7 py-3.5 md:px-9 md:py-4 bg-[#C9A46A] text-white rounded-sm font-semibold text-sm md:text-base shadow-xl shadow-[#C9A46A]/30 hover:bg-[#C9A46A] transition-all duration-300"
+                className="group inline-flex w-fit items-center justify-start gap-2 self-start px-5 py-2.5 text-xs sm:px-7 sm:py-3.5 sm:text-sm md:px-9 md:py-4 md:text-base bg-[#C9A46A] text-white rounded-sm font-semibold shadow-xl shadow-[#C9A46A]/30 hover:bg-[#C9A46A] transition-all duration-300"
               >
                 Our Story
-                <ArrowRight className="w-4 h-4 md:w-5 md:h-5 group-hover:translate-x-1 transition-transform" />
+                <ArrowRight className="w-3.5 h-3.5 sm:w-4 sm:h-4 md:w-5 md:h-5 group-hover:translate-x-1 transition-transform" />
               </motion.button>
               <motion.button
                 whileHover={{ scale: 1.04 }}
                 whileTap={{ scale: 0.96 }}
                 onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-                className="inline-flex w-fit items-center justify-center self-start px-7 py-3.5 md:px-9 md:py-4 bg-[#C9A46A] text-white rounded-sm font-semibold text-sm md:text-base shadow-xl shadow-[#C9A46A]/30 hover:bg-[#C9A46A] transition-all duration-300"
+                className="inline-flex w-fit items-center justify-center self-start px-5 py-2.5 text-xs sm:px-7 sm:py-3.5 sm:text-sm md:px-9 md:py-4 md:text-base bg-[#C9A46A] text-white rounded-sm font-semibold shadow-xl shadow-[#C9A46A]/30 hover:bg-[#C9A46A] transition-all duration-300"
               >
                 Contact Us
               </motion.button>
