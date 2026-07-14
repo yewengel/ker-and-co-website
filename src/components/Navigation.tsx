@@ -15,6 +15,11 @@ const Navigation = () => {
   const [openDropdown, setOpenDropdown] = useState<string | null>(null)
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const navRef = React.useRef<HTMLDivElement>(null)
+  
+  // Paths that should have transparent header at the top (dark hero)
+  const darkHeroPaths = ['/', '/about', '/leadership', '/partnerships']
+  const isDarkHeroPage = darkHeroPaths.includes(pathname)
+  const isTransparent = isDarkHeroPage && !scrolled
 
   useEffect(() => {
     const handleScroll = () => {
@@ -139,10 +144,10 @@ const Navigation = () => {
       active
         ? (isTransparent
             ? 'text-white after:w-full after:bg-white'
-            : (isHome ? 'text-black after:w-full after:bg-black' : 'text-[#C9A46A] after:w-full after:bg-[#C9A46A]'))
+            : 'text-black after:w-full after:bg-black')
         : (isTransparent
             ? 'text-white after:w-0 after:bg-white hover:after:w-full'
-            : (isHome ? 'text-black after:w-0 after:bg-black hover:after:w-full' : 'text-[#222222] after:w-0 after:bg-[#C9A46A] hover:text-[#C9A46A] hover:after:w-full'))
+            : 'text-black after:w-0 after:bg-black hover:after:w-full')
     )
 
   const renderNavItem = (item: NavLeafItem | NavGroupItem, isTransparent?: boolean) => {
@@ -191,7 +196,7 @@ const Navigation = () => {
               onClick={() => setOpenDropdown(isActive ? null : item.name)}
               className={cn(
                 'p-1 rounded-[6px] transition-colors hover:bg-[#F8F4EF]',
-                isTransparent ? 'text-white hover:text-[#C9A46A]' : 'text-[#222222] hover:text-[#C9A46A]'
+                isTransparent ? 'text-white hover:text-[#C9A46A]' : 'text-black hover:text-[#C9A46A]'
               )}
             >
               <ChevronDown
@@ -255,9 +260,9 @@ const Navigation = () => {
       <nav
         className={cn(
           'w-full transition-all duration-300 ease-in-out border-b',
-          scrolled
-            ? 'bg-white border-[#E8E2DA]'
-            : 'bg-transparent border-transparent',
+          isTransparent
+            ? 'bg-transparent border-transparent'
+            : 'bg-white border-[#E8E2DA]',
           headerPadding
         )}
       >
@@ -279,13 +284,13 @@ const Navigation = () => {
           {/* Centered navigation links (desktop only) */}
           <div ref={navRef} className="hidden lg:flex items-center justify-center min-w-0">
             <div className="flex items-center gap-x-6 md:gap-x-8 lg:gap-x-10 xl:gap-x-13 px-2">
-              {navItems.map((item) => renderNavItem(item, !scrolled))}
+              {navItems.map((item) => renderNavItem(item, isTransparent))}
             </div>
           </div>
 
           {/* Contact Us button (desktop only) */}
           <div className="hidden lg:flex items-center justify-end">
-            {renderNavItem(contactUsItem, !scrolled)}
+            {renderNavItem(contactUsItem, isTransparent)}
           </div>
 
           {/* Hamburger button (mobile/tablet only) */}
