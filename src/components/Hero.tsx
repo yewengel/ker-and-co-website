@@ -50,7 +50,7 @@ const Hero = () => {
 
       <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-black/10 to-black/20 z-[1]"></div>
 
-      <div className="relative z-10 w-full px-4 pb-16 pt-20 sm:px-6 sm:pb-0 sm:pt-0 lg:px-8 flex flex-col justify-center min-h-[84svh] sm:min-h-screen">
+      <div className="relative z-10 w-full px-4 pb-12 pt-10 -translate-y-12 sm:px-6 sm:pb-0 sm:pt-0 sm:translate-y-0 lg:px-8 flex flex-col justify-center min-h-[84svh] sm:min-h-screen">
         <div className="max-w-4xl">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
